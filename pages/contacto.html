@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Portfolio 3D</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/navigation.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <style>
+        .contact-page {
+            min-height: 100vh;
+            padding: 100px var(--spacing-md) var(--spacing-xl);
+            background: var(--bg-primary);
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .page-title {
+            font-size: var(--font-size-3xl);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: var(--spacing-sm);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-subtitle {
+            font-size: var(--font-size-lg);
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .contact-form {
+            background: var(--bg-secondary);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .form-group {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .form-label {
+            display: block;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-xs);
+            font-weight: 600;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: var(--spacing-sm);
+            background: var(--bg-tertiary);
+            border: 2px solid transparent;
+            border-radius: var(--radius-md);
+            color: var(--text-primary);
+            font-size: var(--font-size-base);
+            transition: border-color var(--transition-fast);
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: var(--spacing-sm) var(--spacing-md);
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--text-primary);
+            border-radius: var(--radius-md);
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform var(--transition-base), box-shadow var(--transition-base);
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+        }
+
+        .info-card {
+            background: var(--bg-secondary);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-lg);
+            text-align: center;
+        }
+
+        .info-icon {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .info-title {
+            font-size: var(--font-size-xl);
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .info-text {
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">Portfolio</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html" class="nav-link">Inicio</a></li>
+                <li><a href="sobre-mi.html" class="nav-link">Sobre Mí</a></li>
+                <li><a href="servicios.html" class="nav-link">Servicios</a></li>
+                <li><a href="galeria.html" class="nav-link">Galería</a></li>
+                <li><a href="cursos.html" class="nav-link">Cursos</a></li>
+                <li><a href="recursos.html" class="nav-link">Recursos</a></li>
+                <li><a href="equipo.html" class="nav-link">Equipo</a></li>
+                <li><a href="clientes.html" class="nav-link">Clientes</a></li>
+                <li><a href="contacto.html" class="nav-link active">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contact Page -->
+    <main class="contact-page">
+        <div class="contact-container">
+            <h1 class="page-title">Contacto</h1>
+            <p class="page-subtitle">¿Tienes un proyecto en mente? Hablemos</p>
+
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name" class="form-label">Nombre</label>
+                    <input type="text" id="name" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject" class="form-label">Asunto</label>
+                    <input type="text" id="subject" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message" class="form-label">Mensaje</label>
+                    <textarea id="message" class="form-textarea" required></textarea>
+                </div>
+
+                <button type="submit" class="form-submit">Enviar Mensaje</button>
+            </form>
+
+            <div class="contact-info-grid">
+                <div class="info-card">
+                    <div class="info-icon">📧</div>
+                    <h3 class="info-title">Email</h3>
+                    <p class="info-text">info@portfolio.com</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">📱</div>
+                    <h3 class="info-title">Teléfono</h3>
+                    <p class="info-text">+34 123 456 789</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">📍</div>
+                    <h3 class="info-title">Ubicación</h3>
+                    <p class="info-text">Madrid, España</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Portfolio 3D</h3>
+                <p>Creatividad e innovación en cada proyecto</p>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="sobre-mi.html">Sobre Mí</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Síguenos</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Portfolio 3D. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script type="module">
+        import { initNavigation } from '../js/navigation.js';
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            initNavigation();
+            
+            const form = document.getElementById('contactForm');
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('¡Mensaje enviado! Te contactaremos pronto.');
+                form.reset();
+            });
+        });
+    </script>
+</body>
+</html>

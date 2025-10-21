@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - Portfolio 3D</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/navigation.css">
+    <link rel="stylesheet" href="../css/sections.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo"><a href="../index.html">Portfolio</a></div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html" class="nav-link">Inicio</a></li>
+                <li><a href="sobre-mi.html" class="nav-link">Sobre Mí</a></li>
+                <li><a href="servicios.html" class="nav-link active">Servicios</a></li>
+                <li><a href="galeria.html" class="nav-link">Galería</a></li>
+                <li><a href="cursos.html" class="nav-link">Cursos</a></li>
+                <li><a href="recursos.html" class="nav-link">Recursos</a></li>
+                <li><a href="equipo.html" class="nav-link">Equipo</a></li>
+                <li><a href="clientes.html" class="nav-link">Clientes</a></li>
+                <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-content">
+            <h1 class="page-title">Nuestros <span class="highlight">Servicios</span></h1>
+            <p class="page-subtitle">Soluciones creativas personalizadas para hacer crecer tu marca</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="page-content">
+        <!-- Services Grid -->
+        <section class="services-full-section">
+            <div class="services-full-container">
+                <div class="service-full-card" data-service="marketing">
+                    <div class="service-full-icon">🎯</div>
+                    <h3>Marketing Digital</h3>
+                    <p>Estrategias efectivas para hacer crecer tu marca en el mundo digital</p>
+                    <button class="service-detail-btn">Ver detalles</button>
+                </div>
+
+                <div class="service-full-card" data-service="design">
+                    <div class="service-full-icon">🎨</div>
+                    <h3>Diseño Creativo</h3>
+                    <p>Diseños únicos que capturan la esencia de tu negocio</p>
+                    <button class="service-detail-btn">Ver detalles</button>
+                </div>
+
+                <div class="service-full-card" data-service="photography">
+                    <div class="service-full-icon">📸</div>
+                    <h3>Fotografía Profesional</h3>
+                    <p>Capturamos momentos que cuentan historias auténticas</p>
+                    <button class="service-detail-btn">Ver detalles</button>
+                </div>
+
+                <div class="service-full-card" data-service="video">
+                    <div class="service-full-icon">🎬</div>
+                    <h3>Video & Animación</h3>
+                    <p>Contenido audiovisual de alta calidad que impacta</p>
+                    <button class="service-detail-btn">Ver detalles</button>
+                </div>
+
+                <div class="service-full-card" data-service="3d">
+                    <div class="service-full-icon">🎮</div>
+                    <h3>Diseño 3D</h3>
+                    <p>Experiencias inmersivas y visualizaciones impactantes</p>
+                    <button class="service-detail-btn">Ver detalles</button>
+                </div>
+
+                <div class="service-full-card" data-service="branding">
+                    <div class="service-full-icon">✨</div>
+                    <h3>Branding</h3>
+                    <p>Construimos identidades de marca memorables y coherentes</p>
+                    <button class="service-detail-btn">Ver detalles</button>
+                </div>
+
+                <div class="service-full-card" data-service="web">
+                    <div class="service-full-icon">💻</div>
+                    <h3>Desarrollo Web</h3>
+                    <p>Sitios web modernos, rápidos y optimizados</p>
+                    <button class="service-detail-btn">Ver detalles</button>
+                </div>
+
+                <div class="service-full-card" data-service="consulting">
+                    <div class="service-full-icon">💡</div>
+                    <h3>Consultoría</h3>
+                    <p>Asesoramiento estratégico para tu negocio digital</p>
+                    <button class="service-detail-btn">Ver detalles</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Service Detail Modal -->
+    <div class="modal" id="serviceModal">
+        <div class="modal-content large">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="service-detail-content">
+                <div class="service-detail-icon" id="serviceIcon">🎯</div>
+                <h2 id="serviceTitle">Servicio</h2>
+                <p id="serviceDescription" class="service-detail-description"></p>
+                <div class="service-detail-features">
+                    <h3>Incluye:</h3>
+                    <ul id="serviceFeatures"></ul>
+                </div>
+                <div class="service-detail-cta">
+                    <a href="contacto.html" class="cta-button">Solicitar Cotización</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Portfolio 3D</h3>
+                <p>Creatividad e innovación en cada proyecto</p>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="sobre-mi.html">Sobre Mí</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Síguenos</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Portfolio 3D. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="../js/navigation.js"></script>
+    <script type="module" src="../js/services-modal.js"></script>
+    <script type="module">
+        import { initNavigation } from "../js/navigation.js"
+        import { initServicesModal } from "../js/services-modal.js"
+        document.addEventListener("DOMContentLoaded", () => {
+            initNavigation()
+            initServicesModal()
+        })
+    </script>
+</body>
+</html>

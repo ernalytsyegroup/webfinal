@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio 3D - Home</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Mariangel Mujica</div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Inicio</a></li>
+                <li><a href="pages/sobre-mi.html" class="nav-link">Sobre Mí</a></li>
+                <li><a href="pages/servicios.html" class="nav-link">Servicios</a></li>
+                <li><a href="pages/galeria.html" class="nav-link">Galería</a></li>
+                <li><a href="pages/cursos.html" class="nav-link">Cursos</a></li>
+                <li><a href="pages/recursos.html" class="nav-link">Recursos</a></li>
+                <li><a href="pages/equipo.html" class="nav-link">Equipo</a></li>
+                <li><a href="pages/clientes.html" class="nav-link">Clientes</a></li>
+                <li><a href="pages/contacto.html" class="nav-link">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section with 3D Model -->
+    <section class="hero" id="home">
+        <div class="hero-3d-controls">
+            <button id="zoomInBtn" class="zoom-btn" aria-label="Zoom in">＋</button>
+            <button id="zoomOutBtn" class="zoom-btn" aria-label="Zoom out">－</button>
+        </div>
+        <div class="hero-3d-container" id="hero3DContainer"></div>
+        <div class="hero-content">
+            <!-- Added badge and updated title with highlight -->
+            <div class="hero-badge">Bienvenido al website!</div>
+            <h1 class="hero-title">Mariángel<span class="highlight">Mújica</span></h1>
+            <p class="hero-subtitle">Potencia tu marca conmigo</p>
+            <a href="#preview" class="hero-cta">Explorar</a>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- Preview Sections -->
+    <main class="preview-sections" id="preview">
+        <!-- Sobre Mí Preview -->
+        <section class="preview-section" id="sobre-mi-preview">
+            <div class="section-container">
+                <div class="section-content">
+                    <h2 class="section-title">Sobre Mí</h2>
+                    <p class="section-text">
+                        Profesional creativo especializado en marketing digital y diseño 3D. 
+                        Con años de experiencia transformando ideas en experiencias visuales impactantes.
+                    </p>
+                    <a href="pages/sobre-mi.html" class="section-link">Ver más →</a>
+                </div>
+                <div class="section-image">
+                    <img src="/placeholder.svg?height=400&width=400" alt="Sobre mí">
+                </div>
+            </div>
+        </section>
+
+        <!-- Servicios Preview -->
+        <section class="preview-section alt" id="servicios-preview">
+            <div class="section-container">
+                <h2 class="section-title centered">Servicios</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🎯</div>
+                        <h3>Marketing Digital</h3>
+                        <p>Estrategias efectivas para hacer crecer tu marca</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🎨</div>
+                        <h3>Diseño Creativo</h3>
+                        <p>Diseños únicos que capturan la esencia de tu negocio</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">📸</div>
+                        <h3>Fotografía</h3>
+                        <p>Capturamos momentos que cuentan historias</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🎬</div>
+                        <h3>Video & Animación</h3>
+                        <p>Contenido audiovisual de alta calidad</p>
+                    </div>
+                </div>
+                <a href="pages/servicios.html" class="section-link centered">Ver todos los servicios →</a>
+            </div>
+        </section>
+
+        <!-- Galería Preview -->
+        <section class="preview-section" id="galeria-preview">
+            <div class="section-container">
+                <h2 class="section-title centered">Galería</h2>
+                <div class="gallery-carousel" id="galleryCarousel">
+                    <button class="carousel-btn prev" id="galleryPrev" aria-label="Previous">‹</button>
+                    <div class="carousel-track">
+                        <img src="/placeholder.svg?height=400&width=600" alt="Eventos" class="carousel-image">
+                        <img src="/placeholder.svg?height=400&width=600" alt="Productos" class="carousel-image">
+                        <img src="/placeholder.svg?height=400&width=600" alt="Retratos" class="carousel-image">
+                    </div>
+                    <button class="carousel-btn next" id="galleryNext" aria-label="Next">›</button>
+                </div>
+                <a href="pages/galeria.html" class="section-link centered">Ver galería completa →</a>
+            </div>
+        </section>
+
+        <!-- Cursos Preview -->
+        <section class="preview-section alt" id="cursos-preview">
+            <div class="section-container">
+                <h2 class="section-title centered">Cursos Destacados</h2>
+                <div class="courses-grid">
+                    <div class="course-card">
+                        <img src="/placeholder.svg?height=250&width=400" alt="Curso Marketing" class="course-image">
+                        <div class="course-content">
+                            <h3>Marketing Digital Avanzado</h3>
+                            <p>Domina las estrategias más efectivas del marketing digital</p>
+                            <span class="course-price">$99</span>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <img src="/placeholder.svg?height=250&width=400" alt="Curso 3D" class="course-image">
+                        <div class="course-content">
+                            <h3>Diseño 3D para Principiantes</h3>
+                            <p>Aprende a crear modelos 3D desde cero</p>
+                            <span class="course-price">$149</span>
+                        </div>
+                    </div>
+                </div>
+                <a href="pages/cursos.html" class="section-link centered">Ver todos los cursos →</a>
+            </div>
+        </section>
+
+        <!-- Recursos Preview -->
+        <section class="preview-section" id="recursos-preview">
+            <div class="section-container">
+                <h2 class="section-title centered">Recursos Gratuitos</h2>
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <div class="resource-icon">📄</div>
+                        <h3>Guía de Marketing</h3>
+                        <p>Descarga nuestra guía completa de marketing digital</p>
+                        <button class="resource-btn" data-resource="marketing-guide">Descargar</button>
+                    </div>
+                    <div class="resource-card">
+                        <div class="resource-icon">🎨</div>
+                        <h3>Templates de Diseño</h3>
+                        <p>Plantillas profesionales listas para usar</p>
+                        <button class="resource-btn" data-resource="design-templates">Descargar</button>
+                    </div>
+                    <div class="resource-card">
+                        <div class="resource-icon">📊</div>
+                        <h3>Checklist SEO</h3>
+                        <p>Lista completa para optimizar tu sitio web</p>
+                        <button class="resource-btn" data-resource="seo-checklist">Descargar</button>
+                    </div>
+                </div>
+                <a href="pages/recursos.html" class="section-link centered">Ver todos los recursos →</a>
+            </div>
+        </section>
+
+        <!-- Equipo Preview -->
+        <section class="preview-section alt" id="equipo-preview">
+            <div class="section-container">
+                <h2 class="section-title centered">Nuestro Equipo</h2>
+                <div class="team-carousel" id="teamCarousel">
+                    <button class="carousel-btn prev" id="teamPrev" aria-label="Previous">‹</button>
+                    <div class="team-track">
+                        <div class="team-member">
+                            <img src="/placeholder.svg?height=300&width=300" alt="Team member" class="team-photo">
+                            <h3>María García</h3>
+                            <p>Directora Creativa</p>
+                        </div>
+                        <div class="team-member">
+                            <img src="/placeholder.svg?height=300&width=300" alt="Team member" class="team-photo">
+                            <h3>Carlos Rodríguez</h3>
+                            <p>Especialista en Marketing</p>
+                        </div>
+                        <div class="team-member">
+                            <img src="/placeholder.svg?height=300&width=300" alt="Team member" class="team-photo">
+                            <h3>Ana Martínez</h3>
+                            <p>Diseñadora 3D</p>
+                        </div>
+                    </div>
+                    <button class="carousel-btn next" id="teamNext" aria-label="Next">›</button>
+                </div>
+                <a href="pages/equipo.html" class="section-link centered">Conocer al equipo completo →</a>
+            </div>
+        </section>
+
+        <!-- Clientes Preview -->
+        <section class="preview-section" id="clientes-preview">
+            <div class="section-container">
+                <h2 class="section-title centered">Clientes que Confían en Nosotros</h2>
+                <div class="clients-carousel" id="clientsCarousel">
+                    <div class="clients-track">
+                        <img src="/placeholder.svg?height=100&width=200" alt="Cliente 1" class="client-logo">
+                        <img src="/placeholder.svg?height=100&width=200" alt="Cliente 2" class="client-logo">
+                        <img src="/placeholder.svg?height=100&width=200" alt="Cliente 3" class="client-logo">
+                        <img src="/placeholder.svg?height=100&width=200" alt="Cliente 4" class="client-logo">
+                        <img src="/placeholder.svg?height=100&width=200" alt="Cliente 5" class="client-logo">
+                        <img src="/placeholder.svg?height=100&width=200" alt="Cliente 6" class="client-logo">
+                    </div>
+                </div>
+                <a href="pages/clientes.html" class="section-link centered">Ver todos los clientes →</a>
+            </div>
+        </section>
+
+        <!-- Contacto Preview -->
+        <section class="preview-section alt" id="contacto-preview">
+            <div class="section-container">
+                <h2 class="section-title centered">¿Listo para Empezar?</h2>
+                <p class="section-text centered">Contáctanos y hagamos realidad tu proyecto</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <span>info@portfolio.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📱</span>
+                        <span>+34 123 456 789</span>
+                    </div>
+                </div>
+                <a href="pages/contacto.html" class="section-link centered">Ir al formulario de contacto →</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Portfolio 3D</h3>
+                <p>Creatividad e innovación en cada proyecto</p>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="pages/sobre-mi.html">Sobre Mí</a></li>
+                    <li><a href="pages/servicios.html">Servicios</a></li>
+                    <li><a href="pages/contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Síguenos</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Portfolio 3D. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modal for Resources -->
+    <div class="modal" id="resourceModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <h2 id="modalTitle">Recurso</h2>
+            <p id="modalDescription">Descripción del recurso</p>
+            <button class="modal-download" id="modalDownload">Descargar Ahora</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
