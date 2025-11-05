@@ -1,8 +1,22 @@
-/* Footer Styles */
+/* Footer Styles - Premium */
 .footer {
-  background: var(--bg-secondary);
+  background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
   padding: var(--spacing-lg) var(--spacing-md) var(--spacing-md);
-  border-top: 1px solid var(--bg-tertiary);
+  border-top: 1px solid rgba(163, 230, 53, 0.15);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(163, 230, 53, 0.08) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .footer-container {
@@ -12,27 +26,47 @@
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: var(--spacing-lg);
   margin-bottom: var(--spacing-md);
+  position: relative;
+  z-index: 1;
 }
 
 .footer-section h3,
 .footer-section h4 {
   color: var(--text-primary);
   margin-bottom: var(--spacing-sm);
+  font-weight: 700;
 }
 
 .footer-section p,
 .footer-section li {
   color: var(--text-secondary);
   margin-bottom: var(--spacing-xs);
+  transition: color var(--transition-fast);
 }
 
 .footer-section a {
   color: var(--text-secondary);
-  transition: color var(--transition-fast);
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.footer-section a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--primary);
+  transition: width var(--transition-base);
 }
 
 .footer-section a:hover {
   color: var(--primary);
+}
+
+.footer-section a:hover::after {
+  width: 100%;
 }
 
 .social-links {
@@ -42,16 +76,29 @@
 }
 
 .social-links a {
-  transition: transform var(--transition-fast);
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(163, 230, 53, 0.2);
+  border-radius: 50%;
+  background: rgba(163, 230, 53, 0.05);
 }
 
 .social-links a:hover {
-  transform: scale(1.2);
+  transform: translateY(-4px) scale(1.1);
+  background: rgba(163, 230, 53, 0.15);
+  border-color: rgba(163, 230, 53, 0.5);
+  box-shadow: var(--shadow-glow);
 }
 
 .footer-bottom {
   text-align: center;
   padding-top: var(--spacing-md);
-  border-top: 1px solid var(--bg-tertiary);
+  border-top: 1px solid rgba(163, 230, 53, 0.1);
   color: var(--text-muted);
+  position: relative;
+  z-index: 1;
 }

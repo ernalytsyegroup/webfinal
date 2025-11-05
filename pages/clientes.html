@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -45,18 +45,7 @@
 
     <!-- Main Content -->
     <main class="page-content">
-        <!-- Filter Section -->
-        <section class="clients-filter-section">
-            <div class="filter-container">
-                <button class="filter-btn active" data-filter="all">Todos</button>
-                <button class="filter-btn" data-filter="tecnologia">Tecnología</button>
-                <button class="filter-btn" data-filter="moda">Moda</button>
-                <button class="filter-btn" data-filter="alimentos">Alimentos</button>
-                <button class="filter-btn" data-filter="salud">Salud</button>
-                <button class="filter-btn" data-filter="educacion">Educación</button>
-            </div>
-        </section>
-
+        <!-- Removed filter section, directly showing clients grid -->
         <!-- Clients Grid -->
         <section class="clients-full-section">
             <div class="clients-full-grid" id="clientsGrid">
@@ -224,14 +213,10 @@
         </div>
     </footer>
 
-    <script type="module" src="../js/navigation.js"></script>
-    <script type="module" src="../js/clients-filter.js"></script>
     <script type="module">
         import { initNavigation } from "../js/navigation.js"
-        import { initClientsFilter } from "../js/clients-filter.js"
         document.addEventListener("DOMContentLoaded", () => {
             initNavigation()
-            initClientsFilter()
         })
     </script>
 </body>

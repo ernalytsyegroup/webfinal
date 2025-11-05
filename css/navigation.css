@@ -1,20 +1,21 @@
-/* Navigation Styles */
+/* Navigation Styles - Premium */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  /* Updated to pure black with subtle transparency */
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(20px);
   z-index: var(--z-navbar);
-  transition: background var(--transition-base);
-  border-bottom: 1px solid rgba(163, 230, 53, 0.1);
+  transition: background var(--transition-base), border-color var(--transition-base);
+  border-bottom: 1px solid rgba(163, 230, 53, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .navbar.scrolled {
-  background: rgba(0, 0, 0, 0.95);
-  box-shadow: var(--shadow-lg);
+  background: rgba(0, 0, 0, 0.92);
+  border-bottom-color: rgba(163, 230, 53, 0.25);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
 
 .nav-container {
@@ -29,17 +30,34 @@
 .nav-logo {
   font-size: var(--font-size-xl);
   font-weight: 700;
-  /* Changed to white with lime green accent */
   color: var(--text-primary);
   display: flex;
   align-items: center;
   gap: var(--spacing-xs);
+  /* Added hover animation */
+  transition: transform var(--transition-fast), text-shadow var(--transition-fast);
+}
+
+.nav-logo:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 20px rgba(163, 230, 53, 0.4);
 }
 
 .nav-logo::before {
   content: "✦";
   color: var(--primary);
   font-size: 1.5rem;
+  /* Added animation */
+  animation: spin 20s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .nav-toggle {
@@ -54,6 +72,7 @@
   height: 2px;
   background: var(--text-primary);
   transition: var(--transition-base);
+  transform-origin: center;
 }
 
 .nav-menu {
@@ -69,23 +88,24 @@
   position: relative;
   padding: var(--spacing-xs) 0;
   font-weight: 500;
+  /* Added smooth letter spacing on hover */
+  letter-spacing: 0.5px;
 }
 
 .nav-link::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -4px;
   left: 0;
   width: 0;
   height: 2px;
-  /* Changed underline to lime green */
-  background: var(--primary);
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
   transition: width var(--transition-base);
 }
 
 .nav-link:hover,
 .nav-link.active {
-  color: var(--text-primary);
+  color: var(--primary);
 }
 
 .nav-link:hover::after,
@@ -104,7 +124,6 @@
     top: 60px;
     left: 0;
     right: 0;
-    /* Updated mobile menu background */
     background: rgba(0, 0, 0, 0.98);
     flex-direction: column;
     padding: var(--spacing-md);
