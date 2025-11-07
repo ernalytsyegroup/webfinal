@@ -27,18 +27,17 @@ export function initCustomCursor() {
     document.body.classList.remove("custom-cursor-active")
   })
 
-  // Smooth follow animation
   let animationFrameId
   const animate = () => {
     animationFrameId = requestAnimationFrame(animate)
 
     // Smooth easing for cursor follow
-    targetX += (mouseX - targetX) * 0.3
-    targetY += (mouseY - targetY) * 0.3
+    targetX += (mouseX - targetX) * 0.25
+    targetY += (mouseY - targetY) * 0.25
 
-    // Position cursor tracker with offset to center it on the mouse
-    cursorTracker.style.left = targetX - 15 + "px"
-    cursorTracker.style.top = targetY - 15 + "px"
+    // Position cursor tracker with offset to center it on the mouse (25px for new 50px size)
+    cursorTracker.style.left = targetX - 25 + "px"
+    cursorTracker.style.top = targetY - 25 + "px"
   }
 
   animate()

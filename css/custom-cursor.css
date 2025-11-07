@@ -1,14 +1,22 @@
-/* Custom cursor effect - visible follow indicator */
+/* Enhanced cursor to be a larger, more diffuse glow effect */
 .cursor-tracker {
   position: fixed;
-  width: 30px;
-  height: 30px;
-  border: 2px solid rgba(163, 230, 53, 0.8);
-  border-radius: 50%;
+  width: 80px;
+  height: 80px;
   pointer-events: none;
   z-index: 9999;
   display: none;
-  box-shadow: 0 0 10px rgba(163, 230, 53, 0.4), inset 0 0 10px rgba(163, 230, 53, 0.2);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(163, 230, 53, 0.5) 0%,
+    rgba(163, 230, 53, 0.3) 15%,
+    rgba(163, 230, 53, 0.15) 40%,
+    rgba(163, 230, 53, 0.05) 70%,
+    transparent 100%
+  );
+  border-radius: 50%;
+  filter: blur(25px);
+  box-shadow: 0 0 40px rgba(163, 230, 53, 0.6), 0 0 80px rgba(163, 230, 53, 0.3), inset 0 0 30px rgba(163, 230, 53, 0.2);
 }
 
 .cursor-tracker.active {
@@ -21,10 +29,11 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 8px;
-  height: 8px;
-  background: rgba(163, 230, 53, 0.6);
+  width: 6px;
+  height: 6px;
+  background: rgba(163, 230, 53, 0.8);
   border-radius: 50%;
+  filter: blur(1px);
 }
 
 .cursor-tracker::after {
@@ -35,9 +44,10 @@
   transform: translate(-50%, -50%);
   width: 20px;
   height: 20px;
-  border: 1px solid rgba(163, 230, 53, 0.4);
+  background: radial-gradient(circle, rgba(163, 230, 53, 0.6) 0%, transparent 70%);
   border-radius: 50%;
-  animation: pulse-cursor 1.5s ease-in-out infinite;
+  animation: pulse-cursor 3s ease-in-out infinite;
+  filter: blur(3px);
 }
 
 @keyframes pulse-cursor {
@@ -48,9 +58,9 @@
     opacity: 0.6;
   }
   50% {
-    width: 30px;
-    height: 30px;
-    opacity: 0.2;
+    width: 60px;
+    height: 60px;
+    opacity: 0.3;
   }
 }
 

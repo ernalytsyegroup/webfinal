@@ -956,7 +956,7 @@
 
   .timeline-item {
     flex-direction: column !important;
-    margin-left: var(--spacing-lg);
+    margin-left: var(--spacing-lg); 
   }
 
   .team-full-container,
