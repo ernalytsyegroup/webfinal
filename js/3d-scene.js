@@ -44,9 +44,7 @@ export function init3DScene() {
     s.classList.add('hidden-section')
     s.classList.remove('visible-section')
   })
-  // create thresholds depending on number of sections
-  // For "reveal on zoom in" we want smaller z values (camera closer) to trigger sections.
-  // Start just below the initial camera z (initial z = 5) and decrease for each section.
+
   const baseThreshold = 4.5 // z at which first section starts appearing when zooming in
   const thresholdStep = 0.8 // decrease per section
   const sectionThresholds = previewSections.map((_, i) => baseThreshold - i * thresholdStep)
@@ -63,13 +61,12 @@ export function init3DScene() {
   const cube = new THREE.Mesh(geometry, material)
   scene.add(cube)
 
-  // Load GLB model (models/mm.glb)
-  // Use the global THREE.GLTFLoader (loaded from CDN in index.html)
+
   let model = null
   if (typeof THREE !== 'undefined' && THREE.GLTFLoader) {
     const loader = new THREE.GLTFLoader()
     loader.load(
-      'models/mm.glb', // relative path; serve the site over HTTP
+      '/models/logologo.glb', // relative path; serve the site over HTTP
       (gltf) => {
         model = gltf.scene
         // optional: adjust scale/position if necessary
@@ -78,7 +75,7 @@ export function init3DScene() {
         scene.add(model)
         // hide fallback cube when model is present
         if (cube) cube.visible = false
-        console.log('3D model loaded successfully: /models/loguito.glb')
+        console.log('3D model loaded successfully: /models/logologo.glb')
       },
       (xhr) => {
         if (xhr.total) {

@@ -6,7 +6,13 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: radial-gradient(ellipse at 50% 50%, rgba(163, 230, 53, 0.08) 0%, transparent 70%);
+  /* Dark checkerboard background similar to the reference */
+  background-color: var(--bg-primary);
+  background-image:
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    radial-gradient(ellipse at 50% 50%, rgba(163, 230, 53, 0.04) 0%, transparent 60%);
+  background-size: 50px 50px, 50px 50px, cover;
 }
 
 .hero::before {
@@ -37,26 +43,25 @@
 }
 
 .zoom-btn {
-  background: rgba(163, 230, 53, 0.15);
-  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,0.55);
   color: var(--primary);
-  border: 1px solid rgba(163, 230, 53, 0.3);
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
+  border: 2px solid rgba(163, 230, 53, 0.12);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
   display: inline-grid;
   place-items: center;
   cursor: pointer;
   font-size: 20px;
-  transition: all var(--transition-base);
-  box-shadow: 0 4px 15px rgba(163, 230, 53, 0.1);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+  box-shadow: 0 8px 30px rgba(163,230,53,0.06);
 }
 
 .zoom-btn:hover {
-  transform: translateY(-3px);
-  background: rgba(163, 230, 53, 0.25);
+  transform: translateY(-4px) scale(1.05);
+  background: rgba(163, 230, 53, 0.06);
   box-shadow: var(--shadow-glow);
-  border-color: rgba(163, 230, 53, 0.5);
+  border-color: rgba(163, 230, 53, 0.35);
 }
 
 .zoom-overlay {
@@ -64,13 +69,13 @@
   right: 20px;
   top: 20px;
   z-index: 20;
-  background: rgba(255, 255, 255, 0.95);
-  color: #031;
-  padding: 8px 10px;
-  border-radius: 8px;
+  background: rgba(0,0,0,0.85);
+  color: var(--text-primary);
+  padding: 8px 12px;
+  border-radius: 10px;
   font-weight: 700;
   font-family: system-ui, sans-serif;
-  box-shadow: 0 6px 20px rgba(2, 6, 23, 0.08);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6), 0 0 30px rgba(163,230,53,0.04);
 }
 
 .hero-content {
@@ -86,16 +91,15 @@
   font-weight: 700;
   margin-bottom: var(--spacing-md);
   color: var(--text-primary);
-  line-height: 1.1;
-  animation: fadeInUp 1s ease;
-  /* Added text shadow for depth */
-  text-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  line-height: 1.05;
+  animation: fadeInUp 0.9s ease;
+  /* stronger neon highlight */
+  text-shadow: 0 8px 30px rgba(0,0,0,0.6), 0 0 30px rgba(163,230,53,0.06);
 }
 
 .hero-title .highlight {
   color: var(--primary);
-  /* Enhanced highlight with glow effect */
-  text-shadow: 0 0 20px rgba(163, 230, 53, 0.5), 0 0 40px rgba(163, 230, 53, 0.3);
+  text-shadow: 0 0 28px rgba(163,230,53,0.45), 0 0 60px rgba(163,230,53,0.25);
 }
 
 .hero-subtitle {
@@ -122,7 +126,7 @@
   margin-bottom: var(--spacing-md);
   animation: fadeInUp 1s ease 0.1s backwards;
   /* Added subtle backdrop blur */
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(6px);
   transition: all var(--transition-fast);
 }
 
@@ -159,6 +163,37 @@
   border-color: var(--primary-light);
 }
 
+/* Horizontal ribbon similar to reference (category strip) */
+.hero-ribbon {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 86px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 0 20px;
+  z-index: 15;
+  background: linear-gradient(90deg, rgba(163,230,53,0.06), rgba(163,230,53,0.03));
+  border-top: 2px solid rgba(163,230,53,0.12);
+  border-bottom: 2px solid rgba(163,230,53,0.12);
+  overflow: hidden;
+}
+
+.hero-ribbon .item {
+  color: var(--primary);
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(163,230,53,0.08);
+  box-shadow: 0 4px 18px rgba(163,230,53,0.03);
+}
+
+.hero-ribbon .spacer { width: 10px; }
+
 .scroll-indicator {
   position: absolute;
   bottom: var(--spacing-md);
@@ -189,28 +224,7 @@
   animation: scroll 2s infinite;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes scroll {
-  0%,
-  100% {
-    transform: translateX(-50%) translateY(0);
-    opacity: 1;
-  }
-  50% {
-    transform: translateX(-50%) translateY(12px);
-    opacity: 0;
-  }
-}
+/* Animations `fadeInUp` and `scroll` are defined centrally in `pages.css` */
 
 @media (max-width: 768px) {
   .hero-title {
@@ -225,4 +239,45 @@
     padding: 0.875rem 2rem;
     font-size: var(--font-size-base);
   }
+}
+
+/* 3D canvas tweaks and accessibility / transitions */
+.hero-3d-container canvas,
+.hero-3d-container > canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: auto;
+  will-change: transform;
+}
+
+/* Prevent touch gestures from conflicting with controls */
+.hero-3d-container {
+  touch-action: none;
+}
+
+/* Smooth appearing/disappearing for the zoom overlay */
+.zoom-overlay {
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+  opacity: 1;
+  transform: translateY(0);
+}
+.zoom-overlay.hidden {
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+}
+
+/* Focus styles for keyboard users */
+.zoom-btn:focus {
+  outline: 3px solid rgba(163,230,53,0.22);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 4px rgba(163,230,53,0.06);
+}
+
+@media (max-width: 768px) {
+  .hero-ribbon { top: 70px; height: 48px; gap: 12px; }
+  .hero-3d-controls { top: 12px; left: 12px; gap: 6px; }
+  .zoom-btn { width: 40px; height: 40px; font-size: 18px; }
 }

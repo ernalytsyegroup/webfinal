@@ -48,7 +48,7 @@
         <!-- Courses Grid -->
         <section class="courses-full-section">
             <div class="courses-full-container">
-                <div class="course-full-card">
+                <div class="course-full-card" data-course="marketing">
                     <img src="/placeholder.svg?height=300&width=500" alt="Marketing Digital" class="course-full-image">
                     <div class="course-full-content">
                         <div class="course-category">Marketing</div>
@@ -60,12 +60,12 @@
                         </div>
                         <div class="course-footer">
                             <span class="course-price">$99</span>
-                            <a href="cursos/marketing-digital.html" class="course-btn">Ver curso</a>
+                            <button class="course-detail-btn">Ver curso</button>
                         </div>
                     </div>
                 </div>
 
-                <div class="course-full-card">
+                <div class="course-full-card" data-course="diseno3d">
                     <img src="/placeholder.svg?height=300&width=500" alt="Diseño 3D" class="course-full-image">
                     <div class="course-full-content">
                         <div class="course-category">Diseño 3D</div>
@@ -77,12 +77,12 @@
                         </div>
                         <div class="course-footer">
                             <span class="course-price">$149</span>
-                            <a href="cursos/diseno-3d.html" class="course-btn">Ver curso</a>
+                            <button class="course-detail-btn">Ver curso</button>
                         </div>
                     </div>
                 </div>
 
-                <div class="course-full-card">
+                <div class="course-full-card" data-course="fotografia">
                     <img src="/placeholder.svg?height=300&width=500" alt="Fotografía" class="course-full-image">
                     <div class="course-full-content">
                         <div class="course-category">Fotografía</div>
@@ -94,12 +94,12 @@
                         </div>
                         <div class="course-footer">
                             <span class="course-price">$129</span>
-                            <a href="cursos/fotografia.html" class="course-btn">Ver curso</a>
+                            <button class="course-detail-btn">Ver curso</button>
                         </div>
                     </div>
                 </div>
 
-                <div class="course-full-card">
+                <div class="course-full-card" data-course="video">
                     <img src="/placeholder.svg?height=300&width=500" alt="Edición de Video" class="course-full-image">
                     <div class="course-full-content">
                         <div class="course-category">Video</div>
@@ -111,12 +111,12 @@
                         </div>
                         <div class="course-footer">
                             <span class="course-price">$119</span>
-                            <a href="cursos/edicion-video.html" class="course-btn">Ver curso</a>
+                            <button class="course-detail-btn">Ver curso</button>
                         </div>
                     </div>
                 </div>
 
-                <div class="course-full-card">
+                <div class="course-full-card" data-course="branding">
                     <img src="/placeholder.svg?height=300&width=500" alt="Branding" class="course-full-image">
                     <div class="course-full-content">
                         <div class="course-category">Branding</div>
@@ -128,12 +128,12 @@
                         </div>
                         <div class="course-footer">
                             <span class="course-price">$89</span>
-                            <a href="cursos/branding.html" class="course-btn">Ver curso</a>
+                            <button class="course-detail-btn">Ver curso</button>
                         </div>
                     </div>
                 </div>
 
-                <div class="course-full-card">
+                <div class="course-full-card" data-course="web">
                     <img src="/placeholder.svg?height=300&width=500" alt="Diseño Web" class="course-full-image">
                     <div class="course-full-content">
                         <div class="course-category">Desarrollo Web</div>
@@ -145,13 +145,32 @@
                         </div>
                         <div class="course-footer">
                             <span class="course-price">$139</span>
-                            <a href="cursos/diseno-web.html" class="course-btn">Ver curso</a>
+                            <button class="course-detail-btn">Ver curso</button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- Course Detail Modal -->
+    <div class="modal" id="courseModal">
+        <div class="modal-content large">
+            <button class="modal-close" id="courseModalClose">&times;</button>
+            <div class="course-detail-content">
+                <div class="course-detail-icon" id="courseIcon">📚</div>
+                <h2 id="courseTitle">Curso</h2>
+                <p id="courseDescription" class="course-detail-description"></p>
+                <div class="course-detail-features">
+                    <h3>Incluye:</h3>
+                    <ul id="courseFeatures"></ul>
+                </div>
+                <div class="course-detail-cta">
+                    <a id="courseModalCta" href="contacto.html" class="cta-button">Inscribirme</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -183,10 +202,13 @@
     </footer>
 
     <script type="module" src="../js/navigation.js"></script>
+    <script type="module" src="../js/courses-modal.js"></script>
     <script type="module">
         import { initNavigation } from "../js/navigation.js"
+        import { initCoursesModal } from "../js/courses-modal.js"
         document.addEventListener("DOMContentLoaded", () => {
             initNavigation()
+            initCoursesModal()
         })
     </script>
 </body>

@@ -208,48 +208,56 @@
 }
 
 /* CLIENT CARDS */
-.client-full-card {
+.service-full-card {
   padding: var(--spacing-lg);
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
+  justify-content: space-between;
+  min-height: 420px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(12,12,12,0.95), rgba(20,20,20,0.95));
+  border: 1px solid rgba(163,230,53,0.08);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
 }
-
-.client-full-logo {
-  max-height: 100px;
-  max-width: 100%;
+.service-full-icon {
+  font-size: 56px;
   margin-bottom: var(--spacing-md);
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
+  transition: transform 0.45s cubic-bezier(0.2,0.9,0.2,1);
 }
-
-.client-full-card:hover .client-full-logo {
-  opacity: 1;
-  filter: brightness(1.2);
+.service-full-card:hover .service-full-icon {
+  transform: translateY(-6px) scale(1.06);
 }
-
-.client-info h3 {
-  font-size: 1.3rem;
+.service-full-card h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-primary);
+}
+.service-full-card p {
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-md);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.service-detail-btn {
+  background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+  color: #0a0e27;
+  padding: 10px 26px;
+  border-radius: 999px;
   font-weight: 700;
-  margin-bottom: var(--spacing-xs);
-  color: #fff;
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  border: none;
+  display: inline-block;
+  width: 160px;
 }
-
-.client-industry {
-  color: #a3e635;
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-transform: uppercase;
+.service-detail-btn:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 80px rgba(163,230,53,0.12);
 }
-
-/* COURSE CARDS */
-.course-full-card {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
 .course-full-image {
   width: 100%;
   height: 200px;
@@ -391,10 +399,12 @@
 .courses-full-container,
 .services-full-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
   gap: var(--spacing-lg);
   animation: fadeIn 0.8s ease-out;
 }
+
+.services-full-container { max-width: 1200px; margin: 0 auto; padding: 0 var(--spacing-md); }
 
 .courses-full-container {
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -515,9 +525,15 @@
 
 /* ACHIEVEMENTS */
 .achievements-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  /* Arrange achievement cards in a single horizontal row; allow horizontal scroll on small screens */
+  display: flex;
+  flex-direction: row;
   gap: var(--spacing-lg);
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 8px;
 }
 
 .achievement-card {
@@ -539,8 +555,22 @@
 .achievement-number {
   font-size: 3rem;
   font-weight: 800;
-  color: #a3e635;
+  color: var(--primary);
   margin-bottom: var(--spacing-sm);
+}
+
+/* Ensure consistent card width inside the horizontal row */
+.achievement-card {
+  min-width: 240px;
+  max-width: 260px;
+  flex: 0 0 250px;
+}
+
+/* Highlighted / focused achievement */
+.achievement-card.highlight {
+  border-color: var(--primary);
+  box-shadow: 0 40px 120px rgba(163,230,53,0.12), 0 0 60px rgba(163,230,53,0.06) inset;
+  transform: translateY(-8px);
 }
 
 .achievement-card h3 {
@@ -763,7 +793,7 @@
 
 /* RESOURCES */
 .resource-full-card {
-  background: linear-gradient(135deg, #0a0a0a 0%, rgba(15, 15, 15, 0.8) 100%);
+  background: linear-gradient(135deg, #0a0a0a 0%, rgba(15, 15, 15, 0.85) 100%);
   padding: var(--spacing-lg);
   border-radius: 12px;
   border: 1px solid var(--card-border);
@@ -793,6 +823,94 @@
   color: var(--text-muted);
   font-size: 0.95rem;
   margin-bottom: var(--spacing-md);
+}
+
+/* Resources - full width centered cards (like the reference) */
+.resources-list {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-lg);
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: var(--spacing-md);
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+}
+
+/* Also support existing HTML structure `.resources-full-container` used in pages/recursos.html */
+.resources-full-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(320px, 1fr));
+  gap: var(--spacing-lg);
+  align-items: start;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-md);
+}
+
+.resource-full-card {
+  margin: 0;
+  padding: var(--spacing-lg);
+  border-radius: 14px;
+  border: 1px solid rgba(163,230,53,0.06);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  background: linear-gradient(180deg, rgba(10,10,10,0.95), rgba(18,18,18,0.95));
+}
+
+.resource-full-icon {
+  font-size: 48px;
+  color: var(--primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.resource-badges {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 14px 0;
+}
+
+.resource-badges .badge {
+  background: rgba(163,230,53,0.08);
+  color: var(--primary);
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-weight: 700;
+  border: 1px solid rgba(163,230,53,0.12);
+  font-size: 0.85rem;
+}
+
+.resource-download-btn {
+  background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+  color: #0a0e27;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 800;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.resource-download-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-glow-strong);
+}
+
+@media (max-width: 768px) {
+  .resources-list { flex-direction: column; padding: 0; }
+  .resource-full-card { padding: var(--spacing-lg); border-radius: 14px; width: 100%; max-width: 100%; flex: 0 0 auto; }
+  .resource-full-icon { font-size: 40px; }
+}
+
+@media (max-width: 1024px) {
+  .resources-full-container {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+  }
 }
 
 .resource-meta {
@@ -880,6 +998,72 @@
   color: #0a0e27;
 }
 
+/* Services Modal Specific Styling */
+.service-detail-content {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: var(--spacing-md);
+  align-items: start;
+}
+
+.service-detail-icon {
+  width: 96px;
+  height: 96px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  background: linear-gradient(180deg, rgba(163,230,53,0.12), rgba(0,0,0,0.12));
+  border: 1px solid rgba(163,230,53,0.18);
+  color: var(--primary);
+  box-shadow: 0 10px 40px rgba(163,230,53,0.06), 0 0 30px rgba(163,230,53,0.04) inset;
+}
+
+.service-detail-description {
+  margin: calc(var(--spacing-xs) * 0.5) 0 var(--spacing-sm) 0;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.service-detail-features h3 {
+  margin: 0 0 var(--spacing-xs) 0;
+  color: var(--text-primary);
+}
+
+.service-detail-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.service-detail-features li::before {
+  content: "✓";
+  color: var(--primary);
+  margin-right: 8px;
+  font-weight: 700;
+}
+
+.service-detail-cta {
+  margin-top: var(--spacing-md);
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Modal entrance polish */
+.modal-content {
+  transform-origin: center;
+  animation: scaleIn 0.36s cubic-bezier(.2,.9,.2,1);
+}
+
+@media (max-width: 768px) {
+  .service-detail-content { grid-template-columns: 1fr; grid-template-rows: auto; }
+  .service-detail-cta { justify-content: center; }
+  .modal-content.large { padding: var(--spacing-lg); width: 94%; }
+}
+
 /* ANIMATIONS */
 @keyframes fadeIn {
   from {
@@ -933,6 +1117,80 @@
     transform: scale(1) translateZ(0);
   }
 }
+
+/* Common animation moved here so other CSS files don't duplicate definitions */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scroll {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-50%) translateY(12px);
+    opacity: 0;
+  }
+}
+
+/* Additional reveal helpers for more animation types */
+.reveal {
+  opacity: 0;
+  transform-origin: center;
+  will-change: transform, opacity;
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(.2,.9,.2,1);
+}
+.reveal.revealed { opacity: 1; transform: none; }
+.reveal.fade-left { transform: translateX(-30px); }
+.reveal.fade-right { transform: translateX(30px); }
+.reveal.fade-up { transform: translateY(30px); }
+.reveal.fade-down { transform: translateY(-30px); }
+.reveal.zoom { transform: scale(0.92); }
+
+/* Floating/oscillation animation for small decorative elements */
+@keyframes floaty {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+.float { animation: floaty 4s ease-in-out infinite; }
+
+/* Pulse / glow for accents */
+@keyframes glowPulse {
+  from { box-shadow: 0 6px 20px rgba(163,230,53,0.06); }
+  to { box-shadow: 0 30px 90px rgba(163,230,53,0.18); }
+}
+.glow-pulse { animation: glowPulse 2.5s ease-in-out infinite alternate; }
+
+/* Slight parallax translation for layered backgrounds */
+.parallax-1 { transform: translateZ(0) translateY(-4px); transition: transform 0.8s ease; }
+.parallax-2 { transform: translateZ(0) translateY(-8px); transition: transform 0.8s ease; }
+
+/* Nav underline animation */
+.nav-menu .nav-link { position: relative; overflow: visible; }
+.nav-menu .nav-link::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(163,230,53,1), rgba(163,230,53,0.7));
+  border-radius: 3px;
+  transform: translateX(-50%);
+  transition: width 0.35s cubic-bezier(.2,.9,.2,1);
+}
+.nav-menu .nav-link:hover::after,
+.nav-menu .nav-link.active::after { width: 46%; }
 
 @keyframes expandSectionContent {
   from {

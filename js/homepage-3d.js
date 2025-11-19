@@ -30,9 +30,7 @@ function initStatsAnimation() {
   statNumbers.forEach((stat) => observer.observe(stat))
 }
 
-/**
- * Animate a number from 0 to target value
- */
+
 function animateNumber(element, target) {
   const duration = 2000
   const start = Date.now()
@@ -49,16 +47,12 @@ function animateNumber(element, target) {
   updateNumber()
 }
 
-/**
- * Easing function for smooth animation
- */
+
 function easeOutQuad(t) {
   return t * (2 - t)
 }
 
-/**
- * 3D card interactions for service cards
- */
+
 function initServiceCards3D() {
   const cards = document.querySelectorAll(".service-card-3d")
 
