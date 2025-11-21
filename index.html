@@ -48,6 +48,16 @@
             <button id="zoomOutBtn" class="zoom-btn" aria-label="Zoom out">－</button>
         </div>
         <div class="hero-3d-container" id="hero3DContainer"></div>
+        <!-- Background carousel behind the hero text -->
+        <div class="hero-carousel" id="heroCarousel" aria-hidden="true">
+            <div class="slides">
+                <img src="models/IMG_2407.JPG" alt="preview 1">
+                <img src="models/IMG_2390.JPG" alt="preview 2">
+                <img src="models/IMG_2407.JPG" alt="preview 3">
+                <img src="models/IMG_2390.JPG" alt="preview 4">
+                <img src="models/IMG_2407.JPG" alt="preview 5">
+            </div>
+        </div>
         <div class="hero-content">
             <div class="hero-badge">Bienvenido al website</div>
             <h1 class="hero-title">Mariángel Mujica</h1>
@@ -398,6 +408,7 @@
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script type="module" src="js/hero-carousel.js"></script>
     <script type="module" src="js/main.js"></script>
 </body>
 </html>

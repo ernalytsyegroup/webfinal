@@ -33,6 +33,71 @@
   z-index: 1;
 }
 
+/* Hero background carousel (behind text) */
+.hero-carousel {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; /* allow clicks through to CTA */
+  overflow: hidden;
+}
+
+
+.hero-carousel .slides {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  will-change: transform;
+  padding: 20px 0;
+}
+
+/* Make slides uniform size so each advance moves a full slide */
+.hero-carousel img {
+  --slide-w: 540px; /* fallback fixed size on desktop */
+  width: min(56vw, var(--slide-w));
+  height: calc(min(56vw, var(--slide-w)) * 0.58); /* 16:9-ish */
+  max-height: 420px;
+  border-radius: 12px;
+  object-fit: cover;
+  filter: grayscale(10%) contrast(0.9) brightness(0.52) saturate(0.7);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.7), 0 0 40px rgba(163,230,53,0.03) inset;
+  transform: translateZ(0);
+}
+
+/* Smooth transitions and active highlighting */
+.hero-carousel img {
+  transition: transform 900ms cubic-bezier(0.2,0.8,0.2,1), filter 900ms ease, box-shadow 900ms ease, opacity 900ms ease;
+  opacity: 0.88;
+}
+
+.hero-carousel img.active {
+  transform: translateY(-14px) scale(1.06);
+  filter: grayscale(0%) brightness(0.98) saturate(1.06) contrast(1);
+  box-shadow: 0 40px 120px rgba(0,0,0,0.7), 0 0 48px rgba(163,230,53,0.08) inset;
+  opacity: 1;
+  z-index: 3;
+}
+
+.hero-carousel img:not(.active) {
+  transform: translateY(0px) scale(0.98);
+  opacity: 0.78;
+}
+
+/* give slides container a gentle 3D tilt for depth */
+.hero-carousel .slides {
+  transform-origin: center center;
+  perspective: 1200px;
+}
+
+/* subtle parallax animation: slides slowly translate left in a loop via JS */
+@media (max-width: 768px) {
+  .hero-carousel img { width: 72vw; max-width: 420px; }
+  .hero-carousel .slides { gap: 18px; }
+}
+
 .hero-3d-controls {
   position: absolute;
   top: 20px;

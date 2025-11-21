@@ -33,9 +33,34 @@ export function initServicesModal() {
       icon: "🎬",
       features: ["Producción", "Edición profesional", "Animación 2D/3D", "Post-producción"],
     },
+    "3d": {
+      title: "Diseño 3D",
+      description: "Experiencias inmersivas y visualizaciones 3D para productos y entornos",
+      icon: "🎮",
+      features: ["Modelado 3D", "Visualización", "Realidad aumentada", "Prototipos interactivos"],
+    },
+    branding: {
+      title: "Branding",
+      description: "Construimos identidades de marca memorables y coherentes",
+      icon: "✨",
+      features: ["Estrategia de marca", "Naming", "Guías de estilo", "Aplicaciones gráficas"],
+    },
+    web: {
+      title: "Desarrollo Web",
+      description: "Sitios web modernos, rápidos y optimizados",
+      icon: "💻",
+      features: ["Desarrollo front-end", "Back-end", "Optimización", "SEO básico"],
+    },
+    consulting: {
+      title: "Consultoría",
+      description: "Asesoramiento estratégico para proyectos digitales",
+      icon: "💡",
+      features: ["Auditoría", "Plan estratégico", "Roadmap", "Mentoría"],
+    },
   }
 
-  document.querySelectorAll(".service-card").forEach((card) => {
+  // Support both compact cards and full-page service cards
+  document.querySelectorAll(".service-card, .service-full-card").forEach((card) => {
     const btn = card.querySelector(".service-detail-btn")
     const key = card.getAttribute("data-service")
 
@@ -63,19 +88,21 @@ export function initServicesModal() {
         modal.classList.remove("active")
       }
 
-      modal.classList.add("active")
+      if (modal) modal.classList.add("active")
     })
   })
 
-  if (modalClose) {
+  if (modalClose && modal) {
     modalClose.addEventListener("click", () => {
       modal.classList.remove("active")
     })
   }
 
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.classList.remove("active")
-    }
-  })
+  if (modal) {
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.classList.remove("active")
+      }
+    })
+  }
 }

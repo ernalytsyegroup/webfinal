@@ -45,9 +45,14 @@
 
 /* Add universal card animation class to apply 3D effects to all cards */
 .service-card-3d,
+.service-card,
+.service-full-card,
+.service-tile,
 .stat-card-3d,
 .course-card-3d,
+.course-card,
 .resource-card-3d,
+.resource-card,
 .gallery-card-3d,
 .team-member-3d {
   position: relative;
@@ -72,9 +77,14 @@
 
 /* Apply consistent 3D hover effect to all card types */
 .service-card-3d:hover,
+.service-card:hover,
+.service-full-card:hover,
+.service-tile:hover,
 .stat-card-3d:hover,
 .course-card-3d:hover,
+.course-card:hover,
 .resource-card-3d:hover,
+.resource-card:hover,
 .team-member-3d:hover,
 .gallery-card-3d:hover {
   /* Unified 3D perspective hover effect for ALL card types */
@@ -84,9 +94,14 @@
 }
 
 .service-card-3d:hover .card-glow,
+.service-card:hover .card-glow,
+.service-full-card:hover .card-glow,
+.service-tile:hover .card-glow,
 .stat-card-3d:hover .card-glow,
 .course-card-3d:hover .card-glow,
+.course-card:hover .card-glow,
 .resource-card-3d:hover .card-glow,
+.resource-card:hover .card-glow,
 .team-member-3d:hover .card-glow,
 .gallery-card-3d:hover .card-glow {
   /* Added .gallery-card-3d:hover .card-glow for consistency */
