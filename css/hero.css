@@ -54,6 +54,48 @@
   padding: 20px 0;
 }
 
+/* Small GLB model area placed in front of the carousel */
+.hero-model {
+  position: absolute;
+  left: 50%;
+  top: 50%; /* centered vertically */
+  transform: translate(-50%, -50%);
+  z-index: 3; /* above carousel images, below hero text */
+  width: 980px; /* larger */
+  height: 680px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.hero-model canvas {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 1100px;
+  background: transparent;
+  border-radius: 0;
+  /* stronger green shadow/glow so the model pops above the carousel */
+  filter: drop-shadow(0 60px 140px rgba(0,0,0,0.75)) drop-shadow(0 0 80px rgba(120, 255, 120, 0.22));
+  box-shadow: 0 30px 140px rgba(0,0,0,0.65), 0 0 120px rgba(120,255,120,0.25) inset;
+  will-change: transform;
+}
+
+/* style for the moved title (was the welcome badge) */
+.hero-title-badge {
+  display: inline-block;
+  font-size: clamp(1.6rem, 3.2vw, 2.6rem);
+  font-weight: 800;
+  padding: 8px 18px;
+  color: var(--text-primary);
+  background: rgba(0,0,0,0.12);
+  border: 1px solid rgba(163,230,53,0.12);
+  border-radius: 40px;
+  text-shadow: 0 6px 20px rgba(0,0,0,0.6), 0 0 28px rgba(163,230,53,0.06);
+}
+
+/* ensure hero text sits above the model */
+.hero-content { z-index: 4; }
+
 /* Make slides uniform size so each advance moves a full slide */
 .hero-carousel img {
   --slide-w: 540px; /* fallback fixed size on desktop */
@@ -145,7 +187,7 @@
 
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 4;
   text-align: center;
   padding: var(--spacing-md);
   max-width: 900px;

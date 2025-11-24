@@ -1,6 +1,7 @@
 // Simple looping carousel placed behind the hero text
 const SELECTOR = '#heroCarousel .slides'
 let intervalId = null
+let rafLoop = null
 let index = 0
 let originalCount = 0
 let slideSize = 0
@@ -41,35 +42,46 @@ function setupLoop() {
   // mark initial active
   setActive(el, 0)
 
-  // clear existing interval
+  // clear existing interval / loop
   if (intervalId) { clearInterval(intervalId); intervalId = null }
+  if (rafLoop) { window.cancelAnimationFrame(rafLoop); rafLoop = null }
 
-  // start timed advance
-  intervalId = setInterval(() => advance(el), HOLD_MS)
+  // start continuous RAF-driven loop for a smooth seamless effect
+  startContinuousLoop(el)
 
   // start parallax tied to the hero area (uses el as root for transforms)
   startParallax(el)
 }
 
-function advance(el) {
+function startContinuousLoop(el) {
   if (!el) return
-  index++
-  el.style.transition = `transform ${TRANSITION_MS}ms ease`
-  el.style.transform = `translateX(-${index * slideSize}px)`
+  // progress in pixels
+  let progress = 0
+  const totalWidth = originalCount * slideSize
+  const speed = slideSize / (HOLD_MS / 1000) // px per second -> one slide per HOLD_MS
+  let last = performance.now()
 
-  // when we've moved past original count, reset after transition
-  if (index >= originalCount) {
-    // after transition completes, snap back to start without animation
-    const onEnd = () => {
-      el.removeEventListener('transitionend', onEnd)
-      el.style.transition = 'none'
-      index = 0
-      el.style.transform = 'translateX(0px)'
-    }
-    el.addEventListener('transitionend', onEnd)
+  function loop(now) {
+    const dt = Math.min(0.05, (now - last) / 1000)
+    last = now
+    progress += speed * dt
+    // wrap progress to keep seamless loop
+    if (progress >= totalWidth) progress -= totalWidth
+
+    // compute index for active marking
+    index = Math.floor(progress / slideSize) % originalCount
+
+    // apply transform with parallax offset considered
+    const base = Math.round(progress)
+    const total = Math.round(base - parallaxOffset)
+    el.style.transition = 'none'
+    el.style.transform = `translateX(-${total}px)`
+
+    setActive(el, index)
+    rafLoop = window.requestAnimationFrame(loop)
   }
-  // mark active for visual emphasis
-  setActive(el, index % originalCount)
+
+  rafLoop = window.requestAnimationFrame(loop)
 }
 
 function applyTransform(el) {

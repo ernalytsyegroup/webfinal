@@ -1,4 +1,5 @@
 import { init3DScene } from "./3d-scene.js"
+import { initHeroModel } from "./hero-model.js"
 import { initNavigation } from "./navigation.js"
 import { initCarousels } from "./carousels.js"
 import { initModal } from "./modal.js"
@@ -16,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initCarousels()
     initModal()
     init3DScene()
+    initHeroModel()
     initAbout3D()
     initHomepage3D() // Added homepage 3D initialization
   } catch (error) {
