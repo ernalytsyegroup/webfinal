@@ -20,28 +20,38 @@ export function initHeroModel() {
   renderer.domElement.style.display = 'block'
   renderer.domElement.style.maxWidth = '640px'
   renderer.domElement.style.width = '100%'
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   container.appendChild(renderer.domElement)
 
-  // lights: brighter ambient + warm fill + a subtle green rim/point light
-  const ambient = new THREE.AmbientLight(0xffffff, 1.0)
+  // Luces: ambiente y direccional con sombras reales en los bordes
+  const ambient = new THREE.AmbientLight(0xffffff, 0.7)
   scene.add(ambient)
-  const hemi = new THREE.HemisphereLight(0xffffff, 0x080820, 0.35)
+  const hemi = new THREE.HemisphereLight(0xffffff, 0x080820, 0.25)
   scene.add(hemi)
-  const dir = new THREE.DirectionalLight(0xffffff, 1.0)
+  const dir = new THREE.DirectionalLight(0xffffff, 1.2)
   dir.position.set(5, 10, 7)
+  dir.castShadow = true;
+  dir.shadow.mapSize.width = 2048;
+  dir.shadow.mapSize.height = 2048;
+  dir.shadow.radius = 8; // sombras suaves
+  dir.shadow.bias = -0.0005;
+  dir.shadow.camera.near = 2;
+  dir.shadow.camera.far = 20;
+  dir.shadow.camera.left = -8;
+  dir.shadow.camera.right = 8;
+  dir.shadow.camera.top = 8;
+  dir.shadow.camera.bottom = -8;
   scene.add(dir)
-  // green accent light to create green-tinted shadows/highlights
-  const greenLight = new THREE.PointLight(0x7CFF78, 0.9, 8)
-  greenLight.position.set(-1.5, 0.5, 1.5)
-  scene.add(greenLight)
 
   // fallback cube
   const geometry = new THREE.BoxGeometry(1, 1, 1)
   const material = new THREE.MeshStandardMaterial({ color: 0x90ee90, metalness: 0.3, roughness: 0.6 })
   const cube = new THREE.Mesh(geometry, material)
   cube.visible = false
-  // ensure cube sits at the bob base
   cube.position.y = 0
+  cube.castShadow = true;
+  cube.receiveShadow = true;
   scene.add(cube)
 
   let model = null
@@ -50,7 +60,17 @@ export function initHeroModel() {
       const loader = new THREE.GLTFLoader()
     loader.load('/models/logologo.glb', (gltf) => {
       model = gltf.scene
-      model.traverse((c) => { if (c.isMesh) { c.castShadow = true; c.receiveShadow = true } })
+      model.traverse((c) => {
+        if (c.isMesh) {
+          c.castShadow = true;
+          c.receiveShadow = true;
+          // Material: aumentar suavidad en los bordes
+          if (c.material) {
+            c.material.shadowSide = THREE.FrontSide;
+            c.material.needsUpdate = true;
+          }
+        }
+      })
       // create a pivot so we can orbit the pivot while keeping the model orientation fixed
       const pivot = new THREE.Object3D()
       // scale/position adjustments on the model itself
