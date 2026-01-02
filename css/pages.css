@@ -1,3 +1,74 @@
+.equipo-carousel-fotos {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  width: 100%;
+  overflow: hidden;
+  padding: 32px 0;
+}
+.equipo-carousel-fotos img {
+  --slide-w: 340px;
+  width: min(32vw, var(--slide-w));
+  height: calc(min(32vw, var(--slide-w)) * 0.62);
+  max-height: 220px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+  filter: grayscale(8%) contrast(0.95) brightness(0.92) saturate(0.8);
+  transition: transform 900ms cubic-bezier(0.2,0.8,0.2,1), filter 900ms, box-shadow 900ms, opacity 900ms;
+  opacity: 0.95;
+}
+/* Carrusel Equipo Manual */
+.equipo-carousel-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  background: var(--page-bg, #000);
+  margin-bottom: 40px;
+}
+.equipo-carousel {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.equipo-carousel-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--card-bg, #111);
+  border-radius: 16px;
+  box-shadow: var(--shadow-card, 0 4px 24px rgba(0,0,0,0.2));
+  padding: 24px 32px;
+  min-width: 220px;
+  max-width: 260px;
+  transition: box-shadow 0.3s;
+  margin: 0 8px;
+}
+.equipo-carousel-item img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 16px;
+}
+.equipo-carousel-prev,
+.equipo-carousel-next {
+  background: var(--card-bg, #111);
+  color: #a3e635;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.equipo-carousel-prev:hover,
+.equipo-carousel-next:hover {
+  background: #a3e635;
+  color: #111;
+}
 /* ========================================
    PAGES & SECTIONS STYLES - CORPORATE PREMIUM
    ======================================== */

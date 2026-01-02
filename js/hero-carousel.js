@@ -16,23 +16,36 @@ function setupLoop() {
   const el = document.querySelector(SELECTOR)
   if (!el) return
 
+
   // ensure consistent sizing and duplicate nodes for seamless loop
   const items = Array.from(el.children)
   originalCount = items.length
 
   if (originalCount === 0) return
 
-  // clone items so we can reset without visible jump
-  if (el.dataset.looped !== '1') {
-    items.forEach((node) => el.appendChild(node.cloneNode(true)))
-    el.dataset.looped = '1'
+  // Remove previous clones if any
+  if (el.dataset.looped === '1') {
+    while (el.children.length > originalCount) {
+      el.removeChild(el.lastChild)
+    }
+    el.dataset.looped = '0'
   }
 
-  // compute slide width + gap
-  const first = el.children[0]
+  // Calculate how many clones are needed to fill the visible area
+  const visibleWidth = el.parentElement.offsetWidth || window.innerWidth
+  const first = items[0]
   const style = getComputedStyle(el)
   gapSize = parseInt(style.gap || 36)
   slideSize = first.offsetWidth + gapSize
+  let minSlides = Math.ceil(visibleWidth / slideSize) + 2 // +2 for buffer
+  let clonesNeeded = Math.max(minSlides, originalCount)
+
+  // Clone enough slides to fill the visible area and allow seamless loop
+  for (let i = 0; i < clonesNeeded; i++) {
+    el.appendChild(items[i % originalCount].cloneNode(true))
+  }
+  el.dataset.looped = '1'
+
 
   // reset transform and index
   index = 0
@@ -58,7 +71,7 @@ function startContinuousLoop(el) {
   // progress in pixels
   let progress = 0
   const totalWidth = originalCount * slideSize
-  const speed = slideSize / (HOLD_MS / 1000) // px per second -> one slide per HOLD_MS
+  const speed = slideSize / ((HOLD_MS / 1000) * 0.7) // px per second -> más rápido (30% más rápido)
   let last = performance.now()
 
   function loop(now) {
