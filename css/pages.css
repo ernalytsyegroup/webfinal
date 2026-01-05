@@ -1,3 +1,186 @@
+.rrss-horizontal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 1.2rem;
+  justify-content: center;
+}
+.rrss-icons-col {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  width: 100%;
+  margin-bottom: 1.2rem;
+}
+.rrss-main-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  width: 100%;
+}
+.rrss-main-info h3 {
+  text-align: center !important;
+  font-size: 2.1rem !important;
+  margin-bottom: 1.2rem !important;
+}
+.rrss-main-info .service-plans-cards-horizontal {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 1.2rem;
+}
+.rrss-main-info .plan-card {
+  min-width: 180px;
+}
+.rrss-main-info .service-detail-btn {
+  margin-top: 1.2rem;
+}
+@media (max-width: 900px) {
+  .rrss-horizontal-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .rrss-main-info {
+    align-items: center;
+    width: 100%;
+  }
+  .rrss-main-info h3 {
+    text-align: center !important;
+  }
+  .rrss-main-info .service-plans-cards-horizontal {
+    justify-content: center;
+  }
+   .service-full-card.rrss-principal {
+     flex-direction: column !important;
+     align-items: center !important;
+   }
+}
+/* === RRSS PRINCIPAL CARD CUSTOM === */
+.service-full-card.rrss-principal {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 3.5rem auto;
+  background: #fff;
+  border: 2.5px solid #e6e6e6;
+  box-shadow: 0 2px 24px 0 rgba(0,0,0,0.10);
+  padding: 2.2rem 2.5rem 2.2rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  overflow: visible;
+}
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto 3.5rem auto;
+  background: #fff;
+  border: 2.5px solid #e6e6e6;
+  box-shadow: 0 2px 24px 0 rgba(0,0,0,0.10);
+  padding: 2.2rem 2.5rem 2.2rem 2.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  z-index: 2;
+  overflow: visible;
+  letter-spacing: -0.5px;
+  text-align: center;
+  font-size: 2.2rem;
+}
+.service-full-card.rrss-principal .plan-card {
+  background: #f7f7f7;
+  border-radius: 1rem;
+  box-shadow: 0 1px 6px 0 rgba(0,0,0,0.04);
+  padding: 1.2rem 1.5rem 1.1rem 1.5rem;
+  min-width: 210px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  transition: box-shadow 0.2s;
+}
+.service-full-card.rrss-principal .plan-card:hover {
+  box-shadow: 0 4px 18px 0 rgba(0,0,0,0.10);
+}
+.service-full-card.rrss-principal .plan-card img {
+  margin-bottom: 0.3rem;
+}
+.service-full-card.rrss-principal .plan-card h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+.service-full-card.rrss-principal .plan-card p {
+  font-size: 0.98rem;
+  color: #444;
+  text-align: center;
+}
+.service-full-card.rrss-principal .service-detail-btn {
+  margin-top: 2rem;
+  background: #1877f2;
+  color: #fff;
+  border: none;
+  border-radius: 0.7rem;
+  padding: 0.8rem 2.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px 0 rgba(24,119,242,0.08);
+  transition: background 0.2s;
+  width: auto;
+  display: inline-block;
+}
+.service-full-card.rrss-principal .service-detail-btn:hover {
+  background: #145db2;
+}
+/* Ajuste para la grilla de servicios debajo del principal */
+.services-full-container {
+  display: block;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  gap: 2.5rem;
+  justify-content: flex-start;
+  overflow: visible;
+  width: 100%;
+  justify-items: center;
+}
+@media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.service-card .service-icon img {
+  width: 38px;
+  height: 38px;
+  margin-bottom: 0.7rem;
+  filter: none;
+  opacity: 1;
+  transition: transform 0.2s;
+}
+.service-card .service-icon img:hover {
+  transform: scale(1.10);
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.10));
+}
 .equipo-carousel-fotos {
   display: flex;
   align-items: center;
@@ -689,7 +872,6 @@
   font-weight: 900;
   color: var(--text-primary);
   line-height: 1;
-  margin-bottom: 4px;
 }
 
 .service-price-note {
@@ -715,9 +897,6 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  position: relative;
-  z-index: 2;
-  overflow: hidden;
 }
 
 .service-detail-btn::after {
@@ -949,50 +1128,56 @@
 
 /* BIO SECTION - Modificaciones para la imagen prolija */
 .bio-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-2xl);
-  align-items: center;
-  animation: fadeIn 0.8s ease-out;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  align-items: flex-start;
 }
 
 .bio-image {
-  /* ESTILOS CORREGIDOS Y PROLIJOS */
-  position: relative;
-  overflow: hidden;
-  /* El border-radius de 16px se mantiene */
-  border-radius: 16px; 
-  border: 1px solid var(--card-border);
-  
-  /* PROPIEDADES CLAVE PARA LA PROLIJIDAD */
-  width: 100%;
-  max-width: 400px; /* Limita el tamaño en pantallas grandes */
-  aspect-ratio: 1 / 1; /* FUERZA UNA RELACIÓN DE ASPECTO CUADRADA */
-  margin: 0 auto; 
+  flex: 1 1 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 
-.bio-image img {
+.bio-image-large {
   width: 100%;
-  height: 100%; 
-  object-fit: cover; /* RECORTA LA IMAGEN PARA QUE CUBRA EL ESPACIO SIN DISTORSIÓN */
+  max-width: 420px;
+  min-width: 320px;
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(163,230,53,0.10);
+  object-fit: cover;
+}
+
+.bio-image-secondary {
+  width: 100%;
+  max-width: 420px;
+  min-width: 320px;
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(163,230,53,0.10);
+  object-fit: cover;
+}
+
+.bio-content {
+  flex: 2 1 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.bio-block {
+  margin-bottom: 1.5rem;
+}
+
+.bio-block .bio-highlight {
   display: block;
-  transition: transform 0.6s ease;
-}
-
-.bio-container:hover .bio-image img {
-  transform: scale(1.05);
-}
-
-.bio-content h2 {
-  margin-bottom: var(--spacing-md);
-}
-
-.bio-text {
-  color: var(--text-muted);
-  font-size: 1rem;
-  line-height: 1.8;
-  margin-bottom: var(--spacing-md);
-  animation: slideUp 0.8s ease-out;
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
 }
 
 /* TIMELINE */
@@ -1001,8 +1186,31 @@
 }
 
 .timeline {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.timeline-item {
+  background: var(--card-bg);
+  border: 1.5px solid var(--primary);
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  min-width: 260px;
+  max-width: 340px;
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 24px rgba(163,230,53,0.08);
   position: relative;
-  padding: var(--spacing-lg) 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .timeline::before {
@@ -1017,22 +1225,47 @@
 }
 
 .timeline-item {
-  margin-bottom: var(--spacing-2xl);
+  background: var(--card-bg);
+  border: 1.5px solid var(--primary);
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  min-width: 260px;
+  max-width: 340px;
+  flex: 1 1 300px;
   display: flex;
-  gap: var(--spacing-lg);
-  animation: slideUp 0.8s ease-out;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 24px rgba(163,230,53,0.08);
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.timeline-item:nth-child(odd) {
-  flex-direction: row-reverse;
+@media (max-width: 900px) {
+  .timeline {
+    flex-direction: column;
+    align-items: center;
+  }
+  .timeline-item {
+    width: 100%;
+    max-width: 400px;
+  }
 }
 
 .timeline-year {
+  font-size: 1.1rem;
   font-weight: 700;
-  font-size: 1.3rem;
-  color: #a3e635;
-  min-width: 150px;
-  text-align: center;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.timeline-content h3 {
+  color: var(--text-primary);
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
 }
 
 .timeline-content {
@@ -1110,18 +1343,20 @@
 
 .achievement-card {
   background: linear-gradient(135deg, #0a0a0a 0%, rgba(15, 15, 15, 0.8) 100%);
+  border: 2px solid var(--primary);
+  box-shadow: 0 8px 32px rgba(163,230,53,0.10);
+  color: var(--text-primary);
   padding: var(--spacing-lg);
-  border-radius: 16px;
-  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
   text-align: center;
   transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
   animation: scaleIn 0.6s ease-out;
 }
 
 .achievement-card:hover {
-  transform: translateY(-8px);
-  border-color: #a3e635;
-  box-shadow: var(--shadow-hover);
+  transform: translateY(-8px) scale(1.03);
+  border-color: var(--primary-light);
+  box-shadow: 0 16px 48px rgba(163,230,53,0.18);
 }
 
 .achievement-number {
@@ -1129,31 +1364,19 @@
   font-weight: 800;
   color: var(--primary);
   margin-bottom: var(--spacing-sm);
-}
-
-/* Ensure consistent card width inside the horizontal row */
-.achievement-card {
-  min-width: 240px;
-  max-width: 260px;
-  flex: 0 0 250px;
-}
-
-/* Highlighted / focused achievement */
-.achievement-card.highlight {
-  border-color: var(--primary);
-  box-shadow: 0 40px 120px rgba(163,230,53,0.12), 0 0 60px rgba(163,230,53,0.06) inset;
-  transform: translateY(-8px);
+  text-shadow: 0 2px 8px var(--primary-glow);
 }
 
 .achievement-card h3 {
   font-size: 1.2rem;
   margin-bottom: var(--spacing-xs);
-  color: #fff;
+  color: var(--primary);
+  font-weight: 700;
 }
 
 .achievement-card p {
-  color: var(--text-muted);
-  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-size: 1rem;
   margin: 0;
 }
 
@@ -2323,5 +2546,75 @@
 
   .page-subtitle {
     font-size: 1rem;
+  }
+}
+
+/* Resaltar frases clave en la biografía */
+.bio-highlight {
+    color: var(--primary);
+    font-style: italic;
+    font-weight: 500;
+    background: linear-gradient(90deg, var(--primary-glow) 60%, transparent 100%);
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+/* NUEVOS ESTILOS PARA GESTIÓN DE REDES SOCIALES */
+.service-rrss-horizontal {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 2.5rem 2rem;
+}
+.service-rrss-horizontal .service-full-icon {
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+.service-rrss-horizontal h3 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.service-rrss-horizontal p {
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+.service-plans-cards-horizontal {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+.plan-card {
+  background: var(--card-bg);
+  border: 1px solid var(--primary);
+  border-radius: 12px;
+  padding: 1.2rem 1.2rem 1.2rem 1.2rem;
+  min-width: 180px;
+  max-width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2px 12px rgba(163,230,53,0.08);
+}
+.plan-card h4 {
+  margin: 0.5rem 0 0.3rem 0;
+  font-size: 1.1rem;
+  color: var(--primary);
+}
+.plan-card p {
+  text-align: center;
+  font-size: 0.98rem;
+  color: var(--text-secondary);
+}
+@media (max-width: 900px) {
+  .service-plans-cards-horizontal {
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: center;
+  }
+  .plan-card {
+    min-width: 90vw;
+    max-width: 98vw;
   }
 }
