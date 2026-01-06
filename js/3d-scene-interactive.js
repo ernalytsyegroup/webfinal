@@ -93,7 +93,7 @@ function createSectionNodes() {
     "Galería",
     "Cursos",
     "Recursos",
-    "Equipo",
+    "Revista",
     "Clientes",
     "Contacto",
   ]

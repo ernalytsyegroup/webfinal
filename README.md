@@ -10,7 +10,7 @@ Estructura de landings implementada:
 - pages/cursos.html (list of courses)
   - individual courses: pages/cursos/marketing-digital.html, pages/cursos/diseno-3d.html
 - pages/recursos.html (lista y modal) [exists]
-- pages/equipo.html, pages/clientes.html, pages/contacto.html (existentes)
+- pages/revista.html, pages/clientes.html, pages/contacto.html (existentes)
 
 Qué falta por mejorar (opcional):
 - Rellenar contenido real para cada landing.

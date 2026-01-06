@@ -1,78 +1,565 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Galería - Eventos</title>
-  <link rel="stylesheet" href="../../css/variables.css">
-  <link rel="stylesheet" href="../../css/sections.css">
-  <link rel="stylesheet" href="../../css/pages.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento Corporativo - Mariángel Mujica</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/navigation.css">
+    <link rel="stylesheet" href="../../css/sections.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="../../css/pages.css">
 </head>
 <body>
-  <header>
-    <nav><a href="../../index.html">Inicio</a> · <a href="../galeria.html">Galería</a> · Eventos</nav>
-  </header>
-
-  <main class="page-content">
-    <section class="gallery-full-section">
-      <h1>Eventos</h1>
-      <div class="gallery-grid">
-        <div class="gallery-item"><img src="/placeholder.svg?height=400&width=600"></div>
-        <div class="gallery-item"><img src="/placeholder.svg?height=400&width=600"></div>
-        <div class="gallery-item"><img src="/placeholder.svg?height=400&width=600"></div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-top-line"></div>
-    <div class="footer-cta">
-      <div class="footer-cta-left">
-        <h2 class="footer-cta-title">Let's <span class="highlight">Connect</span> there</h2>
-        <p class="footer-cta-sub">Conecta y trabajemos juntos en proyectos creativos</p>
-      </div>
-      <div class="footer-cta-right">
-        <a class="btn-contact" href="/pages/contacto.html">Contact Us Now</a>
-      </div>
-    </div>
-    <div class="footer-container footer-grid">
-      <div class="footer-section footer-about">
-        <div class="footer-brand">Digital Agency.</div>
-        <p class="footer-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <div class="social-links">
-          <a href="#" aria-label="Instagram">📷</a>
-          <a href="#" aria-label="LinkedIn">💼</a>
-          <a href="#" aria-label="Twitter">🐦</a>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo"><a href="../../index.html">Mariángel Mujica</a></div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../../index.html" class="nav-link">Inicio</a></li>
+                <li><a href="../sobre-mi.html" class="nav-link">Sobre Mí</a></li>
+                <li><a href="../servicios.html" class="nav-link">Servicios</a></li>
+                <li><a href="../galeria.html" class="nav-link active">Galería</a></li>
+                <li><a href="../cursos.html" class="nav-link">Cursos</a></li>
+                <li><a href="../recursos.html" class="nav-link">Recursos</a></li>
+                <li><a href="../revista.html" class="nav-link">Revista</a></li>
+                <li><a href="../clientes.html" class="nav-link">Clientes</a></li>
+                <li><a href="../contacto.html" class="nav-link">Contacto</a></li>
+            </ul>
         </div>
-      </div>
-      <div class="footer-section footer-nav">
-        <h4>Navigation</h4>
-        <ul>
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/pages/servicios.html">Services</a></li>
-          <li><a href="/pages/sobre-mi.html">About Us</a></li>
-          <li><a href="/pages/galeria.html">Portfolio</a></li>
-        </ul>
-      </div>
-      <div class="footer-section footer-contact">
-        <h4>Contact</h4>
-        <p>+0123-456-789</p>
-        <p>www.example.com</p>
-        <p>example@gmail.com</p>
-        <p>4517 Washington Ave, Manchester, Kentucky 39495</p>
-      </div>
-      <div class="footer-section footer-subscribe">
-        <h4>Get the latest information</h4>
-        <form class="footer-newsletter" action="#">
-          <input type="email" placeholder="Email address" aria-label="Email address">
-          <button type="submit" aria-label="Subscribe">➤</button>
-        </form>
-      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-content">
+            <h1 class="page-title">Alianzas que <span class="highlight">trascienden:</span></h1>
+            <p class="page-subtitle">Celebrando logros en cada rincón del mundo.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="page-content">
+        <!-- Gallery Grid - Corporate Event -->
+        <section class="gallery-full-section">
+            <div class="gallery-grid corporate-event-grid">
+                <!-- Imágenes del evento corporativo - Todas las 42 fotos -->
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 2.56.31 PM.jpeg" alt="Evento Corporativo 1">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 1</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 2.56.32 PM (1).jpeg" alt="Evento Corporativo 2">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 2</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 2.56.32 PM (2).jpeg" alt="Evento Corporativo 3">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 3</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 2.56.32 PM (3).jpeg" alt="Evento Corporativo 4">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 4</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 2.56.32 PM (4).jpeg" alt="Evento Corporativo 5">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 5</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 2.56.32 PM (5).jpeg" alt="Evento Corporativo 6">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 6</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 2.56.32 PM (6).jpeg" alt="Evento Corporativo 7">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 7</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 2.56.32 PM.jpeg" alt="Evento Corporativo 8">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 8</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 2.56.33 PM (1).jpeg" alt="Evento Corporativo 9">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 9</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 2.56.33 PM.jpeg" alt="Evento Corporativo 10">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 10</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 3.06.39 PM (1).jpeg" alt="Evento Corporativo 11">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 11</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 3.06.39 PM (2).jpeg" alt="Evento Corporativo 12">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 12</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 3.06.39 PM (3).jpeg" alt="Evento Corporativo 13">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 13</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 3.06.39 PM (4).jpeg" alt="Evento Corporativo 14">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 14</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 3.06.39 PM.jpeg" alt="Evento Corporativo 15">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 15</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 3.06.40 PM (1).jpeg" alt="Evento Corporativo 16">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 16</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 3.06.40 PM (2).jpeg" alt="Evento Corporativo 17">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 17</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 3.06.40 PM (3).jpeg" alt="Evento Corporativo 18">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 18</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 3.06.40 PM (4).jpeg" alt="Evento Corporativo 19">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 19</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 3.06.40 PM (5).jpeg" alt="Evento Corporativo 20">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 20</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 3.06.40 PM (6).jpeg" alt="Evento Corporativo 21">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 21</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 3.06.40 PM (7).jpeg" alt="Evento Corporativo 22">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 22</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 3.06.40 PM (8).jpeg" alt="Evento Corporativo 23">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 23</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 3.06.40 PM (9).jpeg" alt="Evento Corporativo 24">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 24</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 3.06.40 PM (10).jpeg" alt="Evento Corporativo 25">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 25</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 3.06.40 PM (11).jpeg" alt="Evento Corporativo 26">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 26</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 3.06.40 PM (12).jpeg" alt="Evento Corporativo 27">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 27</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 3.06.40 PM.jpeg" alt="Evento Corporativo 28">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 28</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 3.06.41 PM.jpeg" alt="Evento Corporativo 29">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 29</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 3.09.48 PM (1).jpeg" alt="Evento Corporativo 30">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 30</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 3.09.48 PM (2).jpeg" alt="Evento Corporativo 31">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 31</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 3.09.48 PM.jpeg" alt="Evento Corporativo 32">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 32</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 3.13.14 PM.jpeg" alt="Evento Corporativo 33">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 33</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 3.13.15 PM.jpeg" alt="Evento Corporativo 34">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 34</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 3.28.26 PM (1).jpeg" alt="Evento Corporativo 35">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 35</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 3.28.26 PM (2).jpeg" alt="Evento Corporativo 36">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 36</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 3.28.26 PM (3).jpeg" alt="Evento Corporativo 37">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 37</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 3.28.26 PM (4).jpeg" alt="Evento Corporativo 38">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 38</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 3.28.26 PM (5).jpeg" alt="Evento Corporativo 39">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 39</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 3.28.26 PM (6).jpeg" alt="Evento Corporativo 40">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 40</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 3.28.26 PM (7).jpeg" alt="Evento Corporativo 41">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 41</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 3.28.26 PM (8).jpeg" alt="Evento Corporativo 42">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 42</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 3.28.26 PM (9).jpeg" alt="Evento Corporativo 43">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 43</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 3.28.26 PM.jpeg" alt="Evento Corporativo 44">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 44</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 3.28.27 PM (1).jpeg" alt="Evento Corporativo 45">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 45</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item corporate-event-item" data-category="eventos">
+                    <img src="../../models/gallery1/WhatsApp Image 2026-01-02 at 3.28.27 PM.jpeg" alt="Evento Corporativo 46">
+                    <div class="gallery-overlay">
+                        <h3>Evento Corporativo</h3>
+                        <p>Foto 46</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-cta">
+            <h2 class="footer-cta-title">Conecta con nosotros</h2>
+            <p class="footer-cta-sub">Trabajemos juntos en proyectos creativos</p>
+            <a class="btn-contact" href="../contacto.html">Contactar</a>
+        </div>
+
+        <div class="footer-container">
+            <div class="footer-section footer-about">
+                <div class="footer-brand">Mariangel Mujica</div>
+                <p class="footer-desc">Profesional en marketing digital y diseño 3D, transformando ideas en experiencias visuales.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                </div>
+            </div>
+
+            <div class="footer-section footer-nav">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="../../index.html">Inicio</a></li>
+                    <li><a href="../servicios.html">Servicios</a></li>
+                    <li><a href="../sobre-mi.html">Sobre Mí</a></li>
+                    <li><a href="../cursos.html">Cursos</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section footer-contact">
+                <h4>Contacto</h4>
+                <p>+0123-456-789</p>
+                <p>www.mariangelmujica.com</p>
+                <p>contacto@mariangelmujica.com</p>
+            </div>
+
+            <div class="footer-section footer-subscribe">
+                <h4>Newsletter</h4>
+                <form class="footer-newsletter" action="#">
+                    <input type="email" placeholder="Tu email" aria-label="Email">
+                    <button type="submit" aria-label="Suscribirse">→</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div>© 2025 Mariangel Mujica. Todos los derechos reservados.</div>
+            <div>Términos & Privacidad</div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div class="event-lightbox" id="event-lightbox">
+        <button class="event-lightbox-close" id="lightbox-close" aria-label="Cerrar">×</button>
+        <button class="event-lightbox-nav event-lightbox-prev" id="lightbox-prev" aria-label="Imagen anterior">‹</button>
+        <button class="event-lightbox-nav event-lightbox-next" id="lightbox-next" aria-label="Imagen siguiente">›</button>
+        <div class="event-lightbox-content">
+            <img id="lightbox-img" src="" alt="">
+            <div class="event-lightbox-counter" id="lightbox-counter"></div>
+        </div>
     </div>
-    <div class="footer-bottom footer-legal">
-      <div class="footer-legal-left">Copyright © 2025 Digital Agency. All Rights Reserved.</div>
-      <div class="footer-legal-right">User Terms & Conditions | Privacy Policy</div>
-    </div>
-  </footer>
+
+    <script type="module" src="../../js/navigation.js"></script>
+    <script type="module">
+        import { initNavigation } from "../../js/navigation.js"
+        
+        // Lightbox functionality for gallery images
+        document.addEventListener('DOMContentLoaded', () => {
+            initNavigation()
+            
+            const galleryItems = document.querySelectorAll('.corporate-event-item')
+            const lightbox = document.getElementById('event-lightbox')
+            const lightboxImg = document.getElementById('lightbox-img')
+            const lightboxClose = document.getElementById('lightbox-close')
+            const lightboxPrev = document.getElementById('lightbox-prev')
+            const lightboxNext = document.getElementById('lightbox-next')
+            const lightboxCounter = document.getElementById('lightbox-counter')
+            
+            let currentIndex = 0
+            const images = Array.from(galleryItems).map(item => ({
+                src: item.querySelector('img').src,
+                alt: item.querySelector('img').alt
+            }))
+            
+            // Open lightbox
+            galleryItems.forEach((item, index) => {
+                item.addEventListener('click', () => {
+                    currentIndex = index
+                    updateLightbox()
+                    lightbox.classList.add('active')
+                    document.body.style.overflow = 'hidden'
+                })
+            })
+            
+            // Close lightbox
+            lightboxClose.addEventListener('click', closeLightbox)
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox()
+            })
+            
+            // Navigation
+            lightboxPrev.addEventListener('click', (e) => {
+                e.stopPropagation()
+                currentIndex = (currentIndex - 1 + images.length) % images.length
+                updateLightbox()
+            })
+            
+            lightboxNext.addEventListener('click', (e) => {
+                e.stopPropagation()
+                currentIndex = (currentIndex + 1) % images.length
+                updateLightbox()
+            })
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.classList.contains('active')) return
+                
+                if (e.key === 'Escape') closeLightbox()
+                if (e.key === 'ArrowLeft') {
+                    currentIndex = (currentIndex - 1 + images.length) % images.length
+                    updateLightbox()
+                }
+                if (e.key === 'ArrowRight') {
+                    currentIndex = (currentIndex + 1) % images.length
+                    updateLightbox()
+                }
+            })
+            
+            function updateLightbox() {
+                lightboxImg.src = images[currentIndex].src
+                lightboxImg.alt = images[currentIndex].alt
+                lightboxCounter.textContent = `${currentIndex + 1} / ${images.length}`
+            }
+            
+            function closeLightbox() {
+                lightbox.classList.remove('active')
+                document.body.style.overflow = ''
+            }
+        })
+    </script>
 </body>
 </html>
+

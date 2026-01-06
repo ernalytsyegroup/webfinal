@@ -1,4 +1,4 @@
-const SELECTOR = '.equipo-carousel'
+const SELECTOR = '.revista-carousel'
 let rafLoop = null
 let slideSize = 0
 let gapSize = 24

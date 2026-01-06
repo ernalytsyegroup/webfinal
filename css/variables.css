@@ -62,4 +62,12 @@
   /* Added gradient definitions for modern look */
   --gradient-primary: linear-gradient(135deg, rgba(163, 230, 53, 0.1) 0%, rgba(163, 230, 53, 0.05) 100%);
   --gradient-overlay: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+
+  /* Gallery card sizing (scalable) */
+  --gallery-card-height: 160px;
+  --gallery-thumb-width: 40%;
+
+  /* RRSS principal (servicios) horizontal layout */
+  --rrss-card-media-width: 280px;
+  --rrss-card-gap: var(--spacing-lg);
 }

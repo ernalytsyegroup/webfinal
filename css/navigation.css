@@ -60,6 +60,24 @@
   }
 }
 
+  /* Global decorative shapes (used across pages) */
+  .global-bg-gradient{position:fixed;inset:0;background:linear-gradient(120deg,#07101a 0%, #081013 40%, #020205 100%);mix-blend-mode:normal;filter:blur(30px) saturate(120%);opacity:0.9;transform:scale(1.05);pointer-events:none;z-index:0}
+  .global-shape{position:fixed;border-radius:50%;opacity:0.12;filter:blur(18px);pointer-events:none;z-index:0;transition:transform 0.25s linear}
+  .global-shape.s1{width:420px;height:420px;background:linear-gradient(90deg,var(--primary),#66c03a);left:-120px;top:-60px;animation:float1 9s ease-in-out infinite}
+  .global-shape.s2{width:300px;height:300px;background:linear-gradient(90deg,#4fb12a,#a3e635);right:-100px;bottom:-80px;animation:float2 12s ease-in-out infinite}
+  .global-shape.s3{width:160px;height:160px;background:linear-gradient(90deg,#6bd03f,#2f7b12);left:30%;top:10%;animation:float3 7s ease-in-out infinite}
+
+  @keyframes float1{0%{transform:translateY(0) translateX(0)}50%{transform:translateY(30px) translateX(12px)}100%{transform:translateY(0) translateX(0)}}
+  @keyframes float2{0%{transform:translateY(0) translateX(0)}50%{transform:translateY(-40px) translateX(-18px)}100%{transform:translateY(0) translateX(0)}}
+  @keyframes float3{0%{transform:translateY(0)}50%{transform:translateY(20px)}100%{transform:translateY(0)}}
+
+  .global-pulse{position:fixed;left:50%;transform:translateX(-50%);bottom:10px;width:120px;height:120px;border-radius:999px;z-index:0;pointer-events:none}
+  .global-pulse::before{content:"";position:absolute;inset:0;border-radius:999px;border:2px solid rgba(163,230,53,0.12);animation:ring 2.6s infinite}
+  @keyframes ring{0%{transform:scale(.8);opacity:.8}70%{transform:scale(1.6);opacity:0}100%{opacity:0}}
+
+  /* ensure main content stacks above the shapes */
+  main, .cs-card, .coming-card, .page-header, .page-content {position:relative;z-index:2}
+
 .nav-toggle {
   display: none;
   flex-direction: column;

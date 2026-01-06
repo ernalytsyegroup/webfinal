@@ -1,10 +1,10 @@
 // Carrusel manual para la sección de equipo
 
 document.addEventListener('DOMContentLoaded', function () {
-    const carousel = document.querySelector('.equipo-carousel');
-    const items = document.querySelectorAll('.equipo-carousel-item');
-    const prevBtn = document.querySelector('.equipo-carousel-prev');
-    const nextBtn = document.querySelector('.equipo-carousel-next');
+    const carousel = document.querySelector('.revista-carousel');
+    const items = document.querySelectorAll('.revista-carousel-item');
+    const prevBtn = document.querySelector('.revista-carousel-prev');
+    const nextBtn = document.querySelector('.revista-carousel-next');
     let currentIndex = 0;
     const total = items.length;
     const visibleCount = 3; // Mostrar 3 elementos a la vez

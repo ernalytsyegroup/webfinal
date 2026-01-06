@@ -28,7 +28,7 @@
                 <li><a href="galeria.html" class="nav-link">Galería</a></li>
                 <li><a href="cursos.html" class="nav-link">Cursos</a></li>
                 <li><a href="recursos.html" class="nav-link">Recursos</a></li>
-                <li><a href="equipo.html" class="nav-link">Equipo</a></li>
+                <li><a href="revista.html" class="nav-link">Revista</a></li>
                 <li><a href="clientes.html" class="nav-link">Clientes</a></li>
                 <li><a href="contacto.html" class="nav-link">Contacto</a></li>
             </ul>
@@ -45,114 +45,119 @@
 
     <!-- Main Content -->
     <main class="page-content">
-        <!-- Carrusel de Servicios (fotos del equipo) -->
+        <!-- Carrusel de Servicios (fotos de la revista) -->
         <section class="servicios-carousel-section">
-            <div class="servicios-carousel equipo-carousel-fotos">
-                <img src="../models/IMG_2267.JPG" alt="Equipo 1">
-                <img src="../models/IMG_2287.JPG" alt="Equipo 2">
-                <img src="../models/IMG_2295.JPG" alt="Equipo 3">
-                <img src="../models/IMG_2296.JPG" alt="Equipo 4">
-                <img src="../models/IMG_2310.JPG" alt="Equipo 5">
-                <img src="../models/IMG_2347.JPG" alt="Equipo 6">
-                <img src="../models/IMG_2353.JPG" alt="Equipo 7">
-                <img src="../models/IMG_2359.JPG" alt="Equipo 8">
-                <img src="../models/IMG_2363.JPG" alt="Equipo 9">
-                <img src="../models/IMG_2365.JPG" alt="Equipo 10">
-                <img src="../models/IMG_2372.JPG" alt="Equipo 11">
-                <img src="../models/IMG_2390.JPG" alt="Equipo 12">
-                <img src="../models/IMG_2407.JPG" alt="Equipo 13">
-                <img src="../models/IMG_2425.JPG" alt="Equipo 14">
+            <div class="servicios-carousel revista-carousel-fotos">
+                <img src="../models/IMG_2267.JPG" alt="Revista 1">
+                <img src="../models/IMG_2287.JPG" alt="Revista 2">
+                <img src="../models/IMG_2295.JPG" alt="Revista 3">
+                <img src="../models/IMG_2296.JPG" alt="Revista 4">
+                <img src="../models/IMG_2310.JPG" alt="Revista 5">
+                <img src="../models/IMG_2347.JPG" alt="Revista 6">
+                <img src="../models/IMG_2353.JPG" alt="Revista 7">
+                <img src="../models/IMG_2359.JPG" alt="Revista 8">
+                <img src="../models/IMG_2363.JPG" alt="Revista 9">
+                <img src="../models/IMG_2365.JPG" alt="Revista 10">
+                <img src="../models/IMG_2372.JPG" alt="Revista 11">
+                <img src="../models/IMG_2390.JPG" alt="Revista 12">
+                <img src="../models/IMG_2407.JPG" alt="Revista 13">
+                <img src="../models/IMG_2425.JPG" alt="Revista 14">
             </div>
         </section>
         <!-- Services Grid -->
         <section class="services-full-section">
+            <!-- Card principal RRSS: Vertical layout -->
             <div class="services-full-container">
-                <!-- Card principal RRSS fuera de la grilla, ancho completo -->
-            </div> <!-- cierre de services-full-container para que el card principal quede fuera -->
-            <div class="service-full-card service-rrss-horizontal rrss-principal" data-service="marketing">
-                <div class="service-full-icon rrss-icons-col" style="margin-bottom:1.2rem;">
-                    <img src="../images/icon-fb.svg" alt="Facebook" width="38" height="38"/>
-                    <img src="../images/icon-ig.svg" alt="Instagram" width="38" height="38"/>
-                    <img src="../images/icon-linkedin.svg" alt="LinkedIn" width="38" height="38"/>
-                    <img src="../images/icon-tiktok.svg" alt="TikTok" width="38" height="38"/>
+                <div class="service-full-card rrss-principal horizontal" data-service="marketing">
+                    <div class="rrss-header">
+                        <div class="rrss-icons-col">
+                            <img src="../images/icon-fb.svg" alt="Facebook" width="38" height="38"/>
+                            <img src="../images/icon-ig.svg" alt="Instagram" width="38" height="38"/>
+                            <img src="../images/icon-linkedin.svg" alt="LinkedIn" width="38" height="38"/>
+                            <img src="../images/icon-tiktok.svg" alt="TikTok" width="38" height="38"/>
+                        </div>
+                        <h3>Gestión de Redes Sociales</h3>
+                    </div>
+                    <div class="rrss-plans-container">
+                        <div class="plan-card">
+                            <img src="../images/icon-fb.svg" alt="Plan Básico" width="32" height="32"/>
+                            <h4>Plan Básico</h4>
+                            <p>16 post al mes, historias, estrategia, reportes mensuales.</p>
+                        </div>
+                        <div class="plan-card">
+                            <img src="../images/icon-linkedin.svg" alt="Plan Pro" width="32" height="32"/>
+                            <h4>Plan Pro</h4>
+                            <p>20 post al mes, historias, estrategia, reportes mensuales.</p>
+                        </div>
+                        <div class="plan-card">
+                            <img src="../images/icon-tiktok.svg" alt="Plan Premium" width="32" height="32"/>
+                            <h4>Plan Premium</h4>
+                            <p>24 post, lo mismo que el otro pero con Campañas de Meta ADS.</p>
+                        </div>
+                    </div>
+                    <div class="rrss-footer">
+                        <button class="service-detail-btn">Ver detalles y precios</button>
+                    </div>
                 </div>
-                <h3 style="margin-bottom:1.2rem;">Gestión de Redes Sociales</h3>
-                <div class="service-plans-cards-horizontal" style="margin-bottom:1.2rem;">
-                    <div class="plan-card">
-                        <img src="../images/icon-fb.svg" alt="Plan Básico" width="32" height="32"/>
-                        <h4>Plan Básico</h4>
-                        <p>16 post al mes, historias, estrategia, reportes mensuales.</p>
-                    </div>
-                    <div class="plan-card">
-                        <img src="../images/icon-linkedin.svg" alt="Plan Pro" width="32" height="32"/>
-                        <h4>Plan Pro</h4>
-                        <p>20 post al mes, historias, estrategia, reportes mensuales.</p>
-                    </div>
-                    <div class="plan-card">
-                        <img src="../images/icon-tiktok.svg" alt="Plan Premium" width="32" height="32"/>
-                        <h4>Plan Premium</h4>
-                        <p>24 post, lo mismo que el otro pero con Campañas de Meta ADS.</p>
-                    </div>
-                </div>
-                <button class="service-detail-btn">Ver detalles y precios</button>
             </div>
+
+            <!-- Grilla de servicios secundarios debajo -->
             <div class="services-full-container">
-                <!-- Grilla de servicios secundarios debajo -->
                 <div class="services-grid">
-                <div class="service-full-card" data-service="design">
-                    <div class="service-full-icon" style="display:flex;gap:10px;align-items:center;">
-                        <img src="../images/meta-ads.svg" alt="Meta" width="32" height="32"/>
-                        <img src="../images/roi.svg" alt="ROI" width="32" height="32"/>
+                    <div class="service-full-card" data-service="design">
+                        <div class="service-full-icon">
+                            <img src="../images/meta-ads.svg" alt="Meta" width="32" height="32"/>
+                            <img src="../images/roi.svg" alt="ROI" width="32" height="32"/>
+                        </div>
+                        <h3>Campañas de Meta ADS</h3>
+                        <p>Campañas con estrategia.</p>
+                        <button class="service-detail-btn">Ver detalles</button>
                     </div>
-                    <h3>Campañas de Meta ADS</h3>
-                    <p>Campañas con estrategia.</p>
-                    <button class="service-detail-btn">Ver detalles</button>
-                </div>
 
-                <div class="service-full-card" data-service="video">
-                    <div class="service-full-icon" style="display:flex;align-items:center;justify-content:center;">
-                        <img src="../images/asesoria.svg" alt="Asesoría" width="32" height="32"/>
+                    <div class="service-full-card" data-service="video">
+                        <div class="service-full-icon">
+                            <img src="../images/asesoria.svg" alt="Asesoría" width="32" height="32"/>
+                        </div>
+                        <h3>Asesorías Personalizadas</h3>
+                        <p>Marketing con Intención: Una hora conmigo para transformar tu negocio.</p>
+                        <button class="service-detail-btn">Ver detalles</button>
                     </div>
-                    <h3>Asesorías Personalizadas</h3>
-                    <p>Marketing con Intención: Una hora conmigo para transformar tu negocio.</p>
-                    <button class="service-detail-btn">Ver detalles</button>
-                </div>
 
-                <div class="service-full-card" data-service="3d">
-                    <div class="service-full-icon" style="display:flex;align-items:center;justify-content:center;">
-                        <img src="../images/disenadores.svg" alt="Diseño Gráfico" width="32" height="32"/>
+                    <div class="service-full-card" data-service="3d">
+                        <div class="service-full-icon">
+                            <img src="../images/disenadores.svg" alt="Diseño Gráfico" width="32" height="32"/>
+                        </div>
+                        <h3>Diseño Gráfico</h3>
+                        <p>Experiencias inmersivas y visualizaciones impactantes.</p>
+                        <button class="service-detail-btn">Ver detalles</button>
                     </div>
-                    <h3>Diseño Gráfico</h3>
-                    <p>Experiencias inmersivas y visualizaciones impactantes.</p>
-                    <button class="service-detail-btn">Ver detalles</button>
-                </div>
 
-                <div class="service-full-card" data-service="branding">
-                    <div class="service-full-icon" style="display:flex;align-items:center;justify-content:center;">
-                        <img src="../images/video-edit.svg" alt="Edición de Videos" width="32" height="32"/>
+                    <div class="service-full-card" data-service="branding">
+                        <div class="service-full-icon">
+                            <img src="../images/video-edit.svg" alt="Edición de Videos" width="32" height="32"/>
+                        </div>
+                        <h3>Edición de Videos</h3>
+                        <p>Videos que cuentan historias, que cierran ventas. Edición profesional.</p>
+                        <button class="service-detail-btn">Ver detalles</button>
                     </div>
-                    <h3>Edición de Videos</h3>
-                    <p>Videos que cuentan historias, que cierran ventas. Edición profesional.</p>
-                    <button class="service-detail-btn">Ver detalles</button>
-                </div>
 
-                <div class="service-full-card" data-service="web">
-                    <div class="service-full-icon" style="display:flex;align-items:center;justify-content:center;">
-                        <img src="../images/email.svg" alt="Email Marketing" width="32" height="32"/>
+                    <div class="service-full-card" data-service="web">
+                        <div class="service-full-icon">
+                            <img src="../images/email.svg" alt="Email Marketing" width="32" height="32"/>
+                        </div>
+                        <h3>Email Marketing</h3>
+                        <p>Email Marketing con Sentido: Directo al corazón (y al buzón) de tu cliente.</p>
+                        <button class="service-detail-btn">Ver detalles</button>
                     </div>
-                    <h3>Email Marketing</h3>
-                    <p>Email Marketing con Sentido: Directo al corazón (y al buzón) de tu cliente.</p>
-                    <button class="service-detail-btn">Ver detalles</button>
-                </div>
 
-                <div class="service-full-card" data-service="consulting">
-                                    </div> <!-- cierre de .services-grid -->
-                    <div class="service-full-icon" style="display:flex;align-items:center;justify-content:center;">
-                        <img src="../images/web.svg" alt="Desarrollo Web" width="32" height="32"/>
+                    <div class="service-full-card" data-service="consulting">
+                        <div class="service-full-icon">
+                            <img src="../images/web.svg" alt="Desarrollo Web" width="32" height="32"/>
+                        </div>
+                        <h3>Desarrollo Web</h3>
+                        <p>Más que una web, tu oficina 24/7: Estructura técnica con alma creativa.</p>
+                        <button class="service-detail-btn">Ver detalles</button>
                     </div>
-                    <h3>Desarrollo Web</h3>
-                    <p>Más que una web, tu oficina 24/7: Estructura técnica con alma creativa.</p>
-                    <button class="service-detail-btn">Ver detalles</button>
                 </div>
             </div>
         </section>
