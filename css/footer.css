@@ -81,14 +81,18 @@
 }
 
 .footer-desc {
-  color: var(--text-secondary);
+  color: #fff;
+  font-weight: 700;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.45);
   line-height: 1.6;
   margin-bottom: var(--spacing-md);
   font-size: 0.95rem;
 }
 
 .footer-section h4 {
-  color: var(--text-primary);
+  color: #fff;
+  font-weight: 900;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.45);
   font-size: 1rem;
   font-weight: 700;
   margin-bottom: var(--spacing-md);
@@ -107,7 +111,9 @@
 }
 
 .footer-section a {
-  color: var(--text-secondary);
+  color: #fff;
+  font-weight: 700;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.45);
   text-decoration: none;
   transition: all 0.3s ease;
   font-size: 0.95rem;
@@ -120,7 +126,9 @@
 }
 
 .footer-section p {
-  color: var(--text-secondary);
+  color: #fff;
+  font-weight: 700;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.45);
   margin-bottom: var(--spacing-xs);
   font-size: 0.95rem;
   line-height: 1.6;
@@ -206,14 +214,18 @@
   align-items: center;
   padding: var(--spacing-lg) var(--spacing-md);
   border-top: 1px solid rgba(163, 230, 53, 0.1);
-  color: var(--text-secondary);
+  color: #fff;
+  font-weight: 900;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.45);
   font-size: 0.9rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .footer-bottom a {
-  color: var(--text-secondary);
+  color: #fff;
+  font-weight: 700;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.45);
   text-decoration: none;
   transition: color 0.3s ease;
 }

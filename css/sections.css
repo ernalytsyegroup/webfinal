@@ -221,7 +221,6 @@
   background: linear-gradient(180deg, rgba(10,10,10,0.95), rgba(8,8,8,0.95));
   border-radius: 14px;
   padding: 20px;
-  border-left: 6px solid var(--primary);
   box-shadow: 0 10px 30px rgba(0,0,0,0.6), 0 0 24px rgba(163,230,53,0.03) inset;
   transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
 }
@@ -255,7 +254,6 @@
 .service-tile:hover {
   transform: translateY(-10px);
   box-shadow: 0 20px 60px rgba(0,0,0,0.65), 0 0 40px rgba(163,230,53,0.06) inset;
-  border-left-color: var(--primary-dark);
 }
 
 .service-card:hover::before,
@@ -586,7 +584,6 @@
   padding: var(--spacing-md);
   border-radius: var(--radius-lg);
   margin: var(--spacing-md) 0;
-  border-left: 3px solid var(--primary);
 }
 
 .service-features h4 {

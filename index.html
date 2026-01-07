@@ -28,13 +28,13 @@
                 <span></span>
             </button>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="nav-link active">Inicio</a></li>
-                <li><a href="#about" class="nav-link">Sobre Mí</a></li>
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="pages/sobre-mi.html" class="nav-link">Sobre Mí</a></li>
+                <li><a href="pages/galeria.html" class="nav-link">Galería</a></li>
                 <li><a href="pages/servicios.html" class="nav-link">Servicios</a></li>
-                <li><a href="pages/cursos.html" class="nav-link">Cursos</a></li>
                 <li><a href="pages/recursos.html" class="nav-link">Recursos</a></li>
-                <li><a href="pages/revista.html" class="nav-link">Revista</a></li>
                 <li><a href="pages/clientes.html" class="nav-link">Clientes</a></li>
+                <li><a href="pages/revista.html" class="nav-link">Revista</a></li>
                 <li><a href="pages/contacto.html" class="nav-link">Contacto</a></li>
             </ul>
         </div>
@@ -57,10 +57,8 @@
                 <img src="models/PRINCIPAL-5.JPG" alt="preview 5">
             </div>
         </div>
-        <!-- Small GLB model preview below the carousel -->
         <div class="hero-model" id="heroModel" aria-hidden="true"></div>
         <div class="hero-content">
-            <!-- removed the original small welcome badge and moved the title up into its place -->
             <div class="hero-badge hero-title-badge">Mariángel Mujica</div>
             <p class="hero-subtitle">Entre el código, las letras y la fé: La estratega detrás de tu éxito digital.</p>
             <a href="#preview" class="hero-cta">Explorar</a>
@@ -80,14 +78,15 @@
                     <div class="about-text">
                         <h2 class="about-title">Sobre Mí</h2>
                         <p class="about-description">
-                            Profesional creativo especializado en marketing digital y diseño 3D. Con años de experiencia transformando ideas en experiencias visuales impactantes.
+                            El Saber que enseña, la Emoción que conecta.
+                            No solo ejecuto estrategias; formo a las nuevas generaciones del sector. 
                         </p>
                         <a href="pages/sobre-mi.html" class="about-cta">Ver perfil completo →</a>
                     </div>
                 </div>
                 <div class="about-image-container">
                     <div class="image-frame-3d">
-                        <img src="/models/IMG_2407.JPG" alt="Mariángel Mujica - Profesional en Marketing Digital y Diseño 3D">
+                        <img src="/models/SOBREMINICIO.JPG" alt="Mariángel Mujica - Profesional en Marketing Digital">
                         <div class="image-glow"></div>
                     </div>
                 </div>
@@ -105,7 +104,7 @@
                     <div class="card-glow"></div>
                     <div class="card-inner">
                         <div class="service-icon-3d">🎯</div>
-                        <h3>Marketing Digital</h3>
+                        <h3>Gestión de Redes Sociales</h3>
                         <p>Estrategias efectivas para hacer crecer tu marca en el mundo digital</p>
                         <button class="service-detail-btn">Ver detalles</button>
                     </div>
@@ -114,8 +113,8 @@
                     <div class="card-glow"></div>
                     <div class="card-inner">
                         <div class="service-icon-3d">🎨</div>
-                        <h3>Branding</h3>
-                        <p>Diseños únicos que capturan la esencia de tu negocio</p>
+                        <h3>Campañas de Meta ADS</h3>
+                        <p>Campañas con estrategia.</p>
                         <button class="service-detail-btn">Ver detalles</button>
                     </div>
                 </div>
@@ -123,8 +122,8 @@
                     <div class="card-glow"></div>
                     <div class="card-inner">
                         <div class="service-icon-3d">📸</div>
-                        <h3>Campañas de Meta ADS</h3>
-                        <p>Capturamos momentos que cuentan historias impactantes</p>
+                        <h3>Email Marketing</h3>
+                        <p>Email Marketing con Sentido: Directo al corazón (y al buzón) de tu cliente.</p>
                         <button class="service-detail-btn">Ver detalles</button>
                     </div>
                 </div>
@@ -133,7 +132,7 @@
                     <div class="card-inner">
                         <div class="service-icon-3d">🎬</div>
                         <h3>Asesorías Personalizadas</h3>
-                        <p>Contenido audiovisual de alta calidad que impresiona</p>
+                        <p>Marketing con Intención: Una hora conmigo para transformar tu negocio.</p>
                         <button class="service-detail-btn">Ver detalles</button>
                     </div>
                 </div>
@@ -168,65 +167,32 @@
                 <h2 class="section-title">Cursos Destacados</h2>
                 <p class="section-subtitle">Aprende directamente de los expertos</p>
             </div>
-            <div class="courses-3d-grid">
-                <div class="course-card-3d">
-                    <div class="course-image">
-                        <img src="/placeholder.svg?height=250&width=400" alt="Curso Marketing">
-                    </div>
-                    <div class="course-content">
-                        <h3>Marketing Digital Avanzado</h3>
-                        <p>Domina las estrategias más efectivas del marketing digital</p>
-                        <div class="course-footer">
-                            <span class="course-price">$99</span>
-                            <button class="course-btn">Explorar</button>
+            <div class="courses-full-container" style="display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;">
+                <div class="course-full-card" data-course="metaads" style="max-width: 370px; min-width: 290px; background: linear-gradient(135deg, #0a0a0a 0%, rgba(15, 15, 15, 0.8) 100%); border: 1px solid rgba(163, 230, 53, 0.1); border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); overflow: hidden; display: flex; flex-direction: column; transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);">
+                    <img src="models/cursos/CURSO1.jpg" alt="Meta ADS" class="course-full-image" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="course-full-content" style="padding: 2rem; display: flex; flex-direction: column; flex: 1;">
+                        <div class="course-category" style="background: rgba(163, 230, 53, 0.12); color: #a3e635; padding: 6px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 1rem; width: fit-content; border: 1px solid rgba(163, 230, 53, 0.2);">Meta ADS</div>
+                        <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem; color: #fff; letter-spacing: -0.5px; line-height: 1.3;">El ABC de Meta ADS</h3>
+                        <div class="course-footer" style="display: flex; justify-content: flex-end; align-items: center; padding-top: 0; border-top: none; margin-top: auto;">
+                            <a class="course-detail-btn" style="padding: 10px 20px; background: linear-gradient(135deg, #a3e635 0%, #84cc16 100%); color: #000; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1); border: none; cursor: pointer; box-shadow: 0 4px 15px rgba(163, 230, 53, 0.25); display: inline-flex; align-items: center; gap: 6px;" href="https://wa.me/584241234567?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20curso%20El%20ABC%20de%20Meta%20ADS" target="_blank" rel="noopener">Más info<span style="font-size: 1.1rem; margin-left: 4px;">→</span></a>
                         </div>
                     </div>
                 </div>
-                <div class="course-card-3d">
-                    <div class="course-image">
-                        <img src="/placeholder.svg?height=250&width=400" alt="Curso 3D">
-                    </div>
-                    <div class="course-content">
-                        <h3>Diseño 3D para Principiantes</h3>
-                        <p>Aprende a crear modelos 3D desde cero</p>
-                        <div class="course-footer">
-                            <span class="course-price">$149</span>
-                            <button class="course-btn">Explorar</button>
+                <div class="course-full-card" data-course="medicion" style="max-width: 370px; min-width: 290px; background: linear-gradient(135deg, #0a0a0a 0%, rgba(15, 15, 15, 0.8) 100%); border: 1px solid rgba(163, 230, 53, 0.1); border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); overflow: hidden; display: flex; flex-direction: column; transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);">
+                    <img src="models/cursos/CURSO2.jpg" alt="Medición" class="course-full-image" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="course-full-content" style="padding: 2rem; display: flex; flex-direction: column; flex: 1;">
+                        <div class="course-category" style="background: rgba(163, 230, 53, 0.12); color: #a3e635; padding: 6px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 1rem; width: fit-content; border: 1px solid rgba(163, 230, 53, 0.2);">Métricas</div>
+                        <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem; color: #fff; letter-spacing: -0.5px; line-height: 1.3;">¡Medir para CONVERTIR!</h3>
+                        <div class="course-footer" style="display: flex; justify-content: flex-end; align-items: center; padding-top: 0; border-top: none; margin-top: auto;">
+                            <a class="course-detail-btn" style="padding: 10px 20px; background: linear-gradient(135deg, #a3e635 0%, #84cc16 100%); color: #000; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1); border: none; cursor: pointer; box-shadow: 0 4px 15px rgba(163, 230, 53, 0.25); display: inline-flex; align-items: center; gap: 6px;" href="https://wa.me/584241234567?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20curso%20Medir%20para%20CONVERTIR" target="_blank" rel="noopener">Más info<span style="font-size: 1.1rem; margin-left: 4px;">→</span></a>
                         </div>
                     </div>
                 </div>
             </div>
-            <a href="pages/cursos.html" class="view-all-link">Ver todos los cursos →</a>
+            <a href="pages/cursos.html" class="view-all-link" style="margin-top: 2rem; display: block; text-align: center; color: #a3e635; font-weight: 700;">Ver todos los cursos →</a>
         </section>
 
         <!-- Resources Section -->
-        <section class="resources-section reveal" id="recursos-preview" data-anim="zoom" data-delay="350">
-            <div class="section-header">
-                <h2 class="section-title">Recursos Gratuitos</h2>
-                <p class="section-subtitle">Descarga herramientas profesionales</p>
-            </div>
-            <div class="resources-3d-grid">
-                <div class="resource-card-3d">
-                    <div class="resource-icon-large">📄</div>
-                    <h3>Guía de Marketing</h3>
-                    <p>Descarga nuestra guía completa de marketing digital</p>
-                    <button class="resource-btn" data-resource="marketing-guide">Descargar</button>
-                </div>
-                <div class="resource-card-3d">
-                    <div class="resource-icon-large">🎨</div>
-                    <h3>Templates de Diseño</h3>
-                    <p>Plantillas profesionales listas para usar</p>
-                    <button class="resource-btn" data-resource="design-templates">Descargar</button>
-                </div>
-                <div class="resource-card-3d">
-                    <div class="resource-icon-large">📊</div>
-                    <h3>Checklist SEO</h3>
-                    <p>Lista completa para optimizar tu sitio web</p>
-                    <button class="resource-btn" data-resource="seo-checklist">Descargar</button>
-                </div>
-            </div>
-            <a href="pages/recursos.html" class="view-all-link">Ver todos los recursos →</a>
-        </section>
 
         <!-- Gallery Section -->
         <section class="gallery-section reveal" id="galeria-preview" data-anim="fade-left" data-delay="400">
@@ -235,60 +201,16 @@
                 <p class="section-subtitle">Explora nuestro trabajo creativo</p>
             </div>
             <div class="gallery-grid-home">
-                <div class="gallery-item-home">
-                    <img src="models/IMG_2267.JPG" alt="Proyecto creativo">
+                <a href="pages/galeria.html" class="gallery-item-home" style="text-decoration: none;">
+                    <img src="models/PRINCIPAL-1.JPG" alt="Galería general">
                     <div class="gallery-overlay-home">
-                        <span class="gallery-icon">🎨</span>
+                        <div style="text-align: center;">
+                            <div class="gallery-icon">🖼️</div>
+                            <h3 style="color: #fff; font-size: 1.5rem; margin-top: 1rem; font-weight: 700;">Ver galería general →</h3>
+                            <p style="color: #b0b0b0; margin-top: 0.5rem;">Fotos de proyectos y eventos</p>
+                        </div>
                     </div>
-                </div>
-                <div class="gallery-item-home">
-                    <img src="models/IMG_2287.JPG" alt="Proyecto creativo">
-                    <div class="gallery-overlay-home">
-                        <span class="gallery-icon">📸</span>
-                    </div>
-                </div>
-                <div class="gallery-item-home">
-                    <img src="models/IMG_2295.JPG" alt="Proyecto creativo">
-                    <div class="gallery-overlay-home">
-                        <span class="gallery-icon">✨</span>
-                    </div>
-                </div>
-                <div class="gallery-item-home">
-                    <img src="models/IMG_2296.JPG" alt="Proyecto creativo">
-                    <div class="gallery-overlay-home">
-                        <span class="gallery-icon">🎬</span>
-                    </div>
-                </div>
-                <div class="gallery-item-home">
-                    <img src="models/IMG_2310.JPG" alt="Proyecto creativo">
-                    <div class="gallery-overlay-home">
-                        <span class="gallery-icon">💡</span>
-                    </div>
-                </div>
-                <div class="gallery-item-home">
-                    <img src="models/IMG_2347.JPG" alt="Proyecto creativo">
-                    <div class="gallery-overlay-home">
-                        <span class="gallery-icon">🎯</span>
-                    </div>
-                </div>
-                <div class="gallery-item-home">
-                    <img src="models/IMG_2353.JPG" alt="Proyecto creativo">
-                    <div class="gallery-overlay-home">
-                        <span class="gallery-icon">🌟</span>
-                    </div>
-                </div>
-                <div class="gallery-item-home">
-                    <img src="models/IMG_2359.JPG" alt="Proyecto creativo">
-                    <div class="gallery-overlay-home">
-                        <span class="gallery-icon">🎨</span>
-                    </div>
-                </div>
-                <div class="gallery-item-home">
-                    <img src="models/IMG_2363.JPG" alt="Proyecto creativo">
-                    <div class="gallery-overlay-home">
-                        <span class="gallery-icon">📷</span>
-                    </div>
-                </div>
+                </a>
             </div>
         </section>
 
