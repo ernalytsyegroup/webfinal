@@ -32,11 +32,12 @@
         }
     }
     #serviciosCarrusel img {
-        width: min(32vw, 340px);
-        height: calc(min(32vw, 340px) * 0.62);
+        max-width: 340px;
         max-height: 220px;
+        width: auto;
+        height: auto;
         border-radius: 12px;
-        object-fit: cover;
+        object-fit: contain;
         box-shadow: 0 10px 40px rgba(0,0,0,0.4);
         filter: grayscale(8%) contrast(0.95) brightness(0.92) saturate(0.8);
         transition: transform 900ms cubic-bezier(0.2,0.8,0.2,1), filter 900ms, box-shadow 900ms, opacity 900ms;
