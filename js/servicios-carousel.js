@@ -1,86 +1,143 @@
 
-// Carrusel infinito automático para servicios (seamless, sin huecos)
-const SELECTOR_SERV = '.servicios-carousel';
+// Carrusel infinito automático para servicios - Matching Hero Carousel Style
+const SELECTOR_SERV = '#carruselTrack';
 let rafLoopServ = null;
 let slideSizeServ = 0;
-let gapSizeServ = 36;
+let gapSizeServ = 28;
 let originalCountServ = 0;
-let indexServ = 0;
+let progressServ = 0;
 
-function setupServiciosLoop() {
-  const el = document.querySelector(SELECTOR_SERV);
-  if (!el) return;
-  let originals = Array.from(el.querySelectorAll('img'));
-  if (originals.length === 0) return;
+function updateActiveSlide(track) {
+  const slides = Array.from(track.querySelectorAll('img'));
+  if (slides.length === 0) return;
 
-  // Eliminar todos los hijos
-  while (el.firstChild) el.removeChild(el.firstChild);
-  // Insertar los originales
-  originals.forEach(img => el.appendChild(img.cloneNode(true)));
-  originalCountServ = originals.length;
+  const containerRect = track.parentElement.getBoundingClientRect();
+  const centerX = containerRect.left + containerRect.width / 2;
 
-  // Calcular slideSize y gap dinámicamente
-  const first = el.querySelector('img');
-  if (!first) return;
-  // Obtener gap real de CSS
-  const style = getComputedStyle(el);
-  gapSizeServ = parseInt(style.gap || 36);
-  slideSizeServ = first.offsetWidth + gapSizeServ;
+  let closestSlide = null;
+  let minDistance = Infinity;
 
-  // Calcular cuántos clones se necesitan para llenar el área visible + buffer
-  const visibleWidth = el.parentElement ? el.parentElement.offsetWidth : window.innerWidth;
-  let minSlides = Math.ceil(visibleWidth / slideSizeServ) + 2; // +2 buffer
-  let clonesNeeded = Math.max(minSlides, originalCountServ);
+  slides.forEach(slide => {
+    const rect = slide.getBoundingClientRect();
+    const slideCenter = rect.left + rect.width / 2;
+    const distance = Math.abs(slideCenter - centerX);
 
-  // Clonar suficientes slides para llenar el área visible y permitir loop
-  for (let i = 0; i < clonesNeeded; i++) {
-    el.appendChild(originals[i % originalCountServ].cloneNode(true));
+    if (distance < minDistance) {
+      minDistance = distance;
+      closestSlide = slide;
+    }
+  });
+
+  slides.forEach(slide => slide.classList.remove('active'));
+  if (closestSlide) {
+    closestSlide.classList.add('active');
   }
-
-  // Reset transform y estado
-  indexServ = 0;
-  el.style.transition = 'none';
-  el.style.transform = 'translateX(0px)';
-
-  // Iniciar loop
-  if (rafLoopServ) cancelAnimationFrame(rafLoopServ);
-  startServiciosLoop(el);
 }
 
-function startServiciosLoop(el) {
-  let progress = 0;
+function setupServiciosLoop() {
+  const track = document.querySelector(SELECTOR_SERV);
+  if (!track) return;
+
+  const originals = Array.from(track.querySelectorAll('img'));
+  if (originals.length === 0) return;
+
+  // Store original count
+  originalCountServ = originals.length / 2; // Dividido por 2 porque ya están duplicados en el HTML
+
+  // Get computed gap
+  const parent = track.parentElement;
+  const style = getComputedStyle(track);
+  gapSizeServ = parseInt(style.gap || 28);
+
+  // Calculate slide size
+  const first = originals[0];
+  if (!first) return;
+  slideSizeServ = first.offsetWidth + gapSizeServ;
+
+  // Reset progress
+  progressServ = 0;
+  track.style.transform = 'translateX(0px)';
+
+  // Set initial active slide
+  updateActiveSlide(track);
+
+  // Start loop
+  if (rafLoopServ) cancelAnimationFrame(rafLoopServ);
+  startServiciosLoop(track);
+}
+
+function startServiciosLoop(track) {
+  const speed = 1.8; // px per frame - matching hero carousel speed
   const totalWidth = originalCountServ * slideSizeServ;
-  const speed = slideSizeServ / 1.5; // px por segundo
-  let last = performance.now();
+  let lastUpdate = 0;
 
   function loop(now) {
-    const dt = Math.min(0.05, (now - last) / 1000);
-    last = now;
-    progress += speed * dt;
-    if (progress >= totalWidth) progress -= totalWidth;
-    el.style.transition = 'none';
-    el.style.transform = `translateX(-${Math.round(progress)}px)`;
-    rafLoopServ = window.requestAnimationFrame(loop);
+    progressServ -= speed;
+
+    // Reset when we've scrolled through half the images (seamless loop)
+    if (Math.abs(progressServ) >= totalWidth) {
+      progressServ = 0;
+    }
+
+    track.style.transform = `translateX(${progressServ}px)`;
+
+    // Update active slide every 100ms to avoid too many calculations
+    if (now - lastUpdate > 100) {
+      updateActiveSlide(track);
+      lastUpdate = now;
+    }
+
+    rafLoopServ = requestAnimationFrame(loop);
   }
-  rafLoopServ = window.requestAnimationFrame(loop);
+
+  rafLoopServ = requestAnimationFrame(loop);
 }
 
 export function initServiciosCarousel() {
-  const el = document.querySelector(SELECTOR_SERV);
-  if (!el) return;
-  const imgs = el.querySelectorAll('img');
+  const track = document.querySelector(SELECTOR_SERV);
+  if (!track) return;
+
+  const imgs = track.querySelectorAll('img');
   let loaded = 0;
-  if (imgs.length === 0) { setupServiciosLoop(); return; }
+
+  if (imgs.length === 0) {
+    setupServiciosLoop();
+    return;
+  }
+
   imgs.forEach((img) => {
-    if (img.complete) loaded++;
-    else img.addEventListener('load', () => { loaded++; if (loaded === imgs.length) setupServiciosLoop(); });
+    if (img.complete) {
+      loaded++;
+    } else {
+      img.addEventListener('load', () => {
+        loaded++;
+        if (loaded === imgs.length) {
+          setupServiciosLoop();
+        }
+      });
+    }
   });
-  if (loaded === imgs.length) setupServiciosLoop();
-  window.addEventListener('resize', () => { if (el) setupServiciosLoop(); });
+
+  if (loaded === imgs.length) {
+    setupServiciosLoop();
+  }
+
+  // Reinitialize on resize
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      if (track) setupServiciosLoop();
+    }, 250);
+  });
 }
 
 if (typeof window !== 'undefined') {
   window.addEventListener('DOMContentLoaded', () => {
-    try { initServiciosCarousel(); } catch (e) { /* ignore */ }
+    try {
+      initServiciosCarousel();
+    } catch (e) {
+      console.error('Error initializing servicios carousel:', e);
+    }
   });
 }

@@ -321,14 +321,39 @@
   transform: scale(1.10);
   filter: drop-shadow(0 2px 8px rgba(0,0,0,0.10));
 }
+/* Servicios Carousel Section - Fixed without clipping */
+.servicios-carousel-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 350px;
+  background: var(--page-bg, #000);
+  margin-bottom: 40px;
+  overflow: hidden;
+  padding: 50px 0;
+}
+
+.servicios-carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
 .revista-carousel-fotos {
   display: flex;
   align-items: center;
-  gap: 36px;
+  gap: 32px;
   width: 100%;
-  overflow: hidden;
-  padding: 32px 0;
+  overflow: visible;
+  padding: 40px 0;
+  will-change: transform;
 }
+
 .revista-carousel-fotos img {
   --slide-w: 340px;
   width: min(32vw, var(--slide-w));
@@ -338,9 +363,24 @@
   object-fit: cover;
   box-shadow: 0 10px 40px rgba(0,0,0,0.4);
   filter: grayscale(8%) contrast(0.95) brightness(0.92) saturate(0.8);
-  transition: transform 900ms cubic-bezier(0.2,0.8,0.2,1), filter 900ms, box-shadow 900ms, opacity 900ms;
+  transition: transform 900ms cubic-bezier(0.2,0.8,0.2,1), filter 900ms ease, box-shadow 900ms ease, opacity 900ms ease;
   opacity: 0.95;
+  transform: translateZ(0);
 }
+
+.revista-carousel-fotos img.active {
+  transform: translateY(-10px) scale(1.05);
+  filter: grayscale(0%) brightness(1) saturate(1) contrast(1);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 30px rgba(163,230,53,0.06) inset;
+  opacity: 1;
+  z-index: 3;
+}
+
+.revista-carousel-fotos img:not(.active) {
+  transform: translateY(0px) scale(1);
+  opacity: 0.85;
+}
+
 .revista-carousel-section {
   display: flex;
   justify-content: center;
@@ -348,6 +388,23 @@
   min-height: 400px;
   background: var(--page-bg, #000);
   margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+  .servicios-carousel-section {
+    min-height: 300px;
+    padding: 40px 0;
+  }
+  
+  .revista-carousel-fotos {
+    gap: 24px;
+    padding: 30px 0;
+  }
+  
+  .revista-carousel-fotos img {
+    width: 60vw;
+    max-width: 300px;
+  }
 }
 .revista-carousel {
   display: flex;
