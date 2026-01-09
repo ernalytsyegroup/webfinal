@@ -1502,7 +1502,6 @@
     column-count: 1;
   }
 }
-}
 
 @media (max-width: 900px) {
   .clients-full-grid, #clientsGrid {
@@ -1530,6 +1529,8 @@
   break-inside: avoid;
   padding: 0;
   min-height: unset;
+}
+
 /* BIO SECTION - Modificaciones para la imagen prolija */
 .bio-container {
   display: flex;
