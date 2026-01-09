@@ -80,35 +80,49 @@
   display: block;
 }
 
-/* About section compact layout with highlights */
+/* About section compact layout with highlights - RESTAURADO */
 .about-compact {
   padding: var(--spacing-2xl) var(--spacing-md);
+  background: #000000;
 }
 
 .about-compact-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-2xl);
-  align-items: center;
+  grid-template-columns: minmax(320px, 400px) 1fr;
+  gap: 2.5rem;
+  align-items: flex-start;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.about-compact-grid > div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .about-text {
   animation: fadeInUp 0.8s ease-out;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
 }
 
 .about-image {
-  border-radius: var(--radius-xl);
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: var(--shadow-xl);
+  box-shadow: 0 8px 32px rgba(163, 230, 53, 0.15);
   animation: fadeInDown 0.8s ease-out;
+  width: 100%;
 }
 
 .about-image img {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: var(--radius-xl);
+  border-radius: 18px;
   transition: transform var(--transition-slow);
+  object-fit: cover;
 }
 
 .about-image:hover img {
@@ -125,19 +139,20 @@
 .highlight-item {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: var(--spacing-md);
-  background: var(--bg-card);
-  border-radius: var(--radius-lg);
-  border: 1px solid rgba(163, 230, 53, 0.1);
+  padding: 1.5rem;
+  background: rgba(10, 10, 10, 0.8);
+  border-radius: 12px;
+  border: 2px solid var(--primary);
   transition: all var(--transition-base);
-  text-align: center;
+  text-align: left;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 
 .highlight-item:hover {
-  transform: translateY(-8px);
-  border-color: rgba(163, 230, 53, 0.3);
-  box-shadow: var(--shadow-glow);
+  transform: translateY(-4px);
+  border-color: rgba(163, 230, 53, 0.8);
+  box-shadow: 0 8px 24px rgba(163, 230, 53, 0.25);
+  background: rgba(15, 15, 15, 0.9);
 }
 
 .highlight-number {
@@ -151,6 +166,21 @@
   font-size: var(--font-size-sm);
   color: var(--text-secondary);
   margin-top: var(--spacing-xs);
+}
+
+/* Estilos para los textos destacados en biografía */
+.bio-highlight {
+  color: var(--primary);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.bio-text {
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 0.95rem;
 }
 
 /* Enhanced card system */
@@ -668,11 +698,25 @@
 
 @media (max-width: 1024px) {
   .about-compact-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(280px, 350px) 1fr;
+    gap: 2rem;
   }
 
   .about-highlights {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .about-compact-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+  
+  .about-compact-grid > div:first-child {
+    order: -1;
+    max-width: 400px;
+    margin: 0 auto;
   }
 }
 
@@ -694,5 +738,9 @@
 
   .preview-section {
     padding: var(--spacing-lg) var(--spacing-md);
+  }
+  
+  .about-image {
+    max-width: 100%;
   }
 }

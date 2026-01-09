@@ -1,0 +1,222 @@
+/* ========================================
+   SOBRE MI - ESTILOS ESPECÍFICOS RESTAURADOS
+   ======================================== */
+
+/* Sección Mi Historia - Título */
+.about-text .section-title {
+  color: var(--primary) !important;
+  border: none !important;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+/* Cajas de texto destacadas - Restaurado exacto */
+.about-text .highlight-item {
+  background: rgba(10, 10, 10, 0.9) !important;
+  border: 2px solid var(--primary) !important;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.2rem !important;
+  text-align: left !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.about-text .highlight-item:hover {
+  border-color: rgba(163, 230, 53, 0.9);
+  box-shadow: 0 8px 24px rgba(163, 230, 53, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Texto destacado en verde */
+.about-text .bio-highlight {
+  color: var(--primary) !important;
+  font-weight: 700 !important;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* Texto normal en blanco */
+.about-text .bio-text {
+  color: var(--text-primary) !important;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Timeline Section - Restaurado */
+.timeline-section {
+  background: #000000;
+  padding: 3rem 1.5rem;
+}
+
+.timeline-section .section-title {
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Timeline Items - Tarjetas mejoradas */
+.timeline-item {
+  background: linear-gradient(135deg, rgba(10, 10, 10, 0.95), rgba(15, 15, 15, 0.9)) !important;
+  border: 1px solid rgba(163, 230, 53, 0.2) !important;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
+}
+
+.timeline-item:hover {
+  border-color: rgba(163, 230, 53, 0.5) !important;
+  box-shadow: 0 12px 40px rgba(163, 230, 53, 0.2);
+}
+
+.timeline-year {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.timeline-content h3 {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  line-height: 1.3;
+}
+
+.timeline-content p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Achievements Section - Restaurado en HORIZONTAL */
+.achievements-section {
+  background: #000000;
+  padding: 3rem 1.5rem;
+}
+
+.achievements-section .section-title {
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Achievements Grid - FORZAR HORIZONTAL */
+.achievements-grid {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 2rem !important;
+  align-items: stretch !important;
+  justify-content: center !important;
+  flex-wrap: nowrap !important;
+  margin-top: 2rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+  scroll-behavior: smooth;
+}
+
+/* Achievement Cards - Números grandes en verde */
+.achievement-card {
+  background: linear-gradient(135deg, rgba(10, 10, 10, 0.95), rgba(15, 15, 15, 0.9)) !important;
+  border: 1px solid rgba(163, 230, 53, 0.2) !important;
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
+  min-width: 280px;
+  max-width: 340px;
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+.achievement-card:hover {
+  border-color: rgba(163, 230, 53, 0.5) !important;
+  box-shadow: 0 16px 48px rgba(163, 230, 53, 0.25);
+  transform: translateY(-8px);
+}
+
+.achievement-number {
+  font-size: 4rem;
+  font-weight: 900;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  text-shadow: 0 4px 16px rgba(163, 230, 53, 0.4);
+  line-height: 1;
+}
+
+.achievement-card h3 {
+  font-size: 1.2rem;
+  color: #ffffff;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  line-height: 1.3;
+}
+
+.achievement-card p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .about-compact-grid {
+    gap: 2rem;
+  }
+  
+  .timeline-item {
+    max-width: 100%;
+  }
+  
+  /* Mantener horizontal en tablets */
+  .achievements-grid {
+    gap: 1.5rem !important;
+  }
+  
+  .achievement-card {
+    min-width: 240px;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-text .section-title {
+    text-align: center;
+  }
+  
+  .timeline-section,
+  .achievements-section {
+    padding: 2rem 1rem;
+  }
+  
+  /* En móvil, permitir scroll horizontal */
+  .achievements-grid {
+    justify-content: flex-start !important;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .achievement-card {
+    min-width: 260px;
+  }
+}
+
+@media (max-width: 480px) {
+  .achievement-card {
+    min-width: 240px;
+    padding: 2rem 1.5rem;
+  }
+  
+  .achievement-number {
+    font-size: 3.5rem;
+  }
+}
