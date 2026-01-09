@@ -1,3 +1,24 @@
+/* Barra verde para nombre de cliente debajo de la foto */
+.client-bar-green {
+  width: 100%;
+  background: linear-gradient(90deg, #a3e635 0%, #22c55e 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-align: center;
+  padding: 0.5em 0;
+  border-radius: 0 0 12px 12px;
+  margin-top: 0;
+  letter-spacing: 0.5px;
+}
+.client-full-card .client-full-logo {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+}
 /* Coming Soon Loading Bar Animation for Revista */
 .loading-bar {
   width: 100%;
@@ -576,7 +597,104 @@
   background: linear-gradient(135deg, rgba(15, 15, 15, 0.95) 0%, rgba(20, 20, 20, 0.9) 100%);
 }
 
-/* CLIENT CARDS - uniform size with overlay name on hover/tap */
+/* CLIENTS MASONRY GRID - Pinterest Style */
+.clients-masonry-section {
+  padding: var(--spacing-2xl) 0;
+  background: var(--page-bg, #000);
+}
+
+.clients-masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.client-masonry-card {
+  position: relative;
+  background: linear-gradient(135deg, #0a0a0a 0%, rgba(15, 15, 15, 0.8) 100%);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.client-masonry-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(163, 230, 53, 0.15);
+}
+
+.client-masonry-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.client-masonry-card:hover img {
+  transform: scale(1.05);
+}
+
+.client-name-bar {
+  background: linear-gradient(135deg, #a3e635 0%, #8bc34a 100%);
+  color: #000000;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+}
+
+/* Stagger animation for client cards */
+.client-masonry-card:nth-child(1) { animation-delay: 0.05s; }
+.client-masonry-card:nth-child(2) { animation-delay: 0.1s; }
+.client-masonry-card:nth-child(3) { animation-delay: 0.15s; }
+.client-masonry-card:nth-child(4) { animation-delay: 0.2s; }
+.client-masonry-card:nth-child(5) { animation-delay: 0.25s; }
+.client-masonry-card:nth-child(6) { animation-delay: 0.3s; }
+.client-masonry-card:nth-child(7) { animation-delay: 0.35s; }
+.client-masonry-card:nth-child(8) { animation-delay: 0.4s; }
+.client-masonry-card:nth-child(9) { animation-delay: 0.45s; }
+.client-masonry-card:nth-child(10) { animation-delay: 0.5s; }
+.client-masonry-card:nth-child(11) { animation-delay: 0.55s; }
+.client-masonry-card:nth-child(12) { animation-delay: 0.6s; }
+.client-masonry-card:nth-child(13) { animation-delay: 0.65s; }
+.client-masonry-card:nth-child(14) { animation-delay: 0.7s; }
+.client-masonry-card:nth-child(15) { animation-delay: 0.75s; }
+.client-masonry-card:nth-child(16) { animation-delay: 0.8s; }
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .clients-masonry-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .clients-masonry-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .client-name-bar {
+    padding: 0.875rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .clients-masonry-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* OLD CLIENT CARDS - Keep for backward compatibility */
 .client-full-card {
   position: relative;
   display: block;
@@ -1362,28 +1480,56 @@
 .clients-full-grid,
 .courses-full-container,
 .services-full-container {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(300px, 1fr));
-  gap: var(--spacing-lg);
+  column-count: 4;
+  column-gap: 32px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
   animation: fadeIn 0.8s ease-out;
+}
+@media (max-width: 1200px) {
+  .clients-full-grid, #clientsGrid {
+    column-count: 3;
+  }
+}
+@media (max-width: 900px) {
+  .clients-full-grid, #clientsGrid {
+    column-count: 2;
+  }
+}
+@media (max-width: 600px) {
+  .clients-full-grid, #clientsGrid {
+    column-count: 1;
+  }
+}
+}
+
+@media (max-width: 900px) {
+  .clients-full-grid, #clientsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .clients-full-grid, #clientsGrid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Main Gallery Grid - Compact cards */
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: var(--spacing-md);
+  display: block;
+  background: #111;
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+  max-width: 340px;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.services-full-container { max-width: 1200px; margin: 0 auto; padding: 0 var(--spacing-md); }
-
-.courses-full-container {
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-}
-
+  margin: 0 0 32px 0;
+  overflow: hidden;
+  border: 1.5px solid rgba(163,230,53,0.13);
+  break-inside: avoid;
+  padding: 0;
+  min-height: unset;
 /* BIO SECTION - Modificaciones para la imagen prolija */
 .bio-container {
   display: flex;
@@ -2812,15 +2958,14 @@
    ======================================== */
 
 .corporate-event-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: var(--spacing-md);
+  column-count: 4;
+  column-gap: 32px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  animation: fadeIn 0.8s ease-out;
 }
-
 .corporate-event-item {
-  aspect-ratio: 4 / 3;
-  border-radius: 16px;
-  overflow: hidden;
   position: relative;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
