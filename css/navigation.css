@@ -1,3 +1,35 @@
+/* ===================== Responsive Navigation Improvements ===================== */
+@media (max-width: 1024px) {
+  .nav-container {
+    padding: var(--spacing-sm) 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .nav-logo {
+    font-size: 1.2rem;
+  }
+  .nav-menu {
+    gap: 1.2rem;
+    padding: 1.5rem 0.5rem;
+  }
+  .nav-link {
+    font-size: 1rem;
+    padding: 0.7rem 0;
+  }
+}
+@media (max-width: 480px) {
+  .nav-logo {
+    font-size: 1rem;
+  }
+  .nav-menu {
+    gap: 0.8rem;
+    padding: 1rem 0.2rem;
+  }
+  .nav-link {
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
+  }
+}
 /* Navigation Styles - Premium */
 .navbar {
   position: fixed;

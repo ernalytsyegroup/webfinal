@@ -1,3 +1,44 @@
+/* ===================== Responsive Sections Improvements ===================== */
+@media (max-width: 1024px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  .section-container {
+    padding: 0 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+  }
+  .section-text {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  .section-container {
+    padding: 0 0.5rem;
+  }
+  .about-compact {
+    padding: 2rem 0.5rem;
+  }
+}
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .section-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .section-container {
+    padding: 0 0.2rem;
+  }
+  .about-compact {
+    padding: 1rem 0.2rem;
+  }
+}
 /* Preview Sections - Premium */
 .preview-sections {
   position: relative;
@@ -184,25 +225,7 @@
 }
 
 /* Enhanced card system */
-.services-grid,
-.courses-grid,
-.resources-grid {
-  display: grid;
-  gap: var(--spacing-md);
-  margin: var(--spacing-lg) 0;
-}
 
-.services-grid {
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
-
-.courses-grid {
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-}
-
-.resources-grid {
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
 
 .service-card,
 .course-card,
@@ -211,6 +234,7 @@
   border: 1px solid rgba(163, 230, 53, 0.15);
   border-radius: var(--radius-xl);
   backdrop-filter: blur(10px);
+
   transition: all var(--transition-base);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   position: relative;

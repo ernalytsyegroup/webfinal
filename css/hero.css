@@ -1,3 +1,50 @@
+/* ===================== Responsive Hero Improvements ===================== */
+@media (max-width: 1024px) {
+  .hero-model {
+    width: 700px;
+    height: 480px;
+  }
+  .hero-carousel img {
+    --slide-w: 400px;
+    max-height: 300px;
+  }
+}
+@media (max-width: 768px) {
+  .hero {
+    height: 70vh;
+    min-height: 420px;
+  }
+  .hero-model {
+    width: 420px;
+    height: 260px;
+  }
+  .hero-carousel img {
+    --slide-w: 260px;
+    max-height: 180px;
+  }
+  .hero-title-badge {
+    font-size: 1.2rem;
+    padding: 6px 12px;
+  }
+}
+@media (max-width: 480px) {
+  .hero {
+    height: 56vh;
+    min-height: 260px;
+  }
+  .hero-model {
+    width: 220px;
+    height: 120px;
+  }
+  .hero-carousel img {
+    --slide-w: 120px;
+    max-height: 80px;
+  }
+  .hero-title-badge {
+    font-size: 1rem;
+    padding: 4px 8px;
+  }
+}
 /* Hero Section - Premium */
 .hero {
   position: relative;
