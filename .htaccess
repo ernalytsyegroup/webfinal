@@ -1,0 +1,15 @@
+# Habilita el motor de reescritura
+RewriteEngine On
+
+# Redirige URLs amigables a los archivos HTML dentro de /pages
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9-]+)/?$ pages/$1.html [L]
+
+# Opcional: permite también /galeria/3d a /pages/galeria/3d.html
+RewriteRule ^galeria/([a-zA-Z0-9-]+)/?$ pages/galeria/$1.html [L]
+
+# Opcional: permite también /servicios/servicio-estrategia a /pages/servicios/servicio-estrategia.html
+RewriteRule ^servicios/([a-zA-Z0-9-]+)/?$ pages/servicios/$1.html [L]
+
+# Fin de reglas
