@@ -1,3 +1,26 @@
+/* Botón badge verde para stats */
+.stat-badge-green {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: transparent;
+  border: 2px solid #a3e635;
+  color: #a3e635;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  padding: 4px 18px;
+  margin: 12px 0 8px 0;
+  outline: none;
+  box-shadow: none;
+  cursor: default;
+  transition: border-color 0.2s;
+}
+.stat-badge-green .stat-check {
+  color: #8b5cf6;
+  font-size: 1.1em;
+  font-weight: bold;
+}
 /* ===================== Responsive Sections Improvements ===================== */
 @media (max-width: 1024px) {
   .section-title {
