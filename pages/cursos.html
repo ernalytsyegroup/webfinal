@@ -15,6 +15,18 @@
 <body>
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
+        <script>
+            document.addEventListener('contextmenu', function(e) {
+                if (e.target.tagName === 'IMG') {
+                    e.preventDefault();
+                }
+            });
+            document.addEventListener('dragstart', function(e) {
+                if (e.target.tagName === 'IMG') {
+                    e.preventDefault();
+                }
+            });
+        </script>
         <div class="nav-container">
             <div class="nav-logo"><a href="../index.html">Mariángel Mujica</a></div>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
@@ -39,8 +51,8 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="page-header-content">
-            <h1 class="page-title">Nuestros <span class="highlight">Cursos</span></h1>
-            <p class="page-subtitle">Aprende de los mejores y lleva tus habilidades al siguiente nivel</p>
+            <h1 class="page-title"><span class="highlight">Capacitaciones</span></h1>
+            <p class="page-subtitle">Una forma práctica y didáctica de aprender para dar ese gran SALTO  en tus redes sociales.</p>
         </div>
     </section>
 

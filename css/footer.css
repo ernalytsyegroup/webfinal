@@ -1,3 +1,44 @@
+.footer-bottom.footer-legal {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+.footer-legal-links {
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1em;
+}
+.footer-legal-copyright {
+  text-align: center;
+  font-size: 0.95em;
+  font-weight: 400;
+  color: #fff;
+  margin-top: 0.3em;
+}
+/* Centrar y separar el copyright en el footer */
+.footer-legal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+  margin-top: 1em;
+}
+.footer-legal-right {
+  text-align: center;
+}
+.footer-legal-copyright {
+  text-align: center;
+  font-size: 0.95em;
+  font-weight: 400;
+  color: #fff;
+  margin-top: 0.3em;
+}
 /* ===================== Responsive Footer Improvements ===================== */
 @media (max-width: 1024px) {
   .footer {

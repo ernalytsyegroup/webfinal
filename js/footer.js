@@ -25,11 +25,14 @@ window.addEventListener('DOMContentLoaded', () => {
       if (footer) {
         document.body.appendChild(footer);
         initScrollingText();
+        console.log('[FOOTER DEBUG] Footer cargado y agregado al DOM');
+      } else {
+        console.warn('[FOOTER DEBUG] No se encontró el elemento <footer> en footer.html');
       }
     })
     .catch(error => {
-      console.error('Error loading footer:', error);
-      console.log('Attempted to load from:', footerPath);
+      console.error('[FOOTER DEBUG] Error loading footer:', error);
+      console.log('[FOOTER DEBUG] Attempted to load from:', footerPath);
     });
 });
 

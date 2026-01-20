@@ -20,6 +20,20 @@
 <body>
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
+        <script>
+            // Deshabilita clic derecho sobre imágenes
+            document.addEventListener('contextmenu', function(e) {
+                if (e.target.tagName === 'IMG') {
+                    e.preventDefault();
+                }
+            });
+            // Deshabilita arrastre de imágenes
+            document.addEventListener('dragstart', function(e) {
+                if (e.target.tagName === 'IMG') {
+                    e.preventDefault();
+                }
+            });
+        </script>
         <div class="nav-container">
             <div class="nav-logo">Mariángel Mujica</div>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">

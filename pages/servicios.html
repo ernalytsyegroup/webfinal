@@ -62,6 +62,18 @@
 <body>
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
+        <script>
+            document.addEventListener('contextmenu', function(e) {
+                if (e.target.tagName === 'IMG') {
+                    e.preventDefault();
+                }
+            });
+            document.addEventListener('dragstart', function(e) {
+                if (e.target.tagName === 'IMG') {
+                    e.preventDefault();
+                }
+            });
+        </script>
         <div class="nav-container">
             <div class="nav-logo"><a href="../index.html">Mariángel Mujica</a></div>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">

@@ -1,3 +1,37 @@
+/* Pinterest/Masonry Gallery Style */
+.gallery-grid.corporate-event-grid {
+  column-count: 4;
+  column-gap: 1.5em;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.gallery-item.corporate-event-item {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 1.5em;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  background: #181818;
+}
+.gallery-item.corporate-event-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 18px;
+}
+@media (max-width: 1100px) {
+  .gallery-grid.corporate-event-grid {
+    column-count: 2;
+  }
+}
+@media (max-width: 700px) {
+  .gallery-grid.corporate-event-grid {
+    column-count: 1;
+  }
+}
 /* ===================== Responsive Pages Improvements ===================== */
 @media (max-width: 1024px) {
   .client-bar-green {

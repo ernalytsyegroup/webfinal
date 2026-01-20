@@ -143,6 +143,18 @@
 <body>
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
+        <script>
+            document.addEventListener('contextmenu', function(e) {
+                if (e.target.tagName === 'IMG') {
+                    e.preventDefault();
+                }
+            });
+            document.addEventListener('dragstart', function(e) {
+                if (e.target.tagName === 'IMG') {
+                    e.preventDefault();
+                }
+            });
+        </script>
         <div class="nav-container">
             <a href="../index.html" class="nav-logo">Mariángel Mujica</a>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
@@ -195,13 +207,13 @@
                 <div class="info-card">
                     <span class="info-icon">📧</span>
                     <h3 class="info-title">Email</h3>
-                    <p class="info-text">info@portfolio.com</p>
+                    <p class="info-text">isthebigleap@gmail.com</p>
                 </div>
 
                 <div class="info-card">
                     <span class="info-icon">📱</span>
                     <h3 class="info-title">Teléfono</h3>
-                    <p class="info-text">+34 123 456 789</p>
+                    <p class="info-text">+58 414-5364028</p>
                 </div>
             </div>
         </div>

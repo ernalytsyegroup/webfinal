@@ -36,6 +36,18 @@
 <body>
     <nav class="navbar" id="navbar">
         <div class="nav-container">
+        <script>
+            document.addEventListener('contextmenu', function(e) {
+                if (e.target.tagName === 'IMG') {
+                    e.preventDefault();
+                }
+            });
+            document.addEventListener('dragstart', function(e) {
+                if (e.target.tagName === 'IMG') {
+                    e.preventDefault();
+                }
+            });
+        </script>
             <div class="nav-logo"><a href="../index.html">Mariángel Mujica</a></div>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
                 <span></span>
@@ -65,7 +77,7 @@
 
         <div class="cs-card" role="main">
             <div class="label">REVISTA</div>
-            <h1 class="title">Big Leap <span class="glow">360</span></h1>
+            <h1 class="title">Big Leap <span class="glow">360°</span></h1>
             <p class="subtitle">Una mirada 360° a marketing, con emoción y creatividad — Próximamente</p>
             <div class="loading-bar" style="margin: 24px auto 10px auto;">
                 <div class="loading-bar-progress"></div>

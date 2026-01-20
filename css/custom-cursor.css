@@ -1,3 +1,7 @@
+/* Evita el arrastre de imágenes */
+img {
+  -webkit-user-drag: none;
+}
 /* Enhanced cursor to be a larger, more diffuse glow effect */
 .cursor-tracker {
   position: fixed;

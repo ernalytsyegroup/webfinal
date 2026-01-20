@@ -30,6 +30,18 @@
 <body>
     <nav class="navbar" id="navbar">
         <div class="nav-container">
+        <script>
+            document.addEventListener('contextmenu', function(e) {
+                if (e.target.tagName === 'IMG') {
+                    e.preventDefault();
+                }
+            });
+            document.addEventListener('dragstart', function(e) {
+                if (e.target.tagName === 'IMG') {
+                    e.preventDefault();
+                }
+            });
+        </script>
             <div class="nav-logo"><a href="../index.html">Mariángel Mujica</a></div>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
                 <span></span>
@@ -57,13 +69,12 @@
         <div class="global-shape s3"></div>
 
         <div class="cs-card" role="main">
-            <div class="label">RECURSOS</div>
-            <h1 class="title">RECURSOS PRONTO AQUÍ</h1>
-            <p class="subtitle">Muy pronto podrás encontrar recursos y herramientas útiles en esta sección.</p>
+            <div class="label">¡RECURSOS PRONTO AQUÍ</div>
+            <h1 class="title">¡Próximamente!</h1>
+            <p class="subtitle">Podrás descargar recursos y herramientas que te ayudarán a impulsar tu negocio.</p>
             <div class="loading-bar" style="margin: 24px auto 10px auto;">
                 <div class="loading-bar-progress"></div>
             </div>
-            <p class="meta">Estamos preparando recursos y herramientas útiles para ti. Mantente atento a las novedades.</p>
             <a href="../index.html" class="cta">Volver al inicio</a>
         </div>
 
