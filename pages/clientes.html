@@ -124,41 +124,50 @@ Ellos confian el trabajo que junto con mi equipo realizamos.</p>
     </style>
     <script src="../js/navigation.js"></script>
     <script>
-    // Lista de imágenes de clientes
-    const clientesFotos = [
-        "Cabral logo-negro.png",
-        "Stephanie Cabral.jpg",
-        "WM WEB.jpeg",
-        "TERESA RIVERA.jpeg",
-        "Abogado Roberto Ortiz.png",
-        "Alvaro Lesmes Post.png",
-        "Brigitte Capontes.png",
-        "Christrine Cabral.JPG",
-        "Deyaneydis de la Cruz.JPG",
-        "Elena Ruiz.jpg",
-        "isis realtor.jpg",
-        "Latinas Reales.jpg",
-        "Lina Cardona.jpeg",
-        "Majos Magic Decorations balloons.png",
-        "Marcela Rendon.jpeg",
-        "Maria Fernanda.jpg",
-        "Mariel Perez.jpeg",
-        "Monica Carvajal.jpeg",
-        "Post Ricardo Sabogal.png",
-        "POST TORRE MILENIUM.png",
-        "Valeria Vallina.png"
+    // Lista de clientes: archivo y nombre a mostrar
+    const clientes = [
+        { archivo: "Cabral logo-negro.png", nombre: "Cabral Group" },
+        { archivo: "Stephanie Cabral.jpg", nombre: "Stephanie Cabral" },
+        { archivo: "WM WEB.jpeg", nombre: "WM WEB" },
+        { archivo: "TERESA RIVERA.jpeg", nombre: "Teresa Rivera" },
+        { archivo: "Abogado Roberto Ortiz.png", nombre: "Roberto Ortiz" },
+        { archivo: "Alvaro Lesmes Post.png", nombre: "Alvaro Lesmes" },
+        { archivo: "Brigitte Capontes.png", nombre: "Brigitte Capontes" },
+        { archivo: "Christrine Cabral.JPG", nombre: "Christrine Cabral" },
+        { archivo: "Deyaneydis de la Cruz}.JPG", nombre: "Deyaneydis de la Cruz" },
+        { archivo: "Elena Ruiz.jpg", nombre: "Elena Ruiz" },
+        { archivo: "isis realtor.jpg", nombre: "Isis Realtor" },
+        { archivo: "Latinas Reales.jpg", nombre: "Latinas Reales" },
+        { archivo: "Lina Cardona.jpeg", nombre: "Lina Cardona" },
+        { archivo: "Majos Magic Decorations balloons.png", nombre: "Majos Magic Decorations" },
+        { archivo: "Marcela Rendon.jpeg", nombre: "Marcela Rendon" },
+        { archivo: "Maria Fernanda.jpg", nombre: "Maria Fernanda" },
+        { archivo: "Mariel Perez.jpeg", nombre: "Mariel Perez" },
+        { archivo: "Monica Carvajal.jpeg", nombre: "Monica Carvajal" },
+        { archivo: "Post Ricardo Sabogal.png", nombre: "Ricardo Sabogal" },
+        { archivo: "POST TORRE MILENIUM.png", nombre: "Torre Milenium" },
+        { archivo: "Valeria Vallina.png", nombre: "Valeria Vallina" },
+        // Nuevos clientes agregados
+        { archivo: "Beatriz Acevedo.jpeg", nombre: "Beatriz Acevedo" },
+        { archivo: "Giovanna Piskulich.jpeg", nombre: "Giovanna Piskulich" },
+        { archivo: "Belkys Cuello.jpeg", nombre: "Belkys Cuello" },
+        { archivo: "Marcela Santa María.jpeg", nombre: "Marcela Santa María" },
+        { archivo: "Luz Paulino.jpeg", nombre: "Luz Paulino" },
+        { archivo: "Mirna Núñez.jpeg", nombre: "Mirna Núñez" },
+        { archivo: "Andrea Ángel.jpeg", nombre: "Andrea Ángel" },
+        { archivo: "Adrianeth Chacón.jpg", nombre: "Adrianeth Chacón" }
     ];
     const galleryMasonry = document.getElementById('galleryMasonry');
-    clientesFotos.forEach(foto => {
+    clientes.forEach(cliente => {
         const item = document.createElement('div');
         item.className = 'gallery-masonry-item';
         const img = document.createElement('img');
-        img.src = `../models/clientes-fotos/${foto}`;
-        img.alt = foto.replace(/\.[^/.]+$/, "");
+        img.src = `../models/clientes-fotos/${cliente.archivo}`;
+        img.alt = cliente.nombre;
         img.loading = 'lazy';
         const title = document.createElement('div');
         title.className = 'item-title';
-        title.textContent = img.alt;
+        title.textContent = cliente.nombre;
         item.appendChild(img);
         item.appendChild(title);
         galleryMasonry.appendChild(item);
