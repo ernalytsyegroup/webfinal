@@ -36,14 +36,14 @@
             </button>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="../index.html" class="nav-link">Inicio</a></li>
-                <li><a href="/sobre-mi" class="nav-link">Sobre Mí</a></li>
-                <li><a href="/servicios" class="nav-link">Servicios</a></li>
-                <li><a href="/galeria" class="nav-link">Galería</a></li>
-                <li><a href="/cursos" class="nav-link">Cursos</a></li>
-                <li><a href="/recursos" class="nav-link">Recursos</a></li>
-                <li><a href="/revista" class="nav-link">Revista</a></li>
-                <li><a href="/clientes" class="nav-link active">Clientes</a></li>
-                <li><a href="/contacto" class="nav-link">Contacto</a></li>
+                <li><a href="/pages/sobre-mi.html" class="nav-link">Sobre Mí</a></li>
+                <li><a href="/pages/servicios.html" class="nav-link">Servicios</a></li>
+                <li><a href="/pages/galeria.html" class="nav-link">Galería</a></li>
+                <li><a href="/pages/cursos.html" class="nav-link">Cursos</a></li>
+                <li><a href="/pages/recursos.html" class="nav-link">Recursos</a></li>
+                <li><a href="/pages/revista.html" class="nav-link">Revista</a></li>
+                <li><a href="/pages/clientes.html" class="nav-link active">Clientes</a></li>
+                <li><a href="/pages/contacto.html" class="nav-link">Contacto</a></li>
             </ul>
         </div>
     </nav>
@@ -128,7 +128,7 @@ Ellos confian el trabajo que junto con mi equipo realizamos.</p>
     const clientes = [
         { archivo: "Cabral logo-negro.png", nombre: "Cabral Group" },
         { archivo: "Stephanie Cabral.jpg", nombre: "Stephanie Cabral" },
-        { archivo: "WM WEB.jpeg", nombre: "WM WEB" },
+        { archivo: "WM WEB.jpeg", nombre: "Willian Meza y Asociados" },
         { archivo: "TERESA RIVERA.jpeg", nombre: "Teresa Rivera" },
         { archivo: "Abogado Roberto Ortiz.png", nombre: "Roberto Ortiz" },
         { archivo: "Alvaro Lesmes Post.png", nombre: "Alvaro Lesmes" },
@@ -162,7 +162,9 @@ Ellos confian el trabajo que junto con mi equipo realizamos.</p>
         const item = document.createElement('div');
         item.className = 'gallery-masonry-item';
         const img = document.createElement('img');
-        img.src = `../models/clientes-fotos/${cliente.archivo}`;
+        // Reemplazar espacios por %20 en el nombre del archivo
+        const archivoURL = encodeURIComponent(cliente.archivo).replace(/%2F/g, '/');
+        img.src = `../models/clientes-fotos/${archivoURL}`;
         img.alt = cliente.nombre;
         img.loading = 'lazy';
         const title = document.createElement('div');
