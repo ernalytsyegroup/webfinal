@@ -1,3 +1,124 @@
+/* Estilos para fecha y contador del webinar */
+.webinar-date-block {
+  background: none;
+}
+.date-box {
+  background: rgba(24,24,24,0.92);
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(163,230,53,0.10);
+  border: 1.5px solid #222;
+  padding: 18px 24px 10px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 80px;
+}
+.date-num {
+  color: #ff9800;
+  font-size: 2.1em;
+  font-weight: 800;
+  margin-bottom: 2px;
+}
+.date-label {
+  color: #fff;
+  font-size: 1em;
+  font-weight: 600;
+  opacity: 0.8;
+}
+.countdown-box {
+  background: rgba(24,24,24,0.92);
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(163,230,53,0.10);
+  border: 1.5px solid #222;
+  padding: 18px 24px 10px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 80px;
+}
+.countdown-num {
+  color: #a3e635;
+  font-size: 2.1em;
+  font-weight: 800;
+  margin-bottom: 2px;
+}
+.countdown-label {
+  color: #fff;
+  font-size: 1em;
+  font-weight: 600;
+  opacity: 0.8;
+}
+/* Estilo para la 'a' entre QUEMADAS y RENTABLES */
+.subtitle-a {
+  font-weight: 700;
+  color: #fff;
+  margin-left: 0.4em;
+  margin-right: 0.4em;
+  font-size: 1.15em;
+  letter-spacing: 1px;
+  vertical-align: middle;
+  display: inline-block;
+}
+/* Animaciones para palabras clave en el subtítulo del webinar */
+/* Animación llamas para QEMADAS */
+.anim-fire {
+  position: relative;
+  color: #ff9800;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-right: 0;
+  animation: shake-fire 1.2s infinite alternate;
+  text-transform: uppercase;
+}
+.anim-fire::after {
+  content: '🔥';
+  position: relative;
+  top: -0.2em;
+  font-size: 1.1em;
+  margin-left: 0.6em;
+  animation: flame-flicker 0.7s infinite alternate;
+}
+@keyframes shake-fire {
+  0% { transform: rotate(-2deg) scale(1); }
+  100% { transform: rotate(2deg) scale(1.05); }
+}
+@keyframes flame-flicker {
+  0% { filter: brightness(1.1) drop-shadow(0 0 4px #ff9800); }
+  100% { filter: brightness(1.5) drop-shadow(0 0 8px #ff9800); }
+}
+
+/* Animación dinero para RENTABLES */
+.anim-money {
+  position: relative;
+  color: #a3e635;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-left: 0;
+  animation: bounce-money 1.3s infinite alternate;
+  text-transform: uppercase;
+}
+.anim-money::after {
+  content: '💸';
+  position: relative;
+  top: -0.2em;
+  font-size: 1.1em;
+  margin-left: 0.6em;
+  animation: money-bounce 0.8s infinite alternate, money-glow 1.2s infinite alternate;
+}
+
+@keyframes money-glow {
+  0% { filter: brightness(1.1) drop-shadow(0 0 4px #a3e635); }
+  50% { filter: brightness(2) drop-shadow(0 0 12px #fff) drop-shadow(0 0 8px #a3e635); }
+  100% { filter: brightness(1.1) drop-shadow(0 0 4px #a3e635); }
+}
+@keyframes bounce-money {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-3px) scale(1.08); }
+}
+@keyframes money-bounce {
+  0% { filter: brightness(1.1) drop-shadow(0 0 4px #a3e635); }
+  100% { filter: brightness(1.5) drop-shadow(0 0 8px #a3e635); }
+}
 /* Pinterest/Masonry Gallery Style */
 .gallery-grid.corporate-event-grid {
   column-count: 4;

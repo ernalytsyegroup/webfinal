@@ -1,0 +1,32 @@
+
+.fueguito-animado {
+    position: fixed;
+    bottom: 0;
+    width: 32px;
+    height: 32px;
+    pointer-events: none;
+    z-index: 100;
+    /* background: url('../images/fuego.png') no-repeat center/contain; */
+    animation: fueguito-flotar 3.5s linear;
+    opacity: 0.85;
+}
+
+@keyframes fueguito-flotar {
+    0% { transform: translateY(0) scale(1); opacity: 0.85; }
+    60% { opacity: 1; }
+    100% { transform: translateY(-90vh) scale(1.2); opacity: 0; }
+}
+
+/* Si no tienes fuego.png, puedes usar emoji 🔥 */
+.fueguito-animado {
+    background: none;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    filter: drop-shadow(0 0 8px #ff9800);
+}
+.fueguito-dinero {
+    filter: drop-shadow(0 0 8px #a3e635);
+}
