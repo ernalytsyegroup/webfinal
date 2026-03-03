@@ -1,382 +1,446 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-                    <style>
-                    .confirm-title {
-                        color: #a3e635;
-                        font-size: 2em;
-                        margin-bottom: 18px;
-                        font-weight: 900;
-                        text-shadow: 0 2px 16px #a3e63555;
-                    }
-                    .confirm-strong {
-                        color: #a3e635;
-                        font-weight: 900;
-                    }
-                    .confirm-orange {
-                        color: #ff9800;
-                        font-weight: 900;
-                    }
-                    .confirm-btn {
-                        background: linear-gradient(90deg, #a3e635 60%, #7ed957 100%);
-                        color: #181818;
-                        font-weight: 900;
-                        font-size: 1.1em;
-                        padding: 14px 32px;
-                        border-radius: 8px;
-                        border: none;
-                        cursor: pointer;
-                        box-shadow: 0 2px 12px #a3e635;
-                        text-decoration: none;
-                        display: inline-block;
-                        transition: background 0.2s;
-                    }
-                    .confirm-btn:hover {
-                        background: linear-gradient(90deg, #7ed957 0%, #a3e635 100%);
-                        color: #fff;
-                    }
-                    </style>
-                <style>
-                .confirm-bg-anim {
-                    position: fixed;
-                    inset: 0;
-                    z-index: 0;
-                    pointer-events: none;
-                    background: radial-gradient(circle at 30% 30%, #a3e63522 0, transparent 60%),
-                                radial-gradient(circle at 70% 70%, #25d36622 0, transparent 60%),
-                                #05060a;
-                    animation: bg-move 8s linear infinite alternate;
-                }
-                @keyframes bg-move {
-                    0% { background-position: 30% 30%, 70% 70%; }
-                    100% { background-position: 40% 40%, 60% 60%; }
-                }
-                .fueguito-float {
-                    position: absolute;
-                    font-size: 2.2em;
-                    animation: float-fuego 2.5s ease-in-out infinite alternate;
-                    pointer-events: none;
-                }
-                .fueguito-float.f1 { left: 10vw; top: 12vh; animation-delay: 0s; }
-                .fueguito-float.f2 { right: 12vw; top: 18vh; animation-delay: 0.7s; }
-                .fueguito-float.f3 { left: 20vw; bottom: 10vh; animation-delay: 1.2s; }
-                .fueguito-float.f4 { right: 18vw; bottom: 14vh; animation-delay: 1.7s; }
-                @keyframes float-fuego {
-                    0% { transform: translateY(0) scale(1); opacity: 0.8; }
-                    100% { transform: translateY(-24px) scale(1.15); opacity: 1; }
-                }
-                .confirm-anim {
-                    animation: confirm-in 1.1s cubic-bezier(.68,-0.55,.27,1.55);
-                }
-                @keyframes confirm-in {
-                    0% { opacity: 0; transform: scale(0.7) translateY(60px); }
-                    100% { opacity: 1; transform: scale(1) translateY(0); }
-                }
-                </style>
-            <style>
-            .confirm-page {
-                min-height: 100vh;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                background: var(--bg, #05060a);
-                color: #fff;
-                text-align: center;
-                padding: 32px 12px;
-                position: fixed;
-                top: 0; left: 0; width: 100vw; height: 100vh;
-                z-index: 99999;
-            }
-            .confirm-fire {
-                font-size: 2.5em;
-                margin-bottom: 10px;
-                animation: shake-fire 1.2s infinite alternate;
-                display: inline-block;
-            }
-            .confirm-money {
-                font-size: 2.5em;
-                margin-bottom: 10px;
-                animation: money-bounce 1.3s infinite alternate;
-                display: inline-block;
-            }
-            .confirm-btn {
-                margin-top: 24px;
-                background: #25d366;
-                color: #181818;
-                font-weight: 900;
-                font-size: 1.1em;
-                padding: 14px 32px;
-                border-radius: 8px;
-                border: none;
-                cursor: pointer;
-                box-shadow: 0 2px 12px #25d366;
-                text-decoration: none;
-                display: inline-block;
-            }
-            </style>
-        <style>
-        .reset-modal {
-            display: none;
-            position: fixed;
-            inset: 0;
-            z-index: 9999;
-            pointer-events: none;
-        }
-        .reset-modal.active {
-            display: flex;
-            pointer-events: auto;
-        }
-        .reset-modal-card {
-            background: rgba(24,24,24,0.98);
-            border-radius: 28px;
-            max-width: 700px;
-            width: 90vw;
-            padding: 48px 32px;
-            box-shadow: 0 8px 40px 0 rgba(163,230,53,0.13),0 1.5px 12px 0 rgba(163,230,53,0.10);
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: auto;
-            z-index: 10000;
-        }
-        @media (max-width: 600px) {
-            .reset-modal-card {
-                padding: 24px 8px;
-            }
-        }
-        </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webinar | Mariángel Mujica</title>
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/variables.css">
-    <link rel="stylesheet" href="../css/navigation.css">
-    <link rel="stylesheet" href="../css/sections.css">
-    <!-- <link rel="stylesheet" href="../css/footer.css"> -->
-        <link rel="stylesheet" href="../css/custom-cursor.css">
-    <link rel="stylesheet" href="../css/pages.css">
-        <link rel="stylesheet" href="../css/fueguitos.css">
+    <title>Meta Ads: Tu Reset Inmobiliario | Mariángel Mujica</title>
     <style>
-        :root{--accent:#a3e635;--bg:#05060a}
-        html,body{height:100%}
-        body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;background:var(--bg);color:#fff}
-        .cs-hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:0;z-index:100;}
-        main, .cs-card{position:relative;z-index:100 !important;}
-        .cs-card{width:100%;max-width:700px;text-align:center;padding:56px 32px 48px 32px;border-radius:28px;background:rgba(24,24,24,0.98);border:1.5px solid #222;box-shadow:0 8px 40px 0 rgba(163,230,53,0.13),0 1.5px 12px 0 rgba(163,230,53,0.10);backdrop-filter:blur(2px);margin:48px 0;}
-        .label{display:inline-block;padding:6px 12px;border-radius:999px;background:rgba(163,230,53,0.12);color:var(--accent);font-weight:700;margin-bottom:18px}
-        .title{font-size:2.2rem;letter-spacing:0.6px;margin:6px 0;color:#fff;text-shadow:0 6px 30px rgba(163,230,53,0.08)}
-        .title .glow{color:var(--accent);text-shadow:0 6px 40px rgba(163,230,53,0.25);animation:glow 2.8s ease-in-out infinite}
-        @keyframes glow{0%{filter:blur(0px);opacity:0.95}50%{filter:blur(1.5px);opacity:1}100%{filter:blur(0px);opacity:0.95}}
-        .subtitle{color:rgba(255,255,255,0.75);font-size:1.05rem;margin-top:10px}
-        .meta{margin-top:28px;color:rgba(255,255,255,0.5)}
-        .cta{margin-top:30px;display:inline-block;padding:12px 20px;border-radius:12px;background:transparent;border:1px solid rgba(163,230,53,0.12);color:var(--accent);font-weight:700;text-decoration:none}
-        .webinar-list{list-style:none;padding-left:0;margin:18px 0 0 0}
-        .webinar-list li{margin-bottom:0.5em;font-size:1.08em;text-align:left;line-height:1.5;display:flex;align-items:center;gap:8px}
-        .webinar-list li .emoji{font-size:1.2em;margin-right:6px}
-        .webinar-btn-main{margin-top:32px;display:inline-block;padding:16px 32px;border-radius:12px;background:var(--accent);color:#181818;font-weight:800;font-size:1.15rem;text-decoration:none;box-shadow:0 2px 12px var(--primary-glow);transition:background 0.2s, color 0.2s, box-shadow 0.2s;}
-        .webinar-btn-main:hover{background:var(--primary-dark);color:#fff;box-shadow:0 4px 24px var(--primary-glow)}
-        @media (max-width:720px){.title{font-size:1.5rem;padding:0 8px}.cs-card{padding:24px}}
+        :root {
+            --bg: #05060a;
+            --card-bg: rgba(24, 24, 24, 0.98);
+            --accent: #a3e635;
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;
+            --orange: #ff9800;
+            --danger: #ff4444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Estilos de las animaciones (Fuego y Billetes) */
+        .fueguito-animado {
+            position: fixed;
+            bottom: -50px;
+            font-size: 2rem;
+            pointer-events: none;
+            z-index: 9999;
+            animation: subirYSalir linear forwards;
+        }
+
+        @keyframes subirYSalir {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        header {
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(163, 230, 53, 0.1);
+            color: var(--accent);
+            padding: 8px 16px;
+            border-radius: 99px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border: 1px solid rgba(163, 230, 53, 0.2);
+        }
+
+        h1 {
+            font-size: clamp(2.2rem, 7vw, 3.5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .sub-headline {
+            font-size: 1.4rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .highlight { color: var(--accent); }
+
+        .speaker-banner {
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            background: #111827;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(163, 230, 53, 0.2);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+
+        .speaker-banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+            aspect-ratio: 16 / 7; 
+            object-fit: cover;
+        }
+
+        .event-date {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        /* Contador */
+        .timer-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0 40px;
+        }
+
+        .timer-box {
+            background: #12141a;
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 12px;
+            min-width: 85px;
+            text-align: center;
+        }
+
+        .timer-num {
+            display: block;
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--accent);
+        }
+
+        .timer-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        .btn-main {
+            display: inline-block;
+            background: var(--accent);
+            color: #000;
+            padding: 22px 50px;
+            border-radius: 14px;
+            font-weight: 900;
+            font-size: 1.25rem;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(163, 230, 53, 0.3);
+            text-transform: uppercase;
+        }
+
+        .btn-main:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(163, 230, 53, 0.5);
+        }
+
+        /* Secciones de Contenido */
+        .pain-points {
+            background: rgba(255, 68, 68, 0.03);
+            border-radius: 24px;
+            padding: 40px;
+            margin: 40px 0;
+            border: 1px dashed rgba(255, 68, 68, 0.2);
+        }
+
+        .pain-points h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--danger);
+        }
+
+        .pain-list { list-style: none; }
+        .pain-list li {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            display: flex;
+            gap: 10px;
+        }
+
+        .revelation-grid { margin: 60px 0; }
+        .revelation-item {
+            margin-bottom: 40px;
+            border-left: 4px solid var(--accent);
+            padding-left: 20px;
+        }
+
+        .revelation-item h3 {
+            color: var(--danger);
+            text-decoration: line-through;
+            font-size: 1.1rem;
+            opacity: 0.7;
+            margin-bottom: 5px;
+        }
+
+        .revelation-item p.truth {
+            font-size: 1.3rem;
+            color: white;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .check-list { list-style: none; margin: 40px 0; }
+        .check-list li {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 18px;
+            font-size: 1.1rem;
+        }
+        .check-list .icon { color: var(--accent); font-weight: 900; }
+
+        /* Formulario */
+        .register-section {
+            padding: 80px 0;
+            scroll-margin-top: 60px;
+        }
+
+        .register-card {
+            max-width: 480px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 32px;
+            padding: 50px 40px;
+            border: 1px solid rgba(163,230,53,0.2);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+        }
+
+        .register-card h2 {
+            color: var(--accent);
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 900;
+        }
+
+        .form-group { margin-bottom: 20px; }
+
+        input {
+            width: 100%;
+            padding: 16px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            color: white;
+            font-size: 16px;
+        }
+
+        .input-row { display: flex; gap: 12px; }
+        .input-row .code-input { width: 100px; flex-shrink: 0; }
+        .input-row .phone-input { flex-grow: 1; }
+
+        .btn-submit {
+            width: 100%;
+            background: var(--accent);
+            color: #000;
+            padding: 18px;
+            border: none;
+            border-radius: 12px;
+            font-weight: 900;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        #success-view { display: none; text-align: center; }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .pain-points { padding: 25px 15px; }
+            .register-card { padding: 40px 20px; }
+        }
     </style>
 </head>
 <body>
-    <!-- Navegación principal -->
-    <nav role="navigation" aria-label="Menú principal">
-        <!-- ...existing navigation code... -->
-    </nav>
-    <div class="cursor-tracker" aria-hidden="true"></div>
 
-    <main class="cs-hero reveal revealed" data-anim="zoom" data-delay="100" role="main">
-        <div class="global-bg-gradient" aria-hidden="true"></div>
-        <div class="global-shape s1" aria-hidden="true"></div>
-        <div class="global-shape s2" aria-hidden="true"></div>
-        <div class="global-shape s3" aria-hidden="true"></div>
-        <section class="cs-card reveal revealed" data-anim="fade-up" data-delay="200" aria-labelledby="webinar-title">
-            <div class="label reveal revealed" data-anim="fade-down" data-delay="300">WEBINAR</div>
-            <h1 id="webinar-title" class="title reveal revealed" data-anim="zoom" data-delay="400">Meta Ads: <span class="glow">Tu Reset Inmobiliario</span></h1>
-            <p class="subtitle reveal revealed" data-anim="fade-up" data-delay="500">De campañas <span class="anim-fire">QUEMADAS</span> <span class="subtitle-a">a</span><span class="anim-money">RENTABLES</span></p>
-            <p class="meta reveal revealed" data-anim="fade-up" data-delay="600">Webinar en vivo para asesores inmobiliarios que ya invirtieron en publicidad y no obtuvieron resultados</p>
-            <div class="reveal revealed" data-anim="zoom" data-delay="650" style="margin: 24px auto 10px auto;">
-                <img src="/images/BANNER LANDING MM.jpg" alt="Banner del Webinar Meta Ads" style="max-width:100%;border-radius:16px;box-shadow:0 4px 32px rgba(163,230,53,0.10);margin-bottom:12px;">
+    <header>
+        <div class="container">
+            <span class="badge">WEBINAR EN VIVO</span>
+            <h1>META ADS: TU <span class="highlight">RESET INMOBILIARIO</span></h1>
+            <p class="sub-headline">De campañas quemadas a rentables</p>
+            
+            <div class="speaker-banner">
+                <!-- Reemplaza el src con la URL de tu imagen de banner -->
+                <img src="/images/BANNER LANDING MM.jpg" alt="Banner del Webinar">
             </div>
 
-            <div class="webinar-list-block reveal revealed" data-anim="fade-left" data-delay="800">
-                <p style="font-weight:600; color:var(--accent);margin-bottom:0.5em;">¿Sientes que tu presupuesto está en llamas?</p>
-                <ul class="webinar-list" aria-label="Problemas comunes de campañas">
-                    <li><span class="emoji">🔥</span>Tu dinero se consume en días</li>
-                    <li><span class="emoji">🔥</span>Llegan leads que no responden</li>
-                    <li><span class="emoji">🔥</span>El CPL sube</li>
-                    <li><span class="emoji">🔥</span>No se generan citas calificadas.</li>
-                </ul>
-                <p style="font-weight:600; color:var(--accent);margin:1.2em 0 0.5em 0;">En este webinar descubrirás la verdad detrás de:</p>
-                <ul class="webinar-list">
-                    <li><span class="emoji">🔥</span>“Necesito más presupuesto para que funcione.”</li>
-                    <li><span class="emoji">🧯</span>¿Qué realmente hace rentable una campaña?</li>
-                    <li><span class="emoji">🔥</span>“El problema es la segmentación.”</li>
-                    <li><span class="emoji">🧯</span>¿Por qué la estructura pesa más que el targeting?</li>
-                    <li><span class="emoji">🔥</span>“Con cambiar el anuncio basta.”</li>
-                    <li><span class="emoji">🧯</span>¿El rol del perfil y el embudo en la conversión?</li>
-                </ul>
-            </div>
-            <div class="meta reveal revealed" data-anim="fade-right" data-delay="900" style="margin:1.5em 0 0.5em 0;color:var(--accent);font-weight:700;">Conocerás el método que te permite apagar errores estructurales y recuperar el control de tus Meta Ads.</div>
-            <div class="webinar-list-block reveal revealed" data-anim="fade-up" data-delay="1000">
-                <p style="font-weight:700; color:#fff;margin-bottom:0.5em;">Este evento es para ti si:</p>
-                <ul class="webinar-list">
-                    <li><span class="emoji">✔️</span>Ya invertiste y no obtuviste resultados</li>
-                    <li><span class="emoji">✔️</span>Quieres leads calificados</li>
-                    <li><span class="emoji">✔️</span>Necesitas un sistema</li>
-                    <li><span class="emoji">✔️</span>Quieres volver a tener control sobre tu inversión</li>
-                </ul>
-            </div>
-            <p class="meta reveal revealed" data-anim="fade-up" data-delay="1100" style="margin:1.2em 0 0.5em 0;">Saldrás con claridad y un plan para dejar de invertir sin estrategia.</p>
-            <button id="resetModalBtn" class="reset-btn reveal revealed" data-anim="fade-up" data-delay="1200" style="background:#0a3abf;color:#fff;font-weight:800;font-size:1.1em;padding:10px 24px;border-radius:6px;border:none;cursor:pointer;display:flex;align-items:center;gap:10px;margin:0 auto 18px auto;box-shadow:0 2px 12px #0a3abf;">
-                <span style="font-size:1.3em;">👇</span> Si estás listo para hacer el <span style="font-weight:900;">RESET</span> <span style="font-size:1.3em;">👇</span>
-            </button>
+            <p class="event-date">19 de Marzo | 7:00 PM Miami</p>
 
-            <!-- Modal de registro -->
-            <div id="resetModal" class="reset-modal">
-                <div class="reset-modal-card">
-                    <!-- Animaciones fuego y dinero -->
-                    <div class="modal-anim-fire" style="position:absolute;top:-32px;left:32px;font-size:2.2em;animation:shake-fire 1.2s infinite alternate;">🔥</div>
-                    <div class="modal-anim-money" style="position:absolute;top:-32px;right:32px;font-size:2.2em;animation:money-bounce 1.3s infinite alternate;">💸</div>
-                    <button id="resetModalClose" aria-label="Cerrar" style="position:absolute;top:18px;right:18px;background:none;border:none;font-size:2em;color:#fff;cursor:pointer;">&times;</button>
-                    <h2 style="color:var(--accent);margin-bottom:18px;font-size:1.5em;font-weight:900;">¡Haz tu RESET ahora!</h2>
-                    <form id="resetForm" style="width:100%;max-width:400px;display:flex;flex-direction:column;gap:18px;">
-                        <input type="text" name="nombre" placeholder="Nombre completo" required style="padding:12px 14px;border-radius:8px;border:1.5px solid #222;background:#181818;color:#fff;font-size:1em;">
-                        <input type="tel" name="celular" placeholder="Celular" required style="padding:12px 14px;border-radius:8px;border:1.5px solid #222;background:#181818;color:#fff;font-size:1em;">
-                        <input type="text" name="pais" placeholder="País" required style="padding:12px 14px;border-radius:8px;border:1.5px solid #222;background:#181818;color:#fff;font-size:1em;">
-                        <input type="email" name="correo" placeholder="Correo electrónico" required style="padding:12px 14px;border-radius:8px;border:1.5px solid #222;background:#181818;color:#fff;font-size:1em;">
-                        <button type="submit" style="margin-top:10px;background:var(--accent);color:#181818;font-weight:900;font-size:1.1em;padding:14px 0;border-radius:8px;border:none;cursor:pointer;box-shadow:0 2px 12px var(--accent);">Registrarme</button>
-                    </form>
-                </div>
+            <div class="timer-container" id="timer">
+                <div class="timer-box"><span class="timer-num" id="days">00</span><span class="timer-label">Días</span></div>
+                <div class="timer-box"><span class="timer-num" id="hours">00</span><span class="timer-label">Horas</span></div>
+                <div class="timer-box"><span class="timer-num" id="minutes">00</span><span class="timer-label">Min</span></div>
+                <div class="timer-box"><span class="timer-num" id="seconds">00</span><span class="timer-label">Seg</span></div>
             </div>
-            <!-- Botón de registro y modales eliminados -->
-            <!-- Bloque de fecha y contador SOLO dentro del card -->
-            <div class="webinar-date-block reveal revealed" style="margin-top: 32px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                <div style="display: flex; gap: 24px; margin-bottom: 18px; justify-content: center;">
-                    <div class="date-box">
-                        <span class="date-num">19</span>
-                        <span class="date-label">DÍA</span>
-                    </div>
-                    <div class="date-box">
-                        <span class="date-num">03</span>
-                        <span class="date-label">MES</span>
-                    </div>
-                    <div class="date-box">
-                        <span class="date-num">2026</span>
-                        <span class="date-label">AÑO</span>
-                    </div>
-                </div>
-                <div style="color: var(--accent); font-weight: 700; font-size: 1.1em; margin-bottom: 12px; text-align: center;">Horario Miami: 18:00</div>
-                <div style="color: #fff; font-size: 1.05em; margin-bottom: 12px; text-align: center;">Faltan solo:</div>
-                <div id="webinar-countdown" style="display: flex; gap: 18px; justify-content: center;">
-                    <div class="countdown-box">
-                        <span class="countdown-num" id="countdown-days">00</span>
-                        <span class="countdown-label">DÍAS</span>
-                    </div>
-                    <div class="countdown-box">
-                        <span class="countdown-num" id="countdown-hours">00</span>
-                        <span class="countdown-label">HORAS</span>
-                    </div>
-                    <div class="countdown-box">
-                        <span class="countdown-num" id="countdown-minutes">00</span>
-                        <span class="countdown-label">MINUTOS</span>
-                    </div>
-                    <div class="countdown-box">
-                        <span class="countdown-num" id="countdown-seconds">00</span>
-                        <span class="countdown-label">SEGUNDOS</span>
-                    </div>
-                </div>
+
+            <button class="btn-main" id="hero-btn" onclick="scrollToRegister()">[ QUIERO REGISTRARME AL EVENTO ]</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Puntos de dolor -->
+        <section class="pain-points">
+            <h2>¿Sientes que tu presupuesto está en llamas?</h2>
+            <p style="text-align: center; margin-bottom: 30px;">Cada vez que activas una campaña:</p>
+            <ul class="pain-list">
+                <li>🔥 <span>Tu dinero se consume en días</span></li>
+                <li>🔥 <span>Llegan leads que no responden</span></li>
+                <li>🔥 <span>El CPL sube sin control</span></li>
+                <li>🔥 <span>No se generan citas calificadas</span></li>
+            </ul>
+        </section>
+
+        <!-- Revelaciones -->
+        <section class="revelation-grid">
+            <p style="text-align: center; font-weight: 700; font-size: 1.2rem; margin-bottom: 40px;">
+                En este webinar descubrirás la verdad detrás de:
+            </p>
+
+            <div class="revelation-item">
+                <h3>“Necesito más presupuesto para que funcione.”</h3>
+                <p class="truth">🧯 ¿Qué realmente hace rentable una campaña?</p>
+            </div>
+
+            <div class="revelation-item">
+                <h3>“El problema es la segmentación.”</h3>
+                <p class="truth">🧯 ¿Por qué la estructura pesa más que el targeting?</p>
+            </div>
+
+            <div class="revelation-item">
+                <h3>“Con cambiar el anuncio basta.”</h3>
+                <p class="truth">🧯 ¿El rol del perfil y el embudo en la conversión?</p>
             </div>
         </section>
-        <div class="global-pulse" aria-hidden="true"></div>
-        <!-- Fueguitos animados -->
-        <!-- El div fueguito-animado se crea dinámicamente por fueguitos.js -->
+
+        <!-- Registro -->
+        <section class="register-section" id="registro-seccion">
+            <div class="register-card" id="form-container">
+                <h2>¡Haz tu RESET ahora!</h2>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="Nombre completo" required>
+                    </div>
+                    <div class="form-group input-row">
+                        <input type="tel" class="code-input" placeholder="+58" required>
+                        <input type="tel" class="phone-input" placeholder="Tu celular" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="País" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Correo electrónico" required>
+                    </div>
+                    <button type="submit" class="btn-submit">REGISTRARME AL WEBINAR</button>
+                </form>
+            </div>
+
+            <div class="register-card" id="success-view">
+                <div style="font-size: 3.5rem; margin-bottom: 20px;">🔥</div>
+                <h2 class="highlight">¡REGISTRO CONFIRMADO!</h2>
+                <p>Ya diste el primer paso para dominar tus Meta Ads.</p>
+                <a href="https://wa.me/" target="_blank" class="btn-main" style="display: block; margin-top: 20px;">UNIRSE AL CANAL PRIVADO</a>
+            </div>
+        </section>
     </main>
-    <!-- Footer eliminado para landing más limpia -->
 
-        <script src="../js/navigation.js"></script>
-        <!-- <script src="../js/footer.js"></script> -->
-        <script src="../js/fueguitos.js"></script>
-        <!-- Bloque de fecha y contador debajo del card, en el flujo normal -->
+    <script>
+        /* CONFIGURACIÓN DE FECHA: 19 de Marzo 7pm Miami */
+        /* Nota: Para asegurar el tiempo exacto, creamos la fecha en formato ISO o ajustamos manualmente */
+        const eventDate = new Date('2025-03-19T19:00:00-04:00').getTime(); // -04:00 es el offset típico de Miami
 
-        <script>
-        // Contador para el webinar: 19 de marzo 2026, 18:00 (Miami)
-        function updateCountdown() {
-            const eventDate = new Date('2026-03-19T18:00:00-04:00');
-            const now = new Date();
+        function updateTimer() {
+            const now = new Date().getTime();
             const diff = eventDate - now;
-            if (diff > 0) {
-                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-                const minutes = Math.floor((diff / (1000 * 60)) % 60);
-                const seconds = Math.floor((diff / 1000) % 60);
-                document.getElementById('countdown-days').textContent = String(days).padStart(2, '0');
-                document.getElementById('countdown-hours').textContent = String(hours).padStart(2, '0');
-                document.getElementById('countdown-minutes').textContent = String(minutes).padStart(2, '0');
-                document.getElementById('countdown-seconds').textContent = String(seconds).padStart(2, '0');
-            } else {
-                document.getElementById('countdown-days').textContent = '00';
-                document.getElementById('countdown-hours').textContent = '00';
-                document.getElementById('countdown-minutes').textContent = '00';
-                document.getElementById('countdown-seconds').textContent = '00';
+
+            if (diff < 0) {
+                document.getElementById("timer").innerHTML = "<p style='color:var(--accent); font-weight:900;'>¡EL EVENTO HA COMENZADO!</p>";
+                return;
+            }
+
+            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = d.toString().padStart(2, '0');
+            document.getElementById("hours").innerText = h.toString().padStart(2, '0');
+            document.getElementById("minutes").innerText = m.toString().padStart(2, '0');
+            document.getElementById("seconds").innerText = s.toString().padStart(2, '0');
+        }
+
+        /* LÓGICA DE FUEGUITOS Y BILLETES */
+        function crearElementoAnimado(emoji) {
+            const el = document.createElement('div');
+            el.className = 'fueguito-animado';
+            el.innerHTML = emoji;
+            el.style.left = Math.random() * 95 + '%';
+            el.style.animationDuration = (3 + Math.random() * 3) + 's';
+            el.style.fontSize = (1 + Math.random() * 2) + 'rem';
+            document.body.appendChild(el);
+            setTimeout(() => el.remove(), 6000);
+        }
+
+        function lanzarLluvia(cantidad = 8) {
+            for(let i=0; i<cantidad; i++) {
+                const emoji = Math.random() < 0.5 ? '🔥' : '💸';
+                setTimeout(() => crearElementoAnimado(emoji), i * 300);
             }
         }
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
-        </script>
-        <script src="../js/scroll-animations.js"></script>
-        <script src="../js/custom-cursor.js"></script>
-        <!-- <script src="../js/webinar-modals.js"></script> -->
-        <script>
-        // Modal RESET: abrir/cerrar y animaciones
-        window.addEventListener('DOMContentLoaded', function() {
-            const resetBtn = document.getElementById('resetModalBtn');
-            const resetModal = document.getElementById('resetModal');
-            const resetClose = document.getElementById('resetModalClose');
-            const resetForm = document.getElementById('resetForm');
-            if (resetBtn && resetModal && resetClose) {
-                resetBtn.addEventListener('click', () => {
-                    resetModal.classList.add('active');
-                });
-                resetClose.addEventListener('click', () => {
-                    resetModal.classList.remove('active');
-                });
-                resetModal.addEventListener('click', (e) => {
-                    if (e.target === resetModal) {
-                        resetModal.classList.remove('active');
-                    }
-                });
-                if (resetForm) {
-                    resetForm.addEventListener('submit', function(e) {
-                        e.preventDefault();
-                        resetModal.classList.remove('active');
-                        // Mostrar pantalla de confirmación animada
-                        document.body.innerHTML = `
-                        <div class='confirm-bg-anim'></div>
-                        <div class='confirm-page confirm-anim' style='position:relative;z-index:1;'>
-                            <span class='fueguito-float f1'>🔥</span>
-                            <span class='fueguito-float f2'>🔥</span>
-                            <span class='fueguito-float f3'>🔥</span>
-                            <span class='fueguito-float f4'>🔥</span>
-                            <div class='confirm-fire'>🔥</div>
-                            <h1 class='confirm-title'>Tu registro está confirmado</h1>
-                            <div style='max-width:600px;margin:0 auto 18px auto;'>
-                                <p><span class='confirm-strong'>Ya diste el primer paso</span> para dejar de perder dinero en <span class='confirm-orange'>Meta Ads</span>.</p>
-                                <p style='margin:18px 0 0 0;'><span class='confirm-strong'>Ahora completa el proceso.</span></p>
-                                <p style='margin:18px 0 0 0;'>Antes del webinar compartiré un <span class='confirm-orange'>punto clave</span> que cambiará la forma en que analizas tus campañas.</p>
-                                <p style='margin:18px 0 0 0;'>Entra al <span class='confirm-strong' style='font-size:1.1em;'>canal privado</span> y asegúrate de recibirlo.</p>
-                            </div>
-                            <div style='font-size:2em;margin:10px 0;'>👇</div>
-                            <a class='confirm-btn' href='https://wa.me/' target='_blank'>[ Acceder al canal privado ]</a>
-                            <div class='confirm-money' style='margin-top:18px;'>💸</div>
-                        </div>`;
-                    });
-                }
-            }
+
+        function scrollToRegister() {
+            document.getElementById('registro-seccion').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            lanzarLluvia(12); // Efecto visual al hacer clic
+        }
+
+        // Ejecución inicial
+        window.onload = () => {
+            setInterval(updateTimer, 1000);
+            updateTimer();
+            
+            // Lanza fueguitos periódicamente
+            setInterval(() => lanzarLluvia(3), 4000);
+            lanzarLluvia(10); // Lluvia inicial
+
+            // Animación al pasar el mouse por el botón
+            const heroBtn = document.getElementById('hero-btn');
+            heroBtn.addEventListener('mouseenter', () => lanzarLluvia(5));
+        };
+
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('form-container').style.display = 'none';
+            document.getElementById('success-view').style.display = 'block';
+            lanzarLluvia(30); // Explosión de fueguitos al completar
         });
-        // Animaciones extra (fuego y dinero) ya están en CSS, pero puedes agregar más aquí si lo deseas
-        </script>
+    </script>
 </body>
 </html>
