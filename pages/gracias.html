@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Registro Confirmado! | Reset Inmobiliario</title>
+    <style>
+        :root {
+            --bg: #05060a;
+            --card-bg: rgba(24, 24, 24, 0.98);
+            --accent: #a3e635;
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;
+            --orange: #ff9800;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Animación de Fueguitos y Billetes */
+        .fueguito-animado {
+            position: fixed;
+            bottom: -50px;
+            font-size: 2rem;
+            pointer-events: none;
+            z-index: 1;
+            animation: subirYSalir linear forwards;
+        }
+
+        @keyframes subirYSalir {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+        }
+
+        .thank-you-container {
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+            background: var(--card-bg);
+            padding: 60px 40px;
+            border-radius: 32px;
+            border: 1px solid rgba(163, 230, 53, 0.2);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+            position: relative;
+            z-index: 10;
+        }
+
+        .icon-top {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        h1 {
+            color: var(--accent);
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-weight: 900;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+
+        .highlight {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .orange-text {
+            color: var(--orange);
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 1.15rem;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .step-text {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 30px;
+        }
+
+        .btn-whatsapp {
+            display: inline-block;
+            background: var(--accent);
+            color: #000;
+            padding: 20px 40px;
+            border-radius: 14px;
+            font-weight: 900;
+            font-size: 1.2rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(163, 230, 53, 0.3);
+            margin-top: 10px;
+        }
+
+        .btn-whatsapp:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(163, 230, 53, 0.5);
+        }
+
+        .arrow {
+            font-size: 2rem;
+            margin: 15px 0;
+            display: block;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+
+        @media (max-width: 480px) {
+            .thank-you-container {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="thank-you-container">
+        <span class="icon-top">✅</span>
+        <h1>Tu registro está confirmado</h1>
+        
+        <p>
+            Ya diste el <span class="highlight">primer paso</span> para dejar de perder dinero en <span class="orange-text">Meta Ads</span>.
+        </p>
+
+        <p><strong>Ahora completa el proceso.</strong></p>
+
+        <p class="step-text">
+            Antes del webinar compartiré un <span class="orange-text">punto clave</span> que cambiará la forma en que analizas tus campañas. 
+            Entra al canal privado y asegúrate de recibirlo.
+        </p>
+
+        <span class="arrow">👇</span>
+
+        <a href="https://wa.me/TU_LINK_AQUI" class="btn-whatsapp">
+            [ Acceder al canal privado ]
+        </a>
+    </div>
+
+    <script>
+        // Función para crear fueguitos y billetes animados
+        function crearElementoAnimado(emoji) {
+            const el = document.createElement('div');
+            el.className = 'fueguito-animado';
+            el.innerHTML = emoji;
+            el.style.left = Math.random() * 95 + '%';
+            el.style.animationDuration = (3 + Math.random() * 3) + 's';
+            el.style.fontSize = (1.5 + Math.random() * 2) + 'rem';
+            document.body.appendChild(el);
+            setTimeout(() => el.remove(), 6000);
+        }
+
+        function lanzarLluvia(cantidad = 5) {
+            for(let i=0; i<cantidad; i++) {
+                const emoji = Math.random() < 0.5 ? '🔥' : '💸';
+                setTimeout(() => crearElementoAnimado(emoji), i * 400);
+            }
+        }
+
+        // Lanzar lluvia de bienvenida y luego periódicamente
+        window.onload = () => {
+            lanzarLluvia(12);
+            setInterval(() => lanzarLluvia(2), 3500);
+        };
+    </script>
+</body>
+</html>

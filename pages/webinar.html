@@ -19,6 +19,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
@@ -30,7 +31,7 @@
             position: relative;
         }
 
-        /* Estilos de las animaciones (Fuego y Billetes) */
+        /* Animaciones flotantes */
         .fueguito-animado {
             position: fixed;
             bottom: -50px;
@@ -54,7 +55,7 @@
         }
 
         header {
-            padding: 60px 0 40px;
+            padding: 40px 0 30px;
             text-align: center;
         }
 
@@ -62,16 +63,18 @@
             display: inline-block;
             background: rgba(163, 230, 53, 0.1);
             color: var(--accent);
-            padding: 8px 16px;
+            padding: 6px 14px;
             border-radius: 99px;
-            font-size: 14px;
+            font-size: 12px;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             border: 1px solid rgba(163, 230, 53, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         h1 {
-            font-size: clamp(2.2rem, 7vw, 3.5rem);
+            font-size: clamp(1.8rem, 8vw, 3.5rem);
             font-weight: 900;
             line-height: 1.1;
             margin-bottom: 10px;
@@ -79,10 +82,11 @@
         }
 
         .sub-headline {
-            font-size: 1.4rem;
+            font-size: clamp(1rem, 4vw, 1.4rem);
             color: var(--text-muted);
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             font-weight: 500;
+            padding: 0 10px;
         }
 
         .highlight { color: var(--accent); }
@@ -90,7 +94,7 @@
         .speaker-banner {
             width: 100%;
             max-width: 700px;
-            margin: 0 auto 40px;
+            margin: 0 auto 30px;
             background: #111827;
             border-radius: 16px;
             overflow: hidden;
@@ -102,181 +106,190 @@
             width: 100%;
             height: auto;
             display: block;
-            aspect-ratio: 16 / 7; 
+            aspect-ratio: 16 / 9; 
             object-fit: cover;
         }
 
         .event-date {
-            font-size: 1.2rem;
-            font-weight: 700;
+            font-size: clamp(1.1rem, 5vw, 1.3rem);
+            font-weight: 800;
             color: var(--accent);
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             text-transform: uppercase;
+            letter-spacing: 1.5px;
         }
 
-        /* Contador */
+        /* CONTADOR RESPONSIVE */
         .timer-container {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 10px;
             margin: 20px 0 40px;
+            flex-wrap: wrap;
         }
 
         .timer-box {
-            background: #12141a;
-            border: 1px solid rgba(255,255,255,0.1);
-            padding: 15px;
-            border-radius: 12px;
-            min-width: 85px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(163, 230, 53, 0.3);
+            padding: 12px;
+            border-radius: 16px;
+            width: 80px;
             text-align: center;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 20px rgba(163, 230, 53, 0.1);
         }
 
         .timer-num {
             display: block;
-            font-size: 28px;
+            font-size: clamp(24px, 6vw, 32px);
             font-weight: 900;
             color: var(--accent);
+            line-height: 1;
+            margin-bottom: 2px;
+            font-variant-numeric: tabular-nums;
         }
 
         .timer-label {
-            font-size: 10px;
+            font-size: 9px;
             text-transform: uppercase;
             color: var(--text-muted);
+            letter-spacing: 1px;
+            font-weight: 700;
         }
 
         .btn-main {
             display: inline-block;
             background: var(--accent);
             color: #000;
-            padding: 22px 50px;
+            padding: 18px 30px;
+            width: 100%;
+            max-width: 400px;
             border-radius: 14px;
             font-weight: 900;
-            font-size: 1.25rem;
+            font-size: 1rem;
             text-decoration: none;
             cursor: pointer;
             border: none;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 10px 30px rgba(163, 230, 53, 0.3);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(163, 230, 53, 0.3);
             text-transform: uppercase;
         }
 
-        .btn-main:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 40px rgba(163, 230, 53, 0.5);
+        .btn-main:active {
+            transform: scale(0.96);
         }
 
-        /* Secciones de Contenido */
+        /* Contenido */
         .pain-points {
             background: rgba(255, 68, 68, 0.03);
-            border-radius: 24px;
-            padding: 40px;
-            margin: 40px 0;
+            border-radius: 20px;
+            padding: 30px 20px;
+            margin: 30px 0;
             border: 1px dashed rgba(255, 68, 68, 0.2);
         }
 
         .pain-points h2 {
             text-align: center;
-            font-size: 1.8rem;
-            margin-bottom: 30px;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
             color: var(--danger);
         }
 
         .pain-list { list-style: none; }
         .pain-list li {
-            margin-bottom: 15px;
-            font-size: 1.1rem;
+            margin-bottom: 12px;
+            font-size: 1rem;
             display: flex;
             gap: 10px;
+            align-items: flex-start;
         }
 
-        .revelation-grid { margin: 60px 0; }
         .revelation-item {
-            margin-bottom: 40px;
-            border-left: 4px solid var(--accent);
-            padding-left: 20px;
+            margin-bottom: 30px;
+            border-left: 3px solid var(--accent);
+            padding-left: 15px;
         }
 
         .revelation-item h3 {
             color: var(--danger);
             text-decoration: line-through;
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             opacity: 0.7;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
         }
 
         .revelation-item p.truth {
-            font-size: 1.3rem;
+            font-size: 1.15rem;
             color: white;
             font-weight: 700;
-            margin-bottom: 5px;
         }
 
-        .check-list { list-style: none; margin: 40px 0; }
-        .check-list li {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 18px;
-            font-size: 1.1rem;
-        }
-        .check-list .icon { color: var(--accent); font-weight: 900; }
-
-        /* Formulario */
+        /* Registro */
         .register-section {
-            padding: 80px 0;
-            scroll-margin-top: 60px;
+            padding: 40px 0 80px;
         }
 
         .register-card {
-            max-width: 480px;
+            width: 100%;
+            max-width: 450px;
             margin: 0 auto;
             background: var(--card-bg);
-            border-radius: 32px;
-            padding: 50px 40px;
+            border-radius: 24px;
+            padding: 40px 25px;
             border: 1px solid rgba(163,230,53,0.2);
-            box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
         }
 
         .register-card h2 {
             color: var(--accent);
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             font-weight: 900;
+            font-size: 1.5rem;
         }
-
-        .form-group { margin-bottom: 20px; }
 
         input {
             width: 100%;
-            padding: 16px;
-            background: rgba(255,255,255,0.04);
+            padding: 14px;
+            margin-bottom: 15px;
+            background: rgba(255,255,255,0.05);
             border: 1px solid rgba(255,255,255,0.1);
             border-radius: 12px;
             color: white;
             font-size: 16px;
+            outline: none;
         }
 
-        .input-row { display: flex; gap: 12px; }
-        .input-row .code-input { width: 100px; flex-shrink: 0; }
-        .input-row .phone-input { flex-grow: 1; }
+        input:focus {
+            border-color: var(--accent);
+        }
+
+        .input-row { display: flex; gap: 10px; margin-bottom: 15px; }
+        .input-row .code-input { width: 85px; margin-bottom: 0; }
+        .input-row .phone-input { flex-grow: 1; margin-bottom: 0; }
 
         .btn-submit {
             width: 100%;
             background: var(--accent);
             color: #000;
-            padding: 18px;
+            padding: 16px;
             border: none;
             border-radius: 12px;
             font-weight: 900;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             cursor: pointer;
+            margin-top: 10px;
+            transition: opacity 0.2s;
         }
 
-        #success-view { display: none; text-align: center; }
+        .btn-submit:active { opacity: 0.8; }
 
-        @media (max-width: 600px) {
-            h1 { font-size: 2rem; }
-            .pain-points { padding: 25px 15px; }
-            .register-card { padding: 40px 20px; }
+        /* Media Queries específicas para tablets */
+        @media (min-width: 601px) {
+            .btn-main { width: auto; padding: 20px 60px; }
+            .timer-box { width: 95px; padding: 15px; }
+            .timer-num { font-size: 36px; }
+            .timer-label { font-size: 10px; }
         }
     </style>
 </head>
@@ -284,107 +297,73 @@
 
     <header>
         <div class="container">
-            <span class="badge">WEBINAR EN VIVO</span>
+            <span class="badge">WEBINAR EN VIVO 2026</span>
             <h1>META ADS: TU <span class="highlight">RESET INMOBILIARIO</span></h1>
-            <p class="sub-headline">De campañas quemadas a rentables</p>
+            <p class="sub-headline">Domina tus campañas y deja de quemar presupuesto</p>
             
             <div class="speaker-banner">
-                <!-- Reemplaza el src con la URL de tu imagen de banner -->
-                <img src="/images/BANNER LANDING MM.jpg" alt="Banner del Webinar">
+                <img src="/images/BANNER LANDING MM.jpg" alt="Mariángel Mujica">
             </div>
 
-            <p class="event-date">19 de Marzo | 7:00 PM Miami</p>
+            <p class="event-date">19 DE MARZO 2026 | 7:00 PM MIAMI</p>
 
-            <div class="timer-container" id="timer">
+            <div class="timer-container" id="timer-wrapper">
                 <div class="timer-box"><span class="timer-num" id="days">00</span><span class="timer-label">Días</span></div>
                 <div class="timer-box"><span class="timer-num" id="hours">00</span><span class="timer-label">Horas</span></div>
-                <div class="timer-box"><span class="timer-num" id="minutes">00</span><span class="timer-label">Min</span></div>
-                <div class="timer-box"><span class="timer-num" id="seconds">00</span><span class="timer-label">Seg</span></div>
+                <div class="timer-box"><span class="timer-num" id="minutes">00</span><span class="timer-label">Minutos</span></div>
+                <div class="timer-box"><span class="timer-num" id="seconds">00</span><span class="timer-label">Segundos</span></div>
             </div>
 
-            <button class="btn-main" id="hero-btn" onclick="scrollToRegister()">[ QUIERO REGISTRARME AL EVENTO ]</button>
+            <button class="btn-main" id="hero-btn" onclick="scrollToRegister()">[ REGISTRARME GRATIS ]</button>
         </div>
     </header>
 
     <main class="container">
-        <!-- Puntos de dolor -->
         <section class="pain-points">
-            <h2>¿Sientes que tu presupuesto está en llamas?</h2>
-            <p style="text-align: center; margin-bottom: 30px;">Cada vez que activas una campaña:</p>
+            <h2>¿Te sientes identificado?</h2>
             <ul class="pain-list">
-                <li>🔥 <span>Tu dinero se consume en días</span></li>
-                <li>🔥 <span>Llegan leads que no responden</span></li>
-                <li>🔥 <span>El CPL sube sin control</span></li>
-                <li>🔥 <span>No se generan citas calificadas</span></li>
+                <li>❌ <span>Presupuesto que se gasta sin generar cierres.</span></li>
+                <li>❌ <span>Leads de mala calidad que nunca responden.</span></li>
+                <li>❌ <span>Costo por contacto cada vez más caro.</span></li>
             </ul>
         </section>
 
-        <!-- Revelaciones -->
         <section class="revelation-grid">
-            <p style="text-align: center; font-weight: 700; font-size: 1.2rem; margin-bottom: 40px;">
-                En este webinar descubrirás la verdad detrás de:
-            </p>
-
             <div class="revelation-item">
-                <h3>“Necesito más presupuesto para que funcione.”</h3>
-                <p class="truth">🧯 ¿Qué realmente hace rentable una campaña?</p>
+                <h3>“Sube el presupuesto para vender más.”</h3>
+                <p class="truth">💡 Escalar sin estrategia solo escala tus pérdidas.</p>
             </div>
-
             <div class="revelation-item">
-                <h3>“El problema es la segmentación.”</h3>
-                <p class="truth">🧯 ¿Por qué la estructura pesa más que el targeting?</p>
-            </div>
-
-            <div class="revelation-item">
-                <h3>“Con cambiar el anuncio basta.”</h3>
-                <p class="truth">🧯 ¿El rol del perfil y el embudo en la conversión?</p>
+                <h3>“Usa solo segmentación detallada.”</h3>
+                <p class="truth">💡 Hoy el contenido manda sobre el interés.</p>
             </div>
         </section>
 
-        <!-- Registro -->
         <section class="register-section" id="registro-seccion">
-            <div class="register-card" id="form-container">
-                <h2>¡Haz tu RESET ahora!</h2>
+            <div class="register-card">
+                <h2>ASEGURA TU LUGAR</h2>
                 <form id="registerForm">
-                    <div class="form-group">
-                        <input type="text" placeholder="Nombre completo" required>
-                    </div>
-                    <div class="form-group input-row">
+                    <input type="text" placeholder="Nombre completo" required>
+                    <div class="input-row">
                         <input type="tel" class="code-input" placeholder="+58" required>
-                        <input type="tel" class="phone-input" placeholder="Tu celular" required>
+                        <input type="tel" class="phone-input" placeholder="Celular" required>
                     </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="País" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Correo electrónico" required>
-                    </div>
-                    <button type="submit" class="btn-submit">REGISTRARME AL WEBINAR</button>
+                    <input type="text" placeholder="País" required>
+                    <input type="email" placeholder="Correo electrónico" required>
+                    <button type="submit" class="btn-submit">QUIERO MI RESET</button>
                 </form>
-            </div>
-
-            <div class="register-card" id="success-view">
-                <div style="font-size: 3.5rem; margin-bottom: 20px;">🔥</div>
-                <h2 class="highlight">¡REGISTRO CONFIRMADO!</h2>
-                <p>Ya diste el primer paso para dominar tus Meta Ads.</p>
-                <a href="https://wa.me/" target="_blank" class="btn-main" style="display: block; margin-top: 20px;">UNIRSE AL CANAL PRIVADO</a>
             </div>
         </section>
     </main>
 
     <script>
-        /* CONFIGURACIÓN DE FECHA: 19 de Marzo 7pm Miami */
-        /* Nota: Para asegurar el tiempo exacto, creamos la fecha en formato ISO o ajustamos manualmente */
-        const eventDate = new Date('2025-03-19T19:00:00-04:00').getTime(); // -04:00 es el offset típico de Miami
+        // CONFIGURACIÓN 2026
+        const eventDate = new Date('2026-03-19T19:00:00-04:00').getTime(); 
 
         function updateTimer() {
             const now = new Date().getTime();
-            const diff = eventDate - now;
-
-            if (diff < 0) {
-                document.getElementById("timer").innerHTML = "<p style='color:var(--accent); font-weight:900;'>¡EL EVENTO HA COMENZADO!</p>";
-                return;
-            }
+            let diff = eventDate - now;
+            if (diff < 0) diff = 0; 
 
             const d = Math.floor(diff / (1000 * 60 * 60 * 24));
             const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -397,49 +376,39 @@
             document.getElementById("seconds").innerText = s.toString().padStart(2, '0');
         }
 
-        /* LÓGICA DE FUEGUITOS Y BILLETES */
         function crearElementoAnimado(emoji) {
             const el = document.createElement('div');
             el.className = 'fueguito-animado';
             el.innerHTML = emoji;
-            el.style.left = Math.random() * 95 + '%';
-            el.style.animationDuration = (3 + Math.random() * 3) + 's';
-            el.style.fontSize = (1 + Math.random() * 2) + 'rem';
+            el.style.left = Math.random() * 92 + '%';
+            el.style.animationDuration = (2.5 + Math.random() * 2.5) + 's';
+            el.style.fontSize = (1.2 + Math.random() * 1.5) + 'rem';
             document.body.appendChild(el);
-            setTimeout(() => el.remove(), 6000);
+            setTimeout(() => el.remove(), 5000);
         }
 
-        function lanzarLluvia(cantidad = 8) {
+        function lanzarLluvia(cantidad = 5) {
             for(let i=0; i<cantidad; i++) {
-                const emoji = Math.random() < 0.5 ? '🔥' : '💸';
-                setTimeout(() => crearElementoAnimado(emoji), i * 300);
+                const emoji = Math.random() < 0.6 ? '🔥' : '💸';
+                setTimeout(() => crearElementoAnimado(emoji), i * 250);
             }
         }
 
         function scrollToRegister() {
             document.getElementById('registro-seccion').scrollIntoView({ behavior: 'smooth', block: 'start' });
-            lanzarLluvia(12); // Efecto visual al hacer clic
+            lanzarLluvia(8);
         }
 
-        // Ejecución inicial
         window.onload = () => {
             setInterval(updateTimer, 1000);
             updateTimer();
-            
-            // Lanza fueguitos periódicamente
-            setInterval(() => lanzarLluvia(3), 4000);
-            lanzarLluvia(10); // Lluvia inicial
-
-            // Animación al pasar el mouse por el botón
-            const heroBtn = document.getElementById('hero-btn');
-            heroBtn.addEventListener('mouseenter', () => lanzarLluvia(5));
+            setInterval(() => lanzarLluvia(2), 5000);
+            lanzarLluvia(6);
         };
 
         document.getElementById('registerForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            document.getElementById('form-container').style.display = 'none';
-            document.getElementById('success-view').style.display = 'block';
-            lanzarLluvia(30); // Explosión de fueguitos al completar
+            window.location.href = 'gracias.html';
         });
     </script>
 </body>
