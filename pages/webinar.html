@@ -119,7 +119,6 @@
             letter-spacing: 1.5px;
         }
 
-        /* CONTADOR RESPONSIVE */
         .timer-container {
             display: flex;
             justify-content: center;
@@ -179,7 +178,6 @@
             transform: scale(0.96);
         }
 
-        /* Contenido */
         .pain-points {
             background: rgba(255, 68, 68, 0.03);
             border-radius: 20px;
@@ -224,7 +222,6 @@
             font-weight: 700;
         }
 
-        /* Registro */
         .register-section {
             padding: 40px 0 80px;
         }
@@ -282,9 +279,11 @@
             transition: opacity 0.2s;
         }
 
-        .btn-submit:active { opacity: 0.8; }
+        .btn-submit:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
 
-        /* Media Queries específicas para tablets */
         @media (min-width: 601px) {
             .btn-main { width: auto; padding: 20px 60px; }
             .timer-box { width: 95px; padding: 15px; }
@@ -302,6 +301,7 @@
             <p class="sub-headline">De campañas quemadas a rentables</p>
             <p class="sub-headline">Webinar en vivo para asesores inmobiliarios que ya invirtieron en publicidad y no obtuvieron resultados</p>
             <div class="speaker-banner">
+                <!-- Nota: Asegúrate que esta ruta de imagen sea correcta al subir tu sitio -->
                 <img src="/images/BANNER LANDING MM.jpg" alt="Mariángel Mujica">
             </div>
 
@@ -356,26 +356,30 @@
             <p style="margin-bottom:18px;font-size:1.08rem;">Saldrás con claridad y un plan para dejar de invertir sin estrategia.</p>
             <p style="font-size:1.15rem;font-weight:500;">👇 Si estás listo para hacer el RESET 👇</p>
         </section>
+
         <section class="register-section" id="registro-seccion">
             <div class="register-card">
                 <h2>ASEGURA TU LUGAR</h2>
                 <form id="registerForm">
-                    <input type="text" placeholder="Nombre completo" required>
+                    <input type="text" name="fullname" placeholder="Nombre completo" required>
                     <div class="input-row">
-                        <input type="tel" class="code-input" placeholder="+58" required>
-                        <input type="tel" class="phone-input" placeholder="Celular" required>
+                        <input type="tel" name="code" class="code-input" placeholder="+58" required>
+                        <input type="tel" name="phone" class="phone-input" placeholder="Celular" required>
                     </div>
-                    <input type="text" placeholder="País" required>
-                    <input type="email" placeholder="Correo electrónico" required>
-                    <button type="submit" class="btn-submit">QUIERO MI RESET</button>
+                    <input type="text" name="country" placeholder="País" required>
+                    <input type="email" name="email" placeholder="Correo electrónico" required>
+                    <button type="submit" id="submitBtn" class="btn-submit">QUIERO MI RESET</button>
                 </form>
             </div>
         </section>
-
     </main>
 
     <script>
-        // CONFIGURACIÓN 2026
+        // CONFIGURACIÓN GOOGLE SHEETS
+        // REEMPLAZA ESTO CON TU URL DE IMPLEMENTACIÓN DE APPS SCRIPT
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyfIt_zuBDfjSD7ggYXbe9WuAZL1_m5cCSOv1gdWVFysxNImZxxzu4Sl6wdmY8FSRw98w/exec';
+
+        // CONFIGURACIÓN RELOJ 2026
         const eventDate = new Date('2026-03-19T19:00:00-04:00').getTime(); 
 
         function updateTimer() {
@@ -424,9 +428,47 @@
             lanzarLluvia(6);
         };
 
-        document.getElementById('registerForm').addEventListener('submit', function(e) {
+        // LÓGICA DE ENVÍO DE FORMULARIO
+        const registerForm = document.getElementById('registerForm');
+        const submitBtn = document.getElementById('submitBtn');
+
+        registerForm.addEventListener('submit', async function(e) {
             e.preventDefault();
-            window.location.href = 'gracias.html';
+            
+            // Deshabilitar botón para evitar múltiples clics
+            submitBtn.disabled = true;
+            submitBtn.innerText = "PROCESANDO...";
+
+            const formData = new FormData(registerForm);
+            
+            // Creamos el objeto con los nombres exactos que espera tu Apps Script
+            const payload = {
+                nombre: formData.get('fullname'),
+                codigo: formData.get('code'),
+                celular: formData.get('phone'),
+                pais: formData.get('country'),
+                correo: formData.get('email')
+            };
+
+            try {
+                // Enviamos los datos a Google Sheets
+                await fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors', // Necesario para Google Apps Script
+                    cache: 'no-cache',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                // Si llega aquí (incluso con no-cors), asumimos éxito y redirigimos
+                window.location.href = 'gracias.html';
+                
+            } catch (error) {
+                console.error('Error al enviar:', error);
+                alert('Hubo un error al procesar tu registro. Por favor, intenta de nuevo.');
+                submitBtn.disabled = false;
+                submitBtn.innerText = "QUIERO MI RESET";
+            }
         });
     </script>
 </body>
