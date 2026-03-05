@@ -183,22 +183,22 @@
                 <p style="font-size: 1.1rem; color: #8b92b0; margin: 0;">¿Tienes un proyecto en mente? Conversemos sobre tus ideas</p>
             </div>
 
-            <form class="contact-form" id="contactForm">
+            <form class="contact-form" id="contactForm" action="https://formspree.io/f/mdawnpgg" method="POST">
                 <div class="form-group">
                     <label for="fullname" class="form-label">Nombre Completo</label>
-                    <input type="text" id="fullname" class="form-input" placeholder="Tu nombre completo" required>
+                    <input type="text" id="fullname" name="fullname" class="form-input" placeholder="Tu nombre completo" required>
                 </div>
                 <div class="form-group">
                     <label for="country" class="form-label">País</label>
-                    <input type="text" id="country" class="form-input" placeholder="Tu país" required>
+                    <input type="text" id="country" name="country" class="form-input" placeholder="Tu país" required>
                 </div>
                 <div class="form-group">
                     <label for="company" class="form-label">Empresa</label>
-                    <input type="text" id="company" class="form-input" placeholder="Nombre de tu empresa" required>
+                    <input type="text" id="company" name="company" class="form-input" placeholder="Nombre de tu empresa" required>
                 </div>
                 <div class="form-group">
                     <label for="instagram" class="form-label">Link de Instagram</label>
-                    <input type="url" id="instagram" class="form-input" placeholder="https://instagram.com/tuusuario" required>
+                    <input type="url" id="instagram" name="instagram" class="form-input" placeholder="https://instagram.com/tuusuario" required>
                 </div>
                 <button type="submit" class="form-submit">Enviar Mensaje</button>
             </form>
