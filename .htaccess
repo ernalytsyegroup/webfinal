@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([a-zA-Z0-9_-]+)/?$ $1.html [L]
+
+# Para páginas dentro de subcarpetas como /pages/
+RewriteRule ^pages/([a-zA-Z0-9_-]+)/?$ pages/$1.html [L]
+
+# Opcional: redirige /index a /
+RewriteRule ^index/?$ / [R=301,L]
