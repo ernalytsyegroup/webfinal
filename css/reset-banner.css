@@ -1,0 +1,50 @@
+/* Cinta tipo ticker verde lima, igual a la de ejemplo, con repetición infinita */
+.reset-banner-ticker-container {
+	width: 100%;
+	background: #a3e635;
+	position: relative;
+	z-index: 1001;
+	top: 0;
+	left: 0;
+}
+.reset-banner-ticker {
+	display: flex;
+	align-items: center;
+	width: 100vw;
+	color: #181818;
+	font-weight: 900;
+	font-size: 1.25rem;
+	letter-spacing: 1.5px;
+	text-align: center;
+	padding: 0.5em 0 0.4em 0;
+	text-decoration: none;
+	white-space: nowrap;
+	overflow: hidden;
+	transition: background 0.2s, color 0.2s;
+	position: relative;
+	z-index: 1002;
+}
+.reset-banner-ticker span {
+	display: inline-block;
+	min-width: 100%;
+	animation: ticker-move 18s linear infinite;
+}
+.reset-banner-ticker span[aria-hidden="true"] {
+	/* El segundo span es solo visual, no accesible */
+}
+.reset-banner-ticker:hover {
+	background: #bfff3c;
+	color: #111;
+	text-decoration: underline;
+}
+@keyframes ticker-move {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(-100%); }
+}
+@media (max-width: 600px) {
+	.reset-banner-ticker {
+		font-size: 0.95rem;
+		padding: 0.35em 0 0.3em 0;
+	}
+}
+
