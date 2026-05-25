@@ -133,10 +133,7 @@ export function init3DScene() {
   })
 
   // Zoom overlay for debugging / UX
-  const zoomOverlay = document.createElement('div')
-  zoomOverlay.className = 'zoom-overlay'
-  zoomOverlay.innerText = `zoom: ${camera.position.z.toFixed(2)}`
-  document.body.appendChild(zoomOverlay)
+  // Eliminado overlay de zoom
 
   // Animation loop
   function animate() {
@@ -158,9 +155,7 @@ export function init3DScene() {
     camera.position.z += (zoomTarget - camera.position.z) * 0.35
 
     // update zoom overlay
-    if (zoomOverlay) {
-      zoomOverlay.innerText = `zoom: ${camera.position.z.toFixed(2)} (target ${zoomTarget.toFixed(2)})`
-    }
+    // Eliminada actualización de overlay de zoom
 
     // reveal sections based on camera distance (zoom out)
     previewSections.forEach((section, idx) => {
