@@ -426,38 +426,51 @@
                     <p>Responde con claridad para que tu cliente ideal deje de ser una idea y se convierta en una audiencia concreta.</p>
                 </div>
 
-                <!-- 
-                  FORMULARIO INTEGRADO CON FORMSUBMIT
-                -->
-                <form class="contact-form" action="https://formsubmit.co/isthebigleap@gmail.com" method="POST" id="idealClientForm">
-                    
-                    <input type="hidden" name="form_type" value="cliente_ideal">
-                    
-                    <!-- Desactiva el sistema de captcha visual para no interrumpir el flujo del usuario -->
-                    <input type="hidden" name="_captcha" value="false">
-                    
-                    <!-- Sistema de asunto personalizado -->
-                    <input type="hidden" name="_subject" value="Nuevo Perfil de Cliente Ideal Recibido">
-                    <!-- Enviar copia a otro correo además de gestionsaberesyemociones@gmail.com -->
-                    <input type="hidden" name="_cc" value="isthebigleap@gmail.com">
-                    <!-- Formato de email de FormSubmit -->
-                    <input type="hidden" name="_template" value="table">
+                <!-- Formulario integrado con Formspree (reemplazado por petición del usuario) -->
+                <form
+                    id="idealClientForm"
+                    class="contact-form"
+                    action="https://formspree.io/f/xeebrzpy"
+                    method="POST">
+
+                    <!-- Asunto del correo -->
+                    <input type="hidden" name="_subject" value="Nuevo formulario - Cliente Ideal">
+
+                    <!-- Honeypot antispam -->
+                    <input type="text" name="_gotcha" style="display:none">
+
+                    <!-- Campo _next para mantener compatibilidad con el script de redirección/modal -->
+                    <input type="hidden" name="_next" id="_nextInput" value="">
 
                     <div class="form-grid">
-                        <!-- Campo Nombre -->
-                        <div class="question-card" style="grid-column: 1 / -1;">
+
+                        <!-- Nombre -->
+                        <div class="question-card" style="grid-column:1/-1;">
                             <span class="question-number">00</span>
                             <h3 class="question-title">Nombre</h3>
-                            <input type="text" name="Nombre" id="userName" class="question-input" placeholder="Tu nombre o el nombre de la persona responsable." required>
+
+                            <input
+                                class="question-input"
+                                type="text"
+                                name="Nombre"
+                                placeholder="Tu nombre"
+                                required>
                         </div>
-                        
-                        <!-- Campo Correo -->
-                        <div class="question-card" style="grid-column: 1 / -1;">
+
+                        <!-- Email -->
+                        <div class="question-card" style="grid-column:1/-1;">
                             <span class="question-number">00</span>
                             <h3 class="question-title">Correo electrónico</h3>
-                            <input type="email" name="Correo electrónico" id="userEmail" class="question-input" placeholder="Tu correo para recibir la copia y la confirmación." required>
+
+                            <input
+                                class="question-input"
+                                type="email"
+                                name="email"
+                                placeholder="correo@ejemplo.com"
+                                required>
                         </div>
-                        
+
+                        <!-- Aquí se mantienen todas las preguntas exactamente como estaban -->
                         <div class="question-card">
                             <span class="question-number">01</span>
                             <h3 class="question-title">¿Cuál es el principal problema o dolor que busca resolver tu cliente con tu producto/servicio?</h3>
@@ -514,7 +527,14 @@
                             <textarea name="¿En qué zonas se encuentra ubicado tu cliente ideal?" class="question-input" placeholder="Ciudad, región, país o zonas de cobertura." required></textarea>
                         </div>
                     </div>
-                    <button type="submit" class="form-submit" id="submitBtn">Enviar respuestas</button>
+
+                    <button
+                        id="submitBtn"
+                        class="form-submit"
+                        type="submit">
+                        Enviar respuestas
+                    </button>
+
                 </form>
             </div>
         </section>
@@ -525,7 +545,7 @@
             <h2 class="modal-title">¡Gracias! Tu perfil fue enviado</h2>
             <p class="modal-message">Para recibir el perfil completo de tu cliente ideal, agenda una llamada en Calendly.</p>
             <div class="modal-actions">
-                <a class="modal-button primary" id="calendlyLink" href="hhttps://calendly.com/mariangelmujicav/reuniones" target="_blank" rel="noopener">Agendar en Calendly</a>
+                <a class="modal-button primary" id="calendlyLink" href="https://calendly.com/mariangelmujicav/reuniones" target="_blank" rel="noopener">Agendar en Calendly</a>
                 <button class="modal-button secondary" type="button" id="closeSubmitModal">Cerrar</button>
             </div>
         </div>
@@ -540,51 +560,81 @@
         })
     </script>
 
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const form = document.getElementById('idealClientForm');
-            const submitBtn = document.getElementById('submitBtn');
-            const submitModal = document.getElementById('submitModal');
-            const closeSubmitModal = document.getElementById('closeSubmitModal');
-            const calendlyLink = document.getElementById('calendlyLink');
-            const calendlyUrl = 'https://calendly.com/mariangelmujicav/reuniones';
+        emailjs.init({ publicKey: "ggU7XvODvke-IZvo1" });
+    </script>
 
-            if (!form || !submitBtn || !submitModal || !closeSubmitModal || !calendlyLink) return;
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
 
-            form.addEventListener('submit', async (event) => {
-                event.preventDefault();
+            const form = document.getElementById("idealClientForm");
+            const submitBtn = document.getElementById("submitBtn");
+
+            const submitModal = document.getElementById("submitModal");
+            const closeSubmitModal = document.getElementById("closeSubmitModal");
+
+            if (!form) return;
+
+            form.addEventListener("submit", async function (e) {
+
+                e.preventDefault();
+
                 submitBtn.disabled = true;
-                const originalText = submitBtn.textContent;
-                submitBtn.textContent = 'Enviando...';
+                submitBtn.textContent = "Enviando...";
 
                 try {
+
                     const response = await fetch(form.action, {
-                        method: 'POST',
+
+                        method: "POST",
+
                         body: new FormData(form),
+
                         headers: {
-                            'Accept': 'application/json'
+                            Accept: "application/json"
                         }
+
                     });
 
-                    if (!response.ok) {
-                        throw new Error('Error al enviar el formulario');
+                    if (response.ok) {
+
+                        await emailjs.send(
+                            "service_lkrwdl9",
+                            "template_wc1ahmu",
+                            {
+                                email: form.email.value,
+                                nombre: form.Nombre.value,
+                            }
+                        );
+
+                        form.reset();
+
+                        submitModal.classList.add("active");
+
+                    } else {
+
+                        alert("No fue posible enviar el formulario.");
+
                     }
 
-                    form.reset();
-                    calendlyLink.href = calendlyUrl;
-                    submitModal.classList.add('active');
-                } catch (error) {
-                    console.error(error);
-                    alert('No se pudo enviar el formulario. Intenta nuevamente más tarde.');
-                } finally {
-                    submitBtn.textContent = originalText;
-                    submitBtn.disabled = false;
+                } catch {
+
+                    alert("Error de conexión.");
+
                 }
+
+                submitBtn.disabled = false;
+                submitBtn.textContent = "Enviar respuestas";
+
             });
 
-            closeSubmitModal.addEventListener('click', () => {
-                submitModal.classList.remove('active');
+            closeSubmitModal.addEventListener("click", () => {
+
+                submitModal.classList.remove("active");
+
             });
+
         });
     </script>
 </body>
